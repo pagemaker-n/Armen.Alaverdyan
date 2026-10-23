@@ -11,6 +11,11 @@
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{background:var(--k);color:var(--w);font:400 1rem/1.6 var(--sans);overflow-x:hidden;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{scrollbar-width:auto;scrollbar-color:#8a8a86 #0A0A0A}
+*::-webkit-scrollbar{width:14px;height:14px}
+*::-webkit-scrollbar-track{background:#0A0A0A}
+*::-webkit-scrollbar-thumb{background:#8a8a86;border:3px solid #0A0A0A;border-radius:10px}
+*::-webkit-scrollbar-thumb:hover{background:#F2F2EF}
 .dk{background:var(--k);color:var(--w)}.lt{background:var(--w);color:var(--k)}
 section,footer{padding:clamp(4rem,9vw,8rem) clamp(1.2rem,5vw,5rem)}
 .tag{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:2rem;display:flex;align-items:center;gap:.8rem}
@@ -52,6 +57,9 @@ nav a{color:#fff;text-decoration:none;margin-left:1.6rem}nav a:first-child{margi
 .poem p{font:400 clamp(1.35rem,2.8vw,2.25rem)/1.5 var(--serif);letter-spacing:-.01em;white-space:pre-line;opacity:.15;transition:opacity .8s,transform .8s;transform:translateX(-24px)}
 .poem p.on{opacity:1;transform:none}
 .poem .acro{color:#a22d35;font-weight:800}
+.poem .sonnet-label{display:block;color:#a22d35;font-size:.72em;font-weight:800;letter-spacing:.2em;margin-bottom:.4rem}
+.poem .sonnet-part{margin-bottom:2rem}
+.poem .sonnet-part:last-child{margin-bottom:0}
 @media(max-width:700px){.poem summary{grid-template-columns:2.5rem 1fr 2.8rem;gap:.7rem}.poem .ptitle{font-size:clamp(1.35rem,6vw,2rem)}.poem .plus{width:2.45rem;height:2.45rem;font-size:1.65rem}.poem .copy{padding:1.5rem 0 0 3.2rem}.poem p{font-size:clamp(1.15rem,4.5vw,1.5rem)}}
 /* about */
 .about{display:grid;gap:3rem;align-items:center}
@@ -132,27 +140,27 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 </header>
 
 <section class="poem lt" id="poem"><p class="tag">Ընտրված բանաստեղծություններ</p>
-  <details class="st"><summary><span class="no">01</span><span class="ptitle">Այսօր նվեր կտամ քեզ իմ ակնախեցին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այսօր նվեր կտամ քեզ իմ ակնախեցին,
-Եթե սիրես մի օր կամ թե սիրես կրկին,
-Իմ աչքերը սիրիր որպես թախծի պատվար,
-Երբ քո հեղեղն իմ մեջ կրկին առնի դադար:
-Քո իղձերի հորդուն հանգրվանն եմ խաղաղ,
-Սեթևեթ ես այսօր լույսերի մեջ կայտառ,
-Շրթունքներիս, ասես, զգայական մի խաղ,
-Համբույրդ իջավ չքնաղ ինչպես գարնան ծիծառ:
-Հիմա դու ես խոնարհ բավիղում մի անտես,
-Կույրի նման, սակայն առանց ձեռնափայտի,
-Ականջալուր կանցնես սրտիդ արձագանքին
-Եվ ձայներին բազում դեպի սիրո հանդես:
-Չմոլորվես, հոգիս, ստվերների ցոլքից,
-Համր ու խեղճ է հիմա իմ երկյուղը մի քիչ,
-Ու քո գրկից բացի. ուրիշ գրկում եթե...
-Սարդոստայնը մահվան իմ շուրջ հյուսվի գուցե:
-Այսօր նվեր կտամ քեզ իմ ակնախեցին,
-Սեթևեթ ես այսօր լույսերի մեջ կայտառ,
-Ականջալուր եթե չանցար սրտիդ ձայնին...
-Սարդոստայն է մահը իմ շուրջ հյուսված իսպառ:</p></div></details>
-  <details class="st"><summary><span class="no">02</span><span class="ptitle">Աղջիկը, որ սիրտ չունի և անուն չունի ծաղկի</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Աղջիկը, որ սիրտ չունի և անուն չունի ծաղկի,
+    <details class="st"><summary><span class="no">01</span><span class="ptitle">Աբո Ալավերդյանին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այս պատումս երբեք թող չգրվեր,
+Այս մի երգս էլ ձոնվեր մայրամուտին,
+Երկու կաթիլ արցունք թե գլորվեր,
+Իմ կարոտը ձուլվեր Բուրջամուտին:
+Թե վախվորած թուրքը չառաջանար,
+Թեկուզ մառախուղը թանձր լիներ,
+Անպատմելի մի ցավ ուրիշ հնար
+Թող հորիներ, հետո սրտին զիներ:
+Թեկուզ որդիդ էլի տարաբնակ
+Ու թոռնիկիդ էլի Աբո կոչեր,
+Թող, որ Տերը կազմեր սիրո բանակ
+Եվ էլ չարքին երբեք բան չարտոներ:
+Բայց քանի դեռ հուդան՝ ծախու պոռնիկ,
+Մեղքնի իր հաստատ գրի կյանքի գրքում,
+Տափաստանի թուրքն էլ անհարմոնիկ
+Իր ոռնոցով էլի նույնն է երգում:
+Ու Սրբերն են կրկին մատաղացու,
+Ջահել կյանքեր քանի և հատկապես
+Փառքը տարան իրենց այլ մի հեռու,
+Ես Ձեր ցավը տանեմ նաև այսպես…</p></div></details>
+    <details class="st"><summary><span class="no">02</span><span class="ptitle">Աղջիկը, որ սիրտ չունի և անուն չունի ծաղկի</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Աղջիկը, որ սիրտ չունի և անուն չունի ծաղկի,
 Իմ գունատ դեմքից բացի, թող նաև գիրկս ծածկի։
 Աղջիկը, որ հույզ չունի , հույս չունի սրտում թաքուն,
 Առանց ինձ ո՞նց է ապրում, առանց ինձ ո՞նց է զնգուն։
@@ -168,7 +176,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Էն պստիկ իշխանի պես ես էլ եմ մանր ու մի քիչ։
 Ինձ էլ ես, սառցե դշխո, պահ տվել կախարդանքին,
 Հմայիլ ունես հաստատ և մի սեր ունես, Անգին։</p></div></details>
-  <details class="st"><summary><span class="no">03</span><span class="ptitle">Ամոթի շրջա՞ն, թե՞ կարեկցանքի թվականություն</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ամոթի շրջա՞ն, թե՞ կարեկցանքի թվականություն,
+    <details class="st"><summary><span class="no">03</span><span class="ptitle">Ամոթի շրջա՞ն, թե՞ կարեկցանքի թվականություն</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ամոթի շրջա՞ն, թե՞ կարեկցանքի թվականություն,
 Որքան դյուրին է ցավակցությունը,
 Մարդկային չափից ավելի դյուրին։
 Հիշողությունից մինչև մոռացում,
@@ -188,11 +196,11 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Մեզ էլ չթվես առաջին շարքում,
 Փակիր շրջանը,
 Այս անակնության ամփոփը ի՞նչ էր</p></div></details>
-  <details class="st"><summary><span class="no">04</span><span class="ptitle">Այս աշխարհի լավ ու վատին անտարբեր</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այս աշխարհի լավ ու վատին անտարբեր,
+    <details class="st"><summary><span class="no">04</span><span class="ptitle">Այս աշխարհի լավ ու վատին անտարբեր</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այս աշխարհի լավ ու վատին անտարբեր,
 Մեկը լիներ, իմ փոխարեն թող հարբեր,
 Ես չիմացա, թե ոնց հասա այս փառքին,
 Մի սուրբ չկար, ինձ գոնե մարդ հռչակեր։</p></div></details>
-  <details class="st"><summary><span class="no">05</span><span class="ptitle">Այս աչքերս, որ խոնավ են անլուր ցավից</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այս աչքերս, որ խոնավ են անլուր ցավից,
+    <details class="st"><summary><span class="no">05</span><span class="ptitle">Այս աչքերս, որ խոնավ են անլուր ցավից</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այս աչքերս, որ խոնավ են անլուր ցավից,
 Այս ձեռքերս, որ զատում են մութը լույսից,
 Ես դարձել եմ անհրապույր այս եզերքից,
 ԵՎ հոգնել եմ կյանքի, մահվան բանավեճից:
@@ -208,7 +216,27 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Սակայն բախտից խռով հոգիս, իմ սիրելի,
 Ասես, վերջին մի հանգրվան, մի վերջակետ,
 Գրկիդ մեջ եմ տեղադրել անձեռակերտ:</p></div></details>
-  <details class="st"><summary><span class="no">06</span><span class="ptitle">ԱՆԴԱՌՆԱԼԻ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Կտուց կտցի չենք կափկափում,
+    <details class="st"><summary><span class="no">06</span><span class="ptitle">Այսօր նվեր կտամ քեզ իմ ակնախեցին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այսօր նվեր կտամ քեզ իմ ակնախեցին,
+Եթե սիրես մի օր կամ թե սիրես կրկին,
+Իմ աչքերը սիրիր որպես թախծի պատվար,
+Երբ քո հեղեղն իմ մեջ կրկին առնի դադար:
+Քո իղձերի հորդուն հանգրվանն եմ խաղաղ,
+Սեթևեթ ես այսօր լույսերի մեջ կայտառ,
+Շրթունքներիս, ասես, զգայական մի խաղ,
+Համբույրդ իջավ չքնաղ ինչպես գարնան ծիծառ:
+Հիմա դու ես խոնարհ բավիղում մի անտես,
+Կույրի նման, սակայն առանց ձեռնափայտի,
+Ականջալուր կանցնես սրտիդ արձագանքին
+Եվ ձայներին բազում դեպի սիրո հանդես:
+Չմոլորվես, հոգիս, ստվերների ցոլքից,
+Համր ու խեղճ է հիմա իմ երկյուղը մի քիչ,
+Ու քո գրկից բացի. ուրիշ գրկում եթե...
+Սարդոստայնը մահվան իմ շուրջ հյուսվի գուցե:
+Այսօր նվեր կտամ քեզ իմ ակնախեցին,
+Սեթևեթ ես այսօր լույսերի մեջ կայտառ,
+Ականջալուր եթե չանցար սրտիդ ձայնին...
+Սարդոստայն է մահը իմ շուրջ հյուսված իսպառ:</p></div></details>
+    <details class="st"><summary><span class="no">07</span><span class="ptitle">ԱՆԴԱՌՆԱԼԻ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Կտուց կտցի չենք կափկափում,
 Էլ օտար ենք և անծես,
 Դժգույն դեմքեր` սիրո չափում,
 Անշքանում ենք կարծես։
@@ -220,38 +248,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Դեռ կտևենք մի հանգի,
 Ճրագին յուղ ի՞նչ հավելենք,
 Անկացուկամ թե հանգչի</p></div></details>
-  <details class="st"><summary><span class="no">07</span><span class="ptitle">ԱՆԻՄԱՆԱԼԻՆ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ահա, ասում եք` երկյուղը, որպես մորեմերկ
-ծնված մի քաջամարտիկ, սատրապ է կարգված
-զգացմունքներին մեր ամենօրյա, և տերունական
-հողերը նրա ձգվում են ահա մեր գոտկատեղից
-մինչև պարանոց, ծնունդից` մինչ մահ և դեպի
-գիշեր, ուր ժամանակն է իր սրինգները բաժանում,
-ինչպես ծննդյան տոնի թանկագին նվեր ...
-Սակայն սերը չ՞է, ում ասեղնակար և ոսկեծածան
-դրոշով միայն հոգի են առնում մանուկները մեր,
-և այդ ինչի՞ց է թախիծը ծորուն, ժպիտն անբասիր,
-կարոտն անբարբառ, ցավը և լացը հավերժ զույգածին,
-անգամ հաճույքի թանձրահյութն են մեզ մատուցում
-(ինչու՞), սարսուռի խաժաչ մատռվակները...
-Համբույրն եմ խլում ես այն շուրթերի որպես նոր Հուդա
-Եվ առաջածին այս մեղքը ահա յոթնագիր ծաղկում
-այն մատյաններում, որոնց վերծանման գաղտնիքը միայն
-նշանագիր է շուրթերին կանանց և աղջիկների...
-Ասա, աննմա՛ն, քո տառապանքի զինակիցը` ես,
-ի՞նչ մեղք գործեցի...</p></div></details>
-  <details class="st"><summary><span class="no">08</span><span class="ptitle">ԱՆՁՐԵՎԻՑ ՀԵՏՈ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այսպես ավելի լավ է, սիրելի՛ս,
-Թեև կատարյալ, բայց անավարտ ես,
-Գահավեժ ջրվեժ անգամ, սիրելի՛ս,
-Մերկ, հանդիպակաց, ինչքա՜ն հպարտ ես:
-Կամար չբռնեց տանիքիս վրա,
-Աստղերն են վետվետ աչքերիդ հեռվում,
-Խորհրդավորը քո ամեն նազում
-Ինձ երգ է թվում, թվում շարական:
-Ուր է թե լինի լույսի խնկարկում,
-Անձրևից հետո ծիածան հեռվում,
-Անստվեր անցնե՛նք, անցնե՛նք թափանցիկ,
-Երազից ծնված այնպես հպանցիկ:</p></div></details>
-  <details class="st"><summary><span class="no">09</span><span class="ptitle">Անի</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ցող արցունքի մեջ աշխարհն ակներև
+    <details class="st"><summary><span class="no">08</span><span class="ptitle">Անի</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ցող արցունքի մեջ աշխարհն ակներև
 Գարնան հալոցք է կամ աշնան տերև,
 Գոռ կատարներից բացվեց առավոտ,
 Ինչ միալար ես, անհասցե կարոտ:
@@ -275,7 +272,26 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Ցող արցունքի մեջ ծվարած երազ,
 Գարնան հալոցք է, թե տերև աշնան,
 Ինձ կանգնած թաղեք մահս չիմանամ:</p></div></details>
-  <details class="st"><summary><span class="no">10</span><span class="ptitle">Անիրական մի աղջիկ կա աշխարհում</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անիրական մի աղջիկ կա աշխարհում
+    <details class="st"><summary><span class="no">09</span><span class="ptitle">ԱՆԻՄԱՆԱԼԻՆ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ահա, ասում եք` երկյուղը, որպես մորեմերկ
+ծնված մի քաջամարտիկ, սատրապ է կարգված
+զգացմունքներին մեր ամենօրյա, և տերունական
+հողերը նրա ձգվում են ահա մեր գոտկատեղից
+մինչև պարանոց, ծնունդից` մինչ մահ և դեպի
+գիշեր, ուր ժամանակն է իր սրինգները բաժանում,
+ինչպես ծննդյան տոնի թանկագին նվեր ...
+Սակայն սերը չ՞է, ում ասեղնակար և ոսկեծածան
+դրոշով միայն հոգի են առնում մանուկները մեր,
+և այդ ինչի՞ց է թախիծը ծորուն, ժպիտն անբասիր,
+կարոտն անբարբառ, ցավը և լացը հավերժ զույգածին,
+անգամ հաճույքի թանձրահյութն են մեզ մատուցում
+(ինչու՞), սարսուռի խաժաչ մատռվակները...
+Համբույրն եմ խլում ես այն շուրթերի որպես նոր Հուդա
+Եվ առաջածին այս մեղքը ահա յոթնագիր ծաղկում
+այն մատյաններում, որոնց վերծանման գաղտնիքը միայն
+նշանագիր է շուրթերին կանանց և աղջիկների...
+Ասա, աննմա՛ն, քո տառապանքի զինակիցը` ես,
+ի՞նչ մեղք գործեցի...</p></div></details>
+    <details class="st"><summary><span class="no">10</span><span class="ptitle">Անիրական մի աղջիկ կա աշխարհում</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անիրական մի աղջիկ կա աշխարհում
 Թագուհու պես, ախր, շատ է տիրական,
 Համբույրն առա շուրթերիցը կուսական,
 Սիրտս հիմա էլ անիմաստ չի զարկում:
@@ -291,7 +307,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Մազերն արձակ ծովի փրփուր է ասես,
 Ամենակալ Տերն աշխարհը հնարեց,
 Մեկին սիրեց, մեկի սերն էլ բացառեց:</p></div></details>
-  <details class="st"><summary><span class="no">11</span><span class="ptitle">Անհաղորդ էլ մնացին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անհաղորդ էլ մնացին,
+    <details class="st"><summary><span class="no">11</span><span class="ptitle">Անհաղորդ էլ մնացին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անհաղորդ էլ մնացին,
 Ով լինելդ չիմացան,
 Չարքից թեև խելացի,
 Աստծուց սակայն հեռացան:
@@ -307,7 +323,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Բայց մեկտեղ են երկբայում,
 Ով էլ մնաց հարազատ,
 Մտքերի մեջ են դավում:</p></div></details>
-  <details class="st"><summary><span class="no">12</span><span class="ptitle">Անհետ կորած տղերք, սիրտս գցեմ ՝զարկեք</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անհետ կորած տղերք, սիրտս գցեմ ՝զարկեք,
+    <details class="st"><summary><span class="no">12</span><span class="ptitle">Անհետ կորած տղերք, սիրտս գցեմ ՝զարկեք</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անհետ կորած տղերք, սիրտս գցեմ ՝զարկեք,
 Աղոթարան-լույսն իմ ալ կարմիրով ներկեք,
 Արյան կաթիս էլի արջնագռավ է թառել,
 Երկյուղ չունեմ, տղերք, ինձ առաթուր թաղեք։
@@ -315,7 +331,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Կալանդ ու կապ դրած այս հարաճուն ցավին,
 Մտքով տարվեմ մի կերպ, թե՞ ճարահատ խոկամ՝
 թուրքին թվաքարեմ նզովք չեկած կավին</p></div></details>
-  <details class="st"><summary><span class="no">13</span><span class="ptitle">Անձրև</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անձրև...
+    <details class="st"><summary><span class="no">13</span><span class="ptitle">Անձրև</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անձրև...
 Ու առանց անձրևանոցի
 Ոսկորներս են թաց` կրակի կարոտ,
 Հոգիս դառնունյան, քայլս` վարանոտ,
@@ -332,7 +348,19 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Եվ մարմինների դողն է մակընթաց
 Փոխանցվում լուսնին… ես, դու, լուսինը…
 Ո՞վ է հնարել հայտնին ու սինը:</p></div></details>
-  <details class="st"><summary><span class="no">14</span><span class="ptitle">Անունս</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Տառերը խառնեցին ինձ հետ
+    <details class="st"><summary><span class="no">14</span><span class="ptitle">ԱՆՁՐԵՎԻՑ ՀԵՏՈ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այսպես ավելի լավ է, սիրելի՛ս,
+Թեև կատարյալ, բայց անավարտ ես,
+Գահավեժ ջրվեժ անգամ, սիրելի՛ս,
+Մերկ, հանդիպակաց, ինչքա՜ն հպարտ ես:
+Կամար չբռնեց տանիքիս վրա,
+Աստղերն են վետվետ աչքերիդ հեռվում,
+Խորհրդավորը քո ամեն նազում
+Ինձ երգ է թվում, թվում շարական:
+Ուր է թե լինի լույսի խնկարկում,
+Անձրևից հետո ծիածան հեռվում,
+Անստվեր անցնե՛նք, անցնե՛նք թափանցիկ,
+Երազից ծնված այնպես հպանցիկ:</p></div></details>
+    <details class="st"><summary><span class="no">15</span><span class="ptitle">Անունս</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Տառերը խառնեցին ինձ հետ
 տեղերը փոխելով անշփոթ,
 Ո՞վ եմ ես դարձյալ,
 Պոե՞տ։
@@ -346,7 +374,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Շնչարանների տակտերը չափող
 Հուզմունքդ տաղ է։
 - Հապա անու՞նս</p></div></details>
-  <details class="st"><summary><span class="no">15</span><span class="ptitle">Աշխարհ քեզ հետ ճամփա ելա</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Աշխարհ քեզ հետ ճամփա ելա,
+    <details class="st"><summary><span class="no">16</span><span class="ptitle">Աշխարհ քեզ հետ ճամփա ելա</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Աշխարհ քեզ հետ ճամփա ելա,
 Ու՞ր ենք գնում, ա´յ աշխարհ,
 Ի՞նչ տագնապ է սիրտս հիմա
 Քեզ հետ կիսում, վա´յ աշխարհ:
@@ -366,7 +394,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Ժպիտ վառի խավարում,
 Ինձ չփնտրեք, ես եմ անթեղ
 Անիրական աշխարհում...</p></div></details>
-  <details class="st"><summary><span class="no">16</span><span class="ptitle">Աշխարհը բեմ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Աշխարհը բեմ
+    <details class="st"><summary><span class="no">17</span><span class="ptitle">Աշխարհը բեմ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Աշխարհը բեմ
 Եվ ես տխուր մի խաղարկու,
 Իմ դերերն եմ, թե չհարբեմ,
 Դեռ թվարկում,
@@ -376,7 +404,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Մի երկվայրկյան և մի քթիթ
 Ես այս անտեր ժամանակին
 Ի՜նչ հակառակ եմ նավարկում։</p></div></details>
-  <details class="st"><summary><span class="no">17</span><span class="ptitle">Աշունն ու կինը</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Քո աչքերի մեջ լուսինն ամոթխած,
+    <details class="st"><summary><span class="no">18</span><span class="ptitle">Աշունն ու կինը</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Քո աչքերի մեջ լուսինն ամոթխած,
 Գիշերն անանջատ, աստղերն անթերի,
 Մի քիչ աշուն կա այնպես տխրամած,
 Եվ աղոտ առկայծ եթերում անհաս:
@@ -392,7 +420,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Ոսկեդեղին նույն հանդերձը հագել,
 Մեկ է գիշեր է, անգամ լռել են
 Ձայները, որ ես երբեք չեմ լսել…</p></div></details>
-  <details class="st"><summary><span class="no">18</span><span class="ptitle">Ավե, Մարիա</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p><span class="acro">Ա</span> նհույս էլ փակում եմ այս էջը,
+    <details class="st"><summary><span class="no">19</span><span class="ptitle">Ավե, Մարիա</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p><span class="acro">Ա</span> նհույս էլ փակում եմ այս էջը,
 <span class="acro">Վ</span> հատ ու ձորձերս եմ կարկատում,
 <span class="acro">Ե</span> կել է, չի եկել իմ վերջը,
 <span class="acro">Մ</span> եռնում է քո անհույզ հարկատուն:
@@ -400,7 +428,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 <span class="acro">Ր</span> ոպեն այս թե ապրեմ անթարթափ,
 <span class="acro">Ի</span> նձանից լոկ մի հուշ կմնա՝
 <span class="acro">Ա</span> չքս թաց՝ լուրերում հրատապ:</p></div></details>
-  <details class="st"><summary><span class="no">19</span><span class="ptitle">ԲԱՐՁՐԱԳՈՒՅՆ ՄԱԹԵՄԱՏԻԿԱ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Եթե տխուր եմ, ապա մռայլ եմ,
+    <details class="st"><summary><span class="no">20</span><span class="ptitle">ԲԱՐՁՐԱԳՈՒՅՆ ՄԱԹԵՄԱՏԻԿԱ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Եթե տխուր եմ, ապա մռայլ եմ,
 Ի՜նչ զուգամետ եմ, ախր, ես այլ եմ,
 Թե անուրախ եմ, կամ ես թախծում եմ,
 Տարամետ այսպես ինձ արտածու՜մ եմ:
@@ -416,7 +444,185 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Վերջս քո գրկում այնպես անարգել,
 Ի՞նչ ես թվերի առանցքն անտեսում,
 Թե որ սիրում են, չեն կանխատեսում:</p></div></details>
-  <details class="st"><summary><span class="no">20</span><span class="ptitle">Թուղթ ընդհանրական</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անկարության նման բազմաչարչար,
+    <details class="st"><summary><span class="no">21</span><span class="ptitle">Դու ու՞ր ես (վերացարկում)</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>1
+Հուսահատում ես, եռանդից գցում,
+Խրախույսներդ արևն է գծում,
+Արծվի թռիչքը նա չի պատկերում,
+Այս վերացումը քեզ էլ չի գերում։
+2
+Օրեր են, կանցնեն իրար շարահար,
+Այս զուգորդության գումարը մահն է,
+Ինձ էլ քիչ մնաց, եթե ապշահար
+Սրտիդ փափագը արքունի գահն է։
+3
+Հնացումով է իմ գինին կոնյակ,
+Սիրո թունդն ինչ է, որ մարդ դիմանա,
+Լուսնկա չափի դարձը մի յոթնյակ,
+Թաքուն կդյութես, որ մարդ չիմանա։
+4
+Բղջախոհինն է պատրանքը ցելի,
+Նոր հերկի համար մի գութանն ինչ է,
+Հարահոսուն է ժամանակն էլի,
+Ցավի ապառնին ոռնոցն է գելի։
+5
+Չարաշահության ակունքը նույնն է,
+Թե ոչինչ չունես՝ անկոչ ես և հյուր,
+Դեղինը ոսկու անարժեք գույնն է,
+Աշնան խանձի մեջ արևն է համբույր։
+6
+Ինձ դերևեց կյանքը և հմայեց մի կին,
+Ոտքս խոչի առավ, սահուն անցա մեկին,
+Հովազառյուծ, ասաց , կեղտոտ անասուն ես,
+Կորի չգաս հանկարծ, մտնես ածուներս։
+7
+Պատառոտեց իրեն, թե ցուցական ունի,
+Ինձ այդ խաղը, ավաղ, հնարովի թվաց,
+Վերափոխման տոնին ով Տիրամայր չունի,
+Եկած ճամփեն գիտի, թե մեկ էլ ուր գնաց։
+8
+Մի արցունքի կաթը մի տիեզերք չարժե,
+Թե անարվեստ մեկի գութը պիտի շարժես,
+Հասարակից հետո, որն է հատուկ անուն,
+Մահը թե բացառենք, որ դիպված է կայուն։
+9
+Մի բարևով եթե կյանքդ եմ աղավաղում,
+Անմեծարա՞նք պիտի անփորձ լինես,
+Չթալկացա էլի, լույսն է իմ նվաղում,
+Կույրին քիչ է, եթե մեծ պատմություն շինես։
+10
+Ուշքս գնաց, աշխարհ, էս ինչ դառն ես թվում,
+Թանկ կորերից եթե մեկն է անդառնալի,
+Կախարդանքից հետո ինձ լուսինն էր թովում,
+Ուր կաղկանձս սեր էր, ցավդ թե ոռնայի։
+11
+Հոգեվարքի տագնապ, սառած ձյունահատեր,
+Փաթիլների մեջ եմ մտամոլոր, ցրիվ,
+Արարչության շարքս թե մի հորձանք հատեր,
+Խելքս քամին տաներ փշուր- փշուր՝ լրիվ։
+Ես ասեի՝ սեր ես և ինքն ասեր՝ համակ,
+Ու չթվար անհույս ուրիշ ժամանակից,
+Մի զուգահեռ չափից ինձ էլ չգար նամակ,
+Հրեշտակի դեմքով ուրիշ անառակից։
+Սարսուռ, սրսուռ, բյուրեղ՝ վեցթևանի աստղիկ,
+Շվարել է հոգիս աչքիդ բացուխուփում,
+Ասդին, անդին ցրված փաթիլներն են պզտիկ
+Իմ այլայլված դեմքին տրամադիր խփում։
+12
+Քո համարումն էի և ամոթը՝ սին,
+Չարի ծաղիկն էի , աչքիդ լույսն անգին,
+Ես քո դիպվածն էի անակնունելի
+Եվ սրտիդ սերն էի, բայց քեզ չունեի։
+Ես և հրճվանք էի և թախիծ ու վիշտ,
+Աչքի արցունք անբիծ ու սրտիդ մեջ միշտ,
+Ես ու՞մ պոետն էի, ում սիրով տարված
+Օր ու արևդ անգամ ինձ էին փարված։
+13
+Անչափությունս աննշմար մի կետ,
+Ես էլ քո լույսն եմ անծիր տիեզերք,
+Ես էլ եմ լրում շրջանն անգոյի,
+Երկրպագության կուռն անգոսնելի։
+Դե, քամահարեք ընթացքը աստղի,
+Մելամաղձության մութը թող տիրի,
+Կիսաբոլորակ ձեր առաստաղի
+Ականակուռը կամարն է ոսկի։
+Ինձ իմ բառերի երկունքը թողեք
+Եվ սիրո հույզը որպես գլխագին,
+Ինձ չսիրելով երբ էլ աղոթեք,
+Չկարծեք ես եմ միայն թանկագին։
+Դուք էլ եք անգին, դու էլ ես չքնաղ
+Քո մեջ եմ մի կետ , հոգիս, թաք կացել,
+Ես էլ այսպես եմ ամփոփ խտացել,
+Վերիվերոյ եմ և տակնուվրա
+Եվ անկից ետքն էլ քո մեջ վերացա։
+14
+Անտարապայման մի իշամեղվի ձնափայլն էլ է էնդիմիկ տեսակ,
+Ապաթարցերով և եթե դատենք սղվածությունն է բավարար պայման,
+Վանքի դպիրը ամեն ժամկոչի պատարագում է սրբերի տեղակ,
+Ձայնավորների քանակը քիչ է և էլի նույնն է երգը հմայման։
+15
+Պլուզ աչքին կարմիր ավետարան,
+Շառագույնը փոխվեց կապույտ հևքի,
+Անկեղծության չափդ, աղջիկ, տարան,
+Քո հոգնության ճիգն է ցավի մերան։
+16
+Անդեմ է բայը, թե մութը կոխեց,
+Կրավորական, երբ օրը փոխվեց,
+Նույն նմանությամբ՝ անմաս չեզոքն է,
+Թե նազ չի ծախում, չիմացար քո՞նն է։
+Հարակատար է անցյալն անորոշ,
+Վաղուց ի վեր է համակրել ես,
+Արտախուրակի մետաքսն ապարոշ
+Սրտիդ թագի պես եթե կրել ես։
+Ինչ դիմավոր է այս երկվությունը,
+Մտքերիդ մեջ ես դեռ տարուբերվում,
+Սերը զանց առար, բայց լռությունը
+Քեզ այս քաղաքի գույնով է չափում։
+17
+Գալիս եմ անսանձ լույսերի միջով,
+Առոգանելով, թե մահս մոտ է,
+Հասնում եմ լուսնին մթին գիշերով,
+Կանայք ասում են ինչ անամոթ է։
+Եվ ահա վերջին այս պարբերության
+Դրվագն եմ խազում ,որ ինձ ուրանաք,
+Տողերիս մեջ է ժամը հարության,
+Հենց որ վերանամ՝՝ չքմեղ ձևանաք։
+18
+Կյանքիս վերջին հավելվածում
+Ապրելու եմ հարբած,
+Արբեցուցիչ այդ հատվածում
+Թե չմեռնեմ հանկարծ։
+Օրս քանի երկար ձգեմ
+Եվ չձգտեմ փառքի,
+Սիրո հույզից թե զգլխեմ՝
+Առանց կախարդանքի։
+Այս մռմռուկ ցավից էլի
+Պիտի օղի թորեմ,
+Ում համն առնեմ՝ նա ցանկալի
+Թվա, ապա թովեմ։
+Հարբելու եմ, հետո չասեք,
+Ձեր պոետն եմ եղել,
+Դուք չգիտեք, քանի թաս եք
+Ի՜նչ անիմաստ հեղել
+19
+Հոգուս մեջ, երկնքում, ամենուր,
+Քեզ չունեմ գրկիս մեջ անգամ,
+Ասում եմ, իմ վերջին հրապույր,
+Մարում եմ, նվաղում եմ անկամ։
+Երկիցս, ոչ ուրեք, կամ երբեք
+Ետ հիշե՞մ թվերը երկպատիկ,
+Թախծում եմ, մեռնում եմ անուրեք,
+Դու ու՞ր ես, թե՞ սեր ես անցողիկ։
+Դու ու՞ր ես, կամ կույս ես տակավին,
+Քեզնից սուրբ էլ որին համարեմ,
+Մինչև քեզ, բեր, ինձ էլ չհամրեմ,
+Քեզ թողնեմ աշնանն ու անցընեմ։
+20
+Վերացարկում եմ աշխարհիս բանը,
+Գետնամած տեղս անհունում ձոր է,
+Բողար, ձայնում եմ նկարի շանը,
+Աղջկա հագին աբրեշում շոր է։
+Սևափոր դռլոն, քելքիդ մեջ շորոր,
+Իստակ ջրերիս ակունքին ես մոտ,
+Ու քո պտերը ես տարին բոլոր
+Թվաքարում եմ ոնց մի անամոթ։
+Խայտավոր, նախշուն ծաղկանկարում
+Ես գինեթթվի աղերն եմ վրձնում,
+Հարբած մի բան չի, օրս է երկարում,
+Ասես աշխարհիս անլույսն է ձնում։
+21
+Կրվեցիր կյանքդ, անմիտ, պարտասել,
+Քար ու քարշանքիդ հնհնուքն ի՞նչ էր,
+Մորմոքուն խաղդ եթե չես ասել,
+Ձայն տալու նման առաջդ կանչել։
+Ցավդ քեզանից առաջ ես թողել,
+Հետքով գնում ես, որ չմոլորես,
+Նազկտուն սերդ բա ո՞նց չես թորել,
+Կաթ-կաթ չես արել, որ չտրոհես։
+Չգիտե՞ս, որն է ցավի ապառնին,
+Էն իշամեղվի խայթոցը կանցնի,
+Սիրտդ է միայն, որ առանց սռնի,
+Ու՞մ առանցքով է մեկը հարցնի։</p></div></details>
+    <details class="st"><summary><span class="no">22</span><span class="ptitle">Թուղթ ընդհանրական</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անկարության նման բազմաչարչար,
 Սպիացած ինչպես ցավը հոգուդ,
 Ողորմածիկ, սակայն առանց պատճառ
 Եվ սրբազան մասունք և կամ դիցուք,
@@ -428,7 +634,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Հավելվածից խռով ինչ-որ անցորդ,
 Խոժոռ հայացք, խիստ և անտարակույս,
 Մի կաթ արցունք՝ իմ չափ խղճահարույց:</p></div></details>
-  <details class="st"><summary><span class="no">21</span><span class="ptitle">Ժամանակ դեռ կա</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ժամանակ դեռ կա,
+    <details class="st"><summary><span class="no">23</span><span class="ptitle">Ժամանակ դեռ կա</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ժամանակ դեռ կա,
 որ հոգեվարքիս
 տագնապը ցրես,
 Դեռ մի քիչ էլ կա,
@@ -440,7 +646,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Ինձ բան չմնաց,
 բայց հենց կարոտես,
 քո ներսը նայիր։</p></div></details>
-  <details class="st"><summary><span class="no">22</span><span class="ptitle">ժամանակը</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>ժամանակը՝
+    <details class="st"><summary><span class="no">24</span><span class="ptitle">ժամանակը</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>ժամանակը՝
 Վախի ածանցյալով,
 Այրվում է հաստատուն արագությամբ՝
 Առանց զանգվածի կորստի,
@@ -450,7 +656,23 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Եվ չի անցնում իմ միջով
 Որպես արյուն,
 Որպես հիշողություն։</p></div></details>
-  <details class="st"><summary><span class="no">23</span><span class="ptitle">Իմ արձագանքը ծովում սուզել ես</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Իմ արձագանքը ծովում սուզել ես,
+    <details class="st"><summary><span class="no">25</span><span class="ptitle">Իմ այս կյանքը կաղապար է</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Իմ այս կյանքը կաղապար է,
+Ի՞նչ իմանամ, ու՞մ կամքով,
+Խոտոր գնամ՝ ճանապարհ է՝
+Մանեման ու կույր աչքով։
+Արմաղանի հրապույրը
+Դուրեկան է իմ քիմքին,
+Ծիր Կաթինի մի պարույրը
+Չափ է տալիս հմայքին։
+Ինչ ոլորքի հիմա բերեմ,
+Որ տրոփի կուրծքն ընկած,
+Լայնածիրից դեպի բոհեմ
+Վեր ու դիրս է մի արկած։
+Քանի գրգում, սիրտն եմ շահում
+Շոյանքներում այս մեղուշ,
+Հույզս հույզին շարահարում
+Եվ մեռնում եմ անմռունչ</p></div></details>
+    <details class="st"><summary><span class="no">26</span><span class="ptitle">Իմ արձագանքը ծովում սուզել ես</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Իմ արձագանքը ծովում սուզել ես,
 Ափակոծ, ասես, հառաչաձայն,
 Ավազ ու խեցի թե որ հուզել ես,
 Տագնապս ափիդ է մի մահարձան:
@@ -462,13 +684,25 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Ծովասպատակ եմ ես իմ հերթին,
 Ասա, սիրու՞մ ես, թե՞ դադարել ես
 Փարոս դառնալ իմ նոր երթին…</p></div></details>
-  <details class="st"><summary><span class="no">24</span><span class="ptitle">Իմ մահից առաջ ինչ լինելու էր, եղել է արդեն</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Իմ մահից առաջ ինչ լինելու էր, եղել է արդեն,
+    <details class="st"><summary><span class="no">27</span><span class="ptitle">Իմ մահից առաջ ինչ լինելու էր, եղել է արդեն</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Իմ մահից առաջ ինչ լինելու էր, եղել է արդեն,
 Մնաց, որ հարբած, դատարկությունը քաոսի բերեմ,
 Մի թաս էլ մնաց, խառնակ ամբողջին թե ցավս հղեմ,
 Անհոգի աղջիկ, չափավորությամբ սիրտդ չգերեմ։
 
 Ահա և չկամ</p></div></details>
-  <details class="st"><summary><span class="no">25</span><span class="ptitle">Իմ պատմությունը մի քիչ տարբեր է</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Իմ պատմությունը մի քիչ տարբեր է,
+    <details class="st"><summary><span class="no">28</span><span class="ptitle">Իմ նամակները</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Իմ նամակները ... որ չես ընթերցել,
+Քեզ խանգարել էր սոսափն անտառի.
+Երբ մեր մանկության քաղաքն անքուն էր,
+Երգս գողացել ու քեզ էր ձոնել:
+Լսիր, քանի դեռ խոսակցությունը
+Թարմ լուրի տեսքով եթերն է լցրել,
+Ես կառուցել եմ ծովի իմ տունը,
+Ապառաժներին, որտեղ չեմ եղել:
+Քանի քաղաքը խաղաղ չի քնել,
+Նամակները իմ ... ինչու՞ եմ հիշել,
+Դեռ առկայծում են կայծոռիկները,
+Որ արթնանում են ու երգում երգեր:</p></div></details>
+    <details class="st"><summary><span class="no">29</span><span class="ptitle">Իմ պատմությունը մի քիչ տարբեր է</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Իմ պատմությունը մի քիչ տարբեր է,
 Գլխապտույտից ես թևեր չառա,
 Ձեր պոետն այսօր թեև հարբել է,
 Սլացքի մեջ է և՛ տեր, և՛ ծառա։
@@ -480,7 +714,466 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Արծաթաբաշ է տաղիս այս բռչոն,
 Ես նրա մասին իմ Աստծուն կասեմ,
 Իմացա՞ք մանր է, մեծ պասի կռճո՞ն։</p></div></details>
-  <details class="st"><summary><span class="no">26</span><span class="ptitle">Մակերեսների անարցունք խաղ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Սերս կորզելու գայթակղության խորքերում անկիրք
+    <details class="st"><summary><span class="no">30</span><span class="ptitle">Լացելեն դադրիս, հանդարտիս թեև</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Լացելեն դադրիս, հանդարտիս թեև,
+Հայացքով քաղցրիկ գորովէս թեթև…
+Սերդ չիմացած, պապդ կհարբեր,
+Հուզմունքը նույնն էր, տրոփն էր տարբեր,
+Աշխարհից հետո սիրտս թերթեցի,
+Աչքերը՝ երկինք, զարկը՝ Աժդահակ,
+Մոնթեն պարգև է ակնունքիս թացին,
+վկայագիր են մազերս ճերմակ։
+Բարձրյալի սիրո հաճախությամբ եմ,
+Քանի տաշտաքեր հույզերս սանձեմ,
+Կոնյակից հետո ժպտում եմ էլի
+Ի՜նչ ոգելից ես և ի՜նչ ցանկալի։</p></div></details>
+    <details class="st"><summary><span class="no">31</span><span class="ptitle">Լույս աղջիկ հուշերի իմ դատարկ փողոցում</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Լույս աղջիկ հուշերի իմ դատարկ փողոցում,
+Մենավոր մի լապտեր թախիծն է տարփողում,
+Կարող եմ մի հանգով կրկնել ինքս ինձ
+Եվ մեռնել աչքերիդ լուսանցքներում ջինջ:
+Փեշերդ կարող եմ քամու պես տատանել,
+Եթերից թափանցիկ մետաքս էլ ծածանել,
+Կարող եմ փշաքաղ, անհաղորդ վայելքին
+Էանալ ջրերի անծանոթ տարերքին:
+Հեռու է լուսինը, բայց իմ մեջ փոքրացած
+Եվ հանդարտ շոյում է ափերդ մերկացած,
+Կարոտն այս հոգեմաշ ու անվերջ ոտնասույզ
+Փնտրում է մի խեցի, արձագանք և մի հույզ…</p></div></details>
+    <details class="st"><summary><span class="no">32</span><span class="ptitle">Լույսը բեկ-բեկ, հորիզոնը անթերի</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Լույսը բեկ-բեկ, հորիզոնը անթերի
+Ինձ կանչում են, ձայն են տալիս անձկալի,-
+Անգնալի ճամփաներով եթերի
+Մեզ մոտ արի մինչև վերջը ձնհալի։
+-Չէ, -ասում եմ, մանկան նման ամոթխած,-
+Հալհլուքից պիտի քամեմ հազար հանգ,
+Որ զարդարեմ իմ գիշերը մթամած,
+Ինձ էլ չասեն, թե մռայլ եմ, աներանգ։
+-Մակդիրներդ էլ խոսում են քո մասին,
+Տիտղոսներիդ ի՞նչ հավելենք շարադիր,
+Լուսաթռիչ բանբերներով՝ միասին,
+Այս անգամ էլ անթվաքար երազիր։
+-Իմ մեղքերը ես կշռել եմ Աստծու հետ,
+Ու քիչ մնաց, որ մինչև մահ լրանամ,
+Մի սեր հետո ինձ մի անկոխ արահետ
+Մատնանշեք, գուցե այդպես լրջանամ։</p></div></details>
+    <details class="st"><summary><span class="no">33</span><span class="ptitle">Լույսը տարանցիկ հետքն է մեր հոգու</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Լույսը տարանցիկ հետքն է մեր հոգու
+Անմրուր միայն լույսն է եթերում,
+Որին երբևէ ժանգը չի կոխում,
+Կյանք է, անցնում է մահվան հերթերում,
+Կորաքամակին մահն է լոկ փոխում:
+Ով որ հասցրեց ինձ թաթով խփեց,
+Եվ ով հեռու չէր կարգին ապտակեց,
+Ասես բախտիս հետ մլուլ են անում
+Անձս ուրացած ասուն, անխոսուն:
+Դիտավորություն կարծում եմ թե կա,
+Մարդկային կերպը չար չէ աներկբա,
+Բայց երբ խավարն է տարանջատ գալիս,
+Խազագրում է նույն մահվան սալիս:
+Թե սա անպաշար, շնորհազուրկ էր,
+Ինքն իր գիտցածով երիցս նվազ,
+Կառուցածն ինչ էր. մի քանի բուրգ էր՝
+Լուցկու հատերով, կամ թղթին գծած:</p></div></details>
+    <details class="st"><summary><span class="no">34</span><span class="ptitle">Խոսելեն դադրիս, հանդարտիս թեև</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Խոսելեն դադրիս, հանդարտիս թեև
+Հայացքով քաղցրիկ գորովէս թեթև…
+Ցավը չիմացած, սերը չապրեցի,
+Հուզմունքը նույնն էր, տրոփն էր տարբեր,
+Հավկուրի նման սիրտս թերթեցի,
+Մի աղոտ լույս էր քո սիրով հարբել։
+Այն հմայանքի գիշերում, անգին,
+Սիրո անձուկն էր ցավն անգոսնելի։
+Ժպտում եմ էլի։
+Սերը՝ անքնին</p></div></details>
+    <details class="st"><summary><span class="no">35</span><span class="ptitle">Ծեր շրջմոլիկը</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Մի հրաշքով հանկարծակի կամ ակամա հայտնվեցի
+Հարդագողի ճանապարհին ու ինձանից բան չմնաց,
+Սերս մարեց, հետքս կորավ մեր փողոցի դիմագծից,
+Ինձ փնտրեցին երկար-երկար պարսպի տակ, տանիքներին,
+Մի ազդագիր մահս գուժեց, ինքս էլ անգամ հավատացի,
+Ու մեկտեղվեց հազար անկեղծ վկայություն,
+Ինձ հիշեցին և բառերի մի բազմություն
+Նստեց վերջին հոգեհացի ու տեսա ինձ
+Նրանց թրջված աչքերի մեջ,
+Հոգիներում զարմանալի , պարսպի տակ, տանիքներին,
+Բայց մի աղջիկ ինձ չթաղեց, ախ, չթաղեց,
+Իր ժպիտով լուսավորեց Ծիր-Կաթինի ամեն անկյուն
+Ու կարոտից փարոս սարքեց, նավազ դարձավ միայնության
+Անհրապույր օվկիանի մեջ
+Նա ինձ սիրեց , ախ , ոնց սիրեց...
+Այս փողոցում դեռ շրջում է իմ պատկերով շրջմոլիկը,
+Ծեր սրիկան...</p></div></details>
+    <details class="st"><summary><span class="no">36</span><span class="ptitle">Կիսակատար երգ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p><span class="acro">Լ</span> <span class="acro">ա</span> ջվարդյա քար է, գոհար ու մառ է,
+<span class="acro">Ո</span><span class="acro">ւ</span> <span class="acro">ս</span> իդ դիմահար, քո հոգեառն է,
+<span class="acro">Ս</span> <span class="acro">տ</span> ինքները ձիգ, մարմինն անթերի,
+<span class="acro">Ա</span> <span class="acro">վ</span> յունն է օծել հիմքերն աշխարհի:
+<span class="acro">Մ</span> <span class="acro">ա</span> լախիտե զարդ, հույսի գանձանակ,
+<span class="acro">Փ</span> <span class="acro">ծ</span> ուն խոկում են եզերքում անկյանք՝
+<span class="acro">Օ</span> <span class="acro">ա</span> զիսներում աղջիկներ բազում,
+<span class="acro">Փ</span> <span class="acro">մ</span> փուս տժժում են՝ կանայք են ջազում:
+<span class="acro">Ի</span> <span class="acro">ո</span> նացվել է բանը աշխարհի,
+<span class="acro">Պ</span> <span class="acro">ր</span> կվել է ջանքը մերժված հանճարի,
+<span class="acro">Ե</span> <span class="acro">ա</span> հուդների դարձն ի անապատ,
+<span class="acro">Ս</span>... <span class="acro">չ</span> որքոտանու մշակված սապատ:
+<span class="acro">Ա</span> <span class="acro">ք</span> ասիաների շուքի տակ կերգի,
+<span class="acro">Ղ</span> <span class="acro">ե</span> յլան կքաշի ծերն արևելքի,
+<span class="acro">Ջ</span> <span class="acro">ր</span> երի մեջ է ակունքը ցավի,
+<span class="acro">Ի</span> <span class="acro">ո</span> ններում լոկ երկինքն է ծավի:
+<span class="acro">Կ</span> <span class="acro">վ</span> արցից փխրուն սիրտն էր հանճարի…</p></div></details>
+    <details class="st"><summary><span class="no">37</span><span class="ptitle">Կուզես հեքիաթ նվիրեմ ու հեքիաթում՝ մի աշխարհ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Կուզես հեքիաթ նվիրեմ ու հեքիաթում՝ մի աշխարհ,
+Համբույր տամ քո շուրթերին, սիրո թրթիռն էլ զգամ,
+Շոյեմ վարսերդ՛ գիշեր, տագնապներն իմ անհամար
+Տեղադրեմ գրկիդ մեջ աստղերի պես ցիրուցան:
+Հպեմ կրծքիդ կիսափակ, կոնքերիդ բաց ու մարմար
+Դեռ չգրված մի սիրերգ ու մեղեդի մի խելառ,
+Թե արտոնես քեզ սիրել, սիրեմ անգամ հայացքով,
+Անուրջներիս թագուհի աստվածուհու նայվածքով:
+Կուզես խնդամ, կուզես լամ, հարբեմ սիրուց քո անուշ,
+Կարոտ, թախիծ ուրանամ ու չդառնամ քաղցր հուշ,
+Լուսին, ես քո հայելում նրա պատկերն եմ տեսնում.
+Ձեր երկվորյակ քույրերից հիմա ես ում եմ սիրում...</p></div></details>
+    <details class="st"><summary><span class="no">38</span><span class="ptitle">Հազար տարին օրվա նման հպանցիկ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Հազար տարին օրվա նման հպանցիկ,
+Երկու օր է Տերը գամված է խաչին,
+Դառնացած եմ աշխարհիկ այս բարքերից,
+Ծերանում ենք, սակայն մեղա չենք գալիս:
+Անհավատի խսիրն արել ենք փիլոն,
+Մերկանդամ ենք, հագած՝ մետաքս ու նեյլոն.
+Լույսերի ծով, կույրի նման խարխափում,
+Մեկ օր սոված՝ ինքներս մեզ ենք լափում:
+Ի՜նչ աշխարհ է, որոգայթներ ու դավեր,
+Ծերն անհառաչ և պատանին ծերունի,
+Ու անցյալի վերքերն, ավաղ չբուժած,
+Դատ ենք անում, մեր դատաստանն անտեսած:
+Անապատում Տերն այդպես էլ մարդ մնաց,
+Նրա բաժին սատանան էլ՝ զարմացած,
+Շքեղության հարկից դևը համրացավ,
+Թիկն տվեց, անգամ նրան էլ անելիք չմնաց:
+Թուրքը գերեց, կատարածուն մենք եղանք,
+Մենք, որ թաքուն կամ բացահայտ նենգ եղանք,
+Հերոսներին դարանակալ խփեցինք,
+Իսկ ով մնաց, հաց ու ջրից կտրեցինք:
+Եվ անցել ենք սահմանները ունայնի,
+Գաղթականի անթացուպն ենք անգոսնել,
+Մի բարեգործ սայլակներն է անայլի
+Մեզ նվիրել և պատվիրել կանգ առնել…</p></div></details>
+    <details class="st"><summary><span class="no">39</span><span class="ptitle">ՀԱՅԱՍՏԱՆ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Հայաստան, իմ բնօրրան,
+Իմ եզերք, իմ Բագարան,
+Իմ քնար, իմ երգ Գողթան,
+Իմ Անի, իմ Երևան:
+Հավատի իմ մագաղաթ,
+Երկնահաս իմ Արարատ,
+Անծանոթ, բայց հարազատ,
+Ինչ ունեմ քեզանից զատ:
+Թանկ, ինչպես համը հացի
+Եվ աղը՝ արցունք-լացի,
+Սևանից, Վանից բացի
+Իմ Պարզ լիճ՝ արյան թացի:
+Հոգնել եմ այս խոնջանքից,
+Այս երթից հոգի մաշող,
+Ալեհեր այս տանջանքից
+Աշխարհից աշխարհ չվող:
+Թե հրաշք լինի մի օր
+Տաս միլիոն աչք ու ափի,
+Կարոտից գժվեմ մի նոր,
+Քեզ գգվեմ առանց չափի:
+Հայաստան, իմ բնօրրան,
+Իմ եզերք, իմ Բագարան,
+Իմ քնար, իմ երգ Գողթան
+Իմ Անի, իմ Երևան:</p></div></details>
+    <details class="st"><summary><span class="no">40</span><span class="ptitle">ՀԱՅԱՍՏԱՆԸ՝ ՃԻՉ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>1
+Փողոցը՝ մթնում,
+Սուրճը սառել ա,
+Ախպերն ասում ա՝ «Հայաստան, դու կարոտ»,
+ժամանակը խնդում ա, «Չէ՝ սեր ա կորած»։
+Ասֆալտի ճաքերում,
+Աչքերին արցունքոտ,
+Պատերին գրած ա՝ «Ծխի պես օդում ա անհույս»։
+Կաֆեի անկյունում
+Ժամանակը խնդում ա՝ «Էդտեղ սեր չկա»։
+Սրտումդ ա ծվար, ախպեր։
+Հայաստան, դու սեր ես
+Ու կարոտի դող։
+Գիշեր ա փողոցում,
+Ու ամեն մի թարթում՝
+«Հայաստանը դու ես՝ Ժամանակն ա խաբում»։
+Կաֆեի սեղանին
+Սուրճը սառել ա,
+Ախպերն ասում ա՝ «Սերը վաղ ա քաշվել»։
+Հայաստանը դու ես՝ Մշուշի մեջ ծով,
+«Էստեղ սեր չկա»,
+Հայաստանը դու ես՝ Կարոտներում մով։
+Հայաստանը՝ ծիծաղ,
+Հայաստանը, դու ես՝
+Անբիծ առավոտ,
+Մակերեսների խաղ – Արմեն Ալավերդյան
+Ախպերն ասում ա՝ «Սուրճը սառել ա,
+Սերը քաշվել ա, ժամանակն ա խաբում»։
+Սրտդողանքիդ գրքի
+Թերթերին դեղնած,
+Կարոտիդ պես ծվար
+Հայաստանը, դու ես։
+«Հե՛յ, ախպեր,
+Էս քաղաքում
+Սերը մի՞շտ ա մեռնում»։
+Շնչահեղձ սիրո,
+Գինու պես բոսոր
+Թթվաշ ա էս անտեր
+Հիշողությունը։
+Փողոցում մի կին,
+Ասում ա՝ «Հաշվե՛նք, մինչև․․․ քանի՞սը»։
+Ժամը կանգ ա առել
+Ու կորել։
+Փողոցի նախշերում մի կաթիլ գինի,
+Ասում ա՝ «Ախպե՛ր, սա սեր չի, մեղք ա»։
+«Ժամանակը քեզ խաբել ա, տղա՛»։
+«Դե՛, գնա»։
+Ասում ա՝ «Էս կյանքը խաբկանք ա, բրո»։
+Անմարմին համբույրս մնացել ա օդում,
+Սա ոչ սեր ա, ոչ էլ ճիչ։
+Քաղաքը ծամում ա երազներս կոպեկով,
+Քաղաքը խնդում ա՝ «Դե՛, վերջ, գնա»։
+Հին բակում մի լապտեր թարթում ա կիսամեռ,
+«Լավ տղերք»-ը նստած՝ խաբում են խաղում,
+Ասում են՝ «Ախպե՛ր, էս կյանքը խոտ ա, վե՛րջ»։
+Ցանկահարույց մի քած
+Խճճվել ա վաղուց,
+«Հաշվե՛նք, տղա,
+Հավերժի ծոցն եմ ծախում
+Նեղուց առ նեղուց»։
+Մի սիլուետ մթնում ծղրտումա էլի,
+Ասում ա՝ «Տղա՛, էս աշխարհի մերն ա մերը»։
+«Հաշվե՛նք, բրո, էս խաղը վերջն ա սուտ»։
+Քաղաքը խնդում ա՝ «Էդ հո, մոռացիր,
+Հայաստանը, դու ես։, բրո»։
+Դուռը ճռռում ա կամաց,
+Մինչև փողոցի ծայրը։
+Ստվերն ասում ա՝ «Տղա՛, էս քաղաքը խոսք ա»։
+Մի բառ սողում ա մոլոր ծայրից՝
+Էդ ծոցից թող ծուխ ելանի,
+Կույր աչքը չի թարթում՝ «Հաշվի, բրո, էս կյանքը ստվեր ա, վերջ»։
+Կոտրված նստարանին ծիծաղը ջնջվում ա՝
+Բառերի խորքում՝ ջնջվում ա լուռ։
+Քաղաքը հեգնում ա՝ «Գնա, անաբուռ»։
+Ախպեր, էս կյանքս զարմանք, բայց զուր ա,
+Հայաստանը, ես եմ, բրո»։
+2
+Ախպե՛ր, ճամփեն խաբում ա,
+Քաղաքը խնդում ա լուռ,
+Սուրճը սառել ա սեղանին,
+Սերը մնացել ա մի կում։
+Հայաստանը դու ես, բրո՛,
+Կարոտի մշուշ, աստղի փոշի,
+Քուչի մեջ գիշերն ու քուչոն,
+Կաֆեն պատրանք են՝ ծխի մեջի։
+Մի կաթ գինի՝ մեղքի պես՝ քիչ
+Կինն էլ ա ասում «Հաշվե՛, տղա»,
+Ժամանակը խնդում ա կողքից,
+«Սա խաղ ա, բայց սուտ ա, հա»։
+Հե՛յ, տղա, ճամփեդ անհաս,
+Հողը՝ հուշում, փոշու մեջ ա ծվար։
+Կոշիկդ ճռռում ա՝ ճամփից ընկար,
+Բայց սիրտդ գիտե թե ուր գնաս։
+Փախչում ես, բայց ո՞ւր, ասա՛,
+Մարդն սպասում ա՝ ծառի ստվեր։
+Օրը սկսվեց, քանի չես հարբել,
+Ժամը ճռռում ա զօր ու գիշեր։
+Հաշվե՛, տղա, քանի՞ խաչ է մնաց,
+Քամու ձենով՝ սրտիդ վրա։
+Հայաստանը ճիչ ա, լռության մեջ
+Աղոթքը խուլ ա, բայց երգդ կա։
+Ստվերդ ա պարում լապտերի տակ,
+Հիշողությունդ ա՝ կարմիր, թթու,
+Հայաստանը դու ես, ախպե՛ր,
+Անձուկն անծունկ ա սիրտդ խրվում։
+Հաշվե՛, ախպե՛ր, քանի՞ արև բռնեց,
+Քանի՞ աստղ կորավ գիշերվա մեջ։
+Իմ անունը քարին էլ ով գրեց,
+Բայց հողը հիշում ա՝ ով եմ ես, ես։
+3
+ՀԱՅԱՍՏԱՆԸ ԴՈՒ ԵՍ, ԱԽՊԵ՛Ր
+փողոցային մեղեդի՝ լռության վրա գրված
+(բանաստեղծություն՝ երգի կառուցվածքով)
+1
+Ճամփեն խաբում ա՝ բայց համով ա խաբում,
+Ոնց կինն ա խաբում՝ որ հերիք չի․․․ բայց մնում ա։
+Սուրճը դառը չի, ախպե՛ր,
+Սրտի ճմլված հետք ա՝ սեղանի վրա։
+2
+Հայաստանը՝ ծխի մեջ մոլորված սեր,
+Որ կաֆեի ապակու մեջ՝ մոռացել ա սահմանը։
+Բայց սահմանը չի մոռանում.
+Սահմանը պահում ա քո անունը՝
+Պոռոտ ցածրախոսությամբ գրված՝ թաց քարերին։
+3
+Սրտիդ մեջ պակաս գինի կար՝ մեղքի պես,
+Բայց մի կումը հերիք էր՝ հիշելու մոր անունը։
+Ժամանակը դարն ա ծռած,
+Ու իր ծուռ ժպիտով՝ խլում ա քեզնից այն,
+Ինչ դեռ չէիր հասցրել տալ։
+4
+Քամին՝ չասած խոսքերիդ մատակարարն ա,
+Սիրտդ՝ իրենց պահեստը։
+Աղոթքդ՝ մուրճ, որ այլևս չի խփում երկնքին,
+Ու երգդ՝ միակ լուսամփոփը ստվերի տակ։
+5
+Հայաստանը դու ես, բրո՛.
+Բայց ոչ թե անձնագրով,
+Այլ էն փոշով, որ չես կարող մաքրել ձեռքերիցդ,
+Որ մնում ա, նույնիսկ եթե հեռանաս,
+Որ մնում ա—even եթե մոռանաս։
+4
+Ուրիշ տարբերակ
+Հաշվե՛, ախպե՛ր, խաչերը,
+Որ մեխել ես սրտիդ ։
+Հավատդ առաջին զինվորն ա,
+Որ մեռնում ա պատերազմում։
+Հայաստանը դու ես, բրո՛.
+Էն երեք գույնով, որ դրոշի վրա են,
+Էն հազար գույնով, որ հոգուդ վրա են։
+Թե հարցնեն՝ որտեղի՞ց ես,
+Ցույց տուր սպիներդ։
+Այլ տարբերակ
+Քաղաքը խնդում ա,
+Ամեն լուսամուտ մի աչք ա,
+Սահմանը քարտեզի գիծ չի,
+Սահմանը երակ ա,
+Կտրես՝ արյուն կգա,
+Կյանքդ կդատարկվի։
+Էս ինչքան,
+Թափանցիկ ես ու փխրուն։
+Հայաստանը դու ես, ախպե՛ր, լսու՞մ ես,
+Էն փոշին ես, որ թոքերիդ մեջ ա։
+Հայաստանը դու ես, ախպե՛ր, տեսնու՞մ ես,
+Էն սպին ես, որ հայելու մեջ ա։
+Հաշվե՛, տղա, քանի՞ կումից ես հարբում,
+Աստված էլ քեզ հետ նույն հերթի մեջ ա ։
+Քո սիրտը ռազմի դաշտ ա,
+Հայաստանը դու ես, ախպե՛ր, լսու՞մ ես...
+Որ մնում ա, նույնիսկ թե հեռանաս... ...
+Որ մնում ա, even թե մոռանաս... ...
+Հողը հիշում ա...
+Տարբերակ - Մոնոդրամա (թատերական ելույթ)
+Վերնագիրը ՍՊԻ-ԱՆՁՆԱԳԻՐ
+Բեմը՝ մինիմալիստական։ Մեջտեղում՝ հին, փայտե սեղան և աթոռ։ Սեղանին՝ սուրճի բաժակ և մոխրաման։ Հետևի ֆոնին կարող է պրոյեկտվել գիշերային քաղաքի աղոտ պատկեր։
+Կերպարը՝ ես (ոնց-որ բանաստեղծ, էլ վաղուց)։
+(Գործողություն 1) նստած եմ սեղանի շուրջ։ Վերցնում եմ բաժակը, մի կում անում, դնում տեղը։
+Ես (Ինքս ինձ, հանդիսատեսին)։
+Ճամփեն խաբում ա...
+Բայց համով ա խաբում։
+(Դադար)
+Ոնց որ... ոնց որ էն կինը, որ գիտես՝ քոնը չի,
+Բայց ամեն գիշեր իրան ես սպասում։
+Որովհետև իր սուտն ավելի ազնիվ ա,
+Քան շատերի ճշմարտությունը։
+(Ծիծաղում եմ)
+Սուրճ...
+Սա սուրճ չի։
+Սա սրտի նստվածքն ա։
+Ամեն առավոտ խմում ես, որ հիշես, որ դեռ կաս։
+(Գործողություն 2) վեր եմ կենում, մոտենում բեմի եզրին։
+Ես:
+Թվում ա, թե սահման չկա։
+Որ աշխարհը մի մեծ, բաց տարածք ա։
+Ծուխ... սեր...
+(Դառնում եմ)
+Բայց սահմանը չի մոռանում։
+Նա իմ անունը գիտի։
+Ոչ թե էն անունը, որ անձնագրիս մեջ ա,
+Այլ էն անունը, որ տվել են ինձ իմ առաջին պարտությունից հետո։
+Էն անունը, որ գրված ա ոչ թե թղթի,
+Այլ թաց քարերի վրա։
+Պոռոտ ցածրախոսությամբ...
+Լսու՞մ եք...
+(Լռում եմ, ականջ դնելով)
+Չեք լսում։
+Որովհետև դա լսելու համար պիտի
+էդ քարի վրա ծնկած լինես։
+(Գործողություն 3) Վերադառնում եմ սեղանի մոտ։
+Ես:
+Աղոթք...
+(Դառը ժպտում եմ)
+Երեխա ժամանակ մուրճ էր,
+Որով խփում էի երկնքի դռանը։
+Միշտ մտածում էի՝ մի օր կբացեն։
+Հետո մեծացա, հասկացա,
+Որ դուռ չկա։
+Ոչ էլ երկինք։
+Մենակ պատեր են։
+Ու․․․խփում եմ էդ պատերին,
+Մինչև ձեռքերս արյունոտվեն։
+Ու հենց էդ արյունն ա իմ միակ, իսկական աղոթքը։
+Իսկ երգը...
+Երգը էն լուսամփոփն ա, որ վառում եմ,
+Որ տեսնեմ, թե ինչքան մեծ ա ստվերս։
+Որ հասկանամ՝ մենակ չեմ,
+Ինձ հետ միշտ իմ խավարն ա։
+(Գործողություն 4, Կուլմինացիա) Բարձրացնում եմ դատարկ ափերս։
+Ես:
+Ինձ հարցնում են՝ Դու ո՞վ ես։
+Կարող եմ ցույց տալ անձնագիրս։
+(Ծիծաղում եմ)
+Բայց դա սուտ կլինի։
+Հայաստանը անձնագիր չի։
+(Սրբում եմ ճակատս)
+Հայաստանը էս փոշին ա։
+Որ մնում ա,
+Նույնիսկ երբ փախչում եմ աշխարհի մյուս ծայրը։
+Փոշին մաշկիս տակն ա, սպիներիս մեջ։
+Հաշվե՛ք սպիներս։
+Սա իմ միակ ճշմարիտ փաստաթուղթն ա։
+Իմ սպի-անձնագիրը։
+(Լույսը դանդաղ մարում է, մնալով դեմքիս վրա։ )
+ԵՐևԱՆՅԱՆ ԲԼՅՈՒԶ
+$Love(Yerevan)=∫Innocence(x)dx+Color(∞)$
+Սերը Երեւանի հանդեպ որպես անմեղության ինտեգրալ և գույնի անսահմանություն։
+Երևանը սիրում ա, երբ ճամփորդն ուշանում ա,
+Էն զրույցներից, որ սրտից դուրս են հոսում,
+Ուր ծիծաղն ու լացն իրար են բռնում...
+Երևանցին, չասինք, բլյուզ ա սիրում։
+Ու հա, բլյուզը՝ երգ չի, քաղաք ա։
+Ու քաղաքը՝ մարդ ա՝ խռով, բայց իրան սիրող։
+Երևանը փողոց ա, քայլքը՝ արձագանք,
+Մի կիթառ ա, բրո, լարերով թե գանք։
+Բլյուզը հնչում ա Կասկադի քարերում,
+Հին Նորքում, Կոնդի մեջ, Արեշում։
+Ասֆալտի հոտը, մայթի ճաքերը,
+Մետրոյի խուլ ձայնը, քաղաքի հազը։
+Մարդիկ շտապում են, դեմքերն անտարբեր,
+Կյանքը պտտվում ա, ոնց մի կարուսել։
+Կանգառում կանգնած, հայացքը՝ հեռվում,
+Մի աղջիկ սպասում ա, թե ով ա գալու։
+Տաքսու շոֆերը, սիգարետին մերվում,
+«Բարև, ախպեր ջան, ուր ենք գնալու»։
+Խանութի ցուցափեղկի մանեկենը՝ երգ,
+Առոգանում ա կյանքն ու իրան՝ մերկ,
+Փողոցի անկյունում հմամաշ մի ծեր,
+Նարդի ա խաղում, ջահելի հետ գեր։
+Էս քաղաքը մերն ա, իրա սլենգով,
+Իրա ցավերով, իրա սիրով։
+Ուզում ես փախչես, բայց չես կարող,
+Երևանը կանչում ա, իրա բլյուզով։
+Արձագանքը միշտ նույնն ա.
+Քաղաքը շնչում ա քո հետ,
+Քայլում ա քո կողքով,
+Նվագում ա քո մեղեդին՝
+Լարերը կյանքի սրինգով։
+Փորձիր հեռանաս՝
+կկանչի քարերից,
+Քանի որ Երևանի բլյուզը՝
+Քո արյան մեջ է հոսում</p></div></details>
+    <details class="st"><summary><span class="no">41</span><span class="ptitle">ՀԱՅԵԼԻ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Նայի՛ր, ահա կեսօրվա մատռվակներն են գունատ
+Մեզ մատուցում ունայնի պտղաջրերն անարատ.
+ԵՎ հեկեկում ենք այնպես, և հեկեկում ենք ահա,
+Մեր մեռյալներն են հավետ հիշողության մանանա:
+Տե՛ս, շնորհ է երկնային, մատնեմատով հպվի՛ր շուտ,
+Նա է` խաժաչ, գեղանի, արհեստների մեջ հմուտ,
+Մահը այսքան զարդոսկի և ժպիտներ է թաղել,
+Զինավառ է այսօր նա և մորմոք է մեզ թողել:
+Սակայն ինչպե՞ս, չիմացանք, մինչև կեսօր և հիմա
+Հեռուներից մեզ հասան մարտակոչերը նրա.
+Ախ, շուրթերիս այս գիշեր լիալուսին էր իջել,
+Սիրեցյալս էր հաճույքի վարդաջրով ինձ ցողել...
+Աս՛ա, աս՛ա, աննմա՛ն. ի՞նչ երկինք էր մեր դիմաց,
+Ի՞նչ շշուկներ մեզ հասան վայելքի հետ համընթաց:
+Սակայն այն էլ չիմացանք` երկյուղի ո՞ր ափերին
+Անափ ցավի մակույկներ կրկին խարիսխ ձգեցին:
+Հայելի է, հայելի, թէ որ ցա՛վն էլ մեկ անի ...</p></div></details>
+    <details class="st"><summary><span class="no">42</span><span class="ptitle">Մակերեսների անարցունք խաղ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Սերս կորզելու գայթակղության խորքերում անկիրք
 Տաղերիս նման մեզ ծնում, թերթում, թաղում ես, երկիր,
 Թող որ աշխարհս իր կարգով գնա ոնց սուրբ գրքերում,
 Ինչ որ կա՝ ծաղկի, մառ գինին էլ է ծաղկախայթ գերում։
@@ -488,7 +1181,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Մարմնից դեպի մահ ոսկրոտ հայացքիս թմբիրն անողոք,
 Լսո՞ւմ ես, ծովի հառաչանքներում անկումիս պահն է,
 Արտոսր ցավս՝ չքացող դեմքիդ անվրեպ բողոք։</p></div></details>
-  <details class="st"><summary><span class="no">27</span><span class="ptitle">Մակերեսների անզուգական խաղ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Մթին գիշեր, երբ լուսնկան դեռ թարթում էր,
+    <details class="st"><summary><span class="no">43</span><span class="ptitle">Մակերեսների անզուգական խաղ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Մթին գիշեր, երբ լուսնկան դեռ թարթում էր,
 Հիշեցի՞ր իմ մակագիրը երանությամբ,
 Սռսուռ բառեր, չնաշխարհիկ կինն արթուն էր,
 Բայց չշեշտեց շաղաշարիս ոտքերը յամբ։
@@ -504,7 +1197,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Անբռնելի կշռոցով եք մեղքս չափում,
 Իմ նազելի, շուքս ձգիր առանց փաղանգ,
 Ես չգրված մի տաղ ունեմ, թեև անհանգ։</p></div></details>
-  <details class="st"><summary><span class="no">28</span><span class="ptitle">Մակերեսների բաժանման խաղ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անհամապատասխանությունների խճանկար,
+    <details class="st"><summary><span class="no">44</span><span class="ptitle">Մակերեսների բաժանման խաղ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անհամապատասխանությունների խճանկար,
 Ներհակ զգացողությունների քրոնիկոն
 Կարոտիս ծխապատիճի մեջ կրակ ես վառել,
 Ասում ես սերն աննահանջ գրկախառնություն Է,
@@ -517,7 +1210,7 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Որպես ցավի հրապույր
 Եվ սրտիս զարկերի մարող արձագանք։
 Դե, բարև, կարոտ։</p></div></details>
-  <details class="st"><summary><span class="no">29</span><span class="ptitle">Մայրիկիս</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այն բարության համար, որ սահմանում չունի,
+    <details class="st"><summary><span class="no">45</span><span class="ptitle">Մայրիկիս</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այն բարության համար, որ սահմանում չունի,
 Եվ խեղճության համար սրտակտուր, աղի,
 Վեհանձնության համար հորդուն, առանց հունի,
 Թեկուզ երկինքն այսօր իմ աչքերով շաղի,
@@ -539,7 +1232,279 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Մի՞թե կարոտ կերթամ քո կաթնաբույր գրկին:
 Շնորհակալ եմ, մա՛յր, տառապանքիդ համար,
 Ցավդ տանեմ, մամա, ցավդ տանեմ, ի՛մ մայր:</p></div></details>
-  <details class="st"><summary><span class="no">30</span><span class="ptitle">Պարաբոլ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Գիշերվա մեջ ես ձեռնահաս խոկում,
+    <details class="st"><summary><span class="no">46</span><span class="ptitle">Մայրիկիս</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Տանթողիկ ծափիդ մեռնեմ, էն դողդոջ ափիդ մեռնեմ,
+Անընդել չափիդ մեռնեմ, ցավ տարած տափիդ մեռնեմ,
+Քո անուշ տեսքին մեռնեմ, էս անտեր երկրիս վրա
+Խինձ ու սինձ, դեղին գռզի․․․ Էն կաթիդ համը չառա։
+Սրսուռդ ինձ է բռնել, անշփոթ հոգուդ մեռնեմ,
+Թե հատ-հատ՝ սև ու ճերմակ, մազերիդ բույրին մեռնեմ,
+Դափն առած տաղ էլ կասեմ աշխարհքիս լավ ու վատից,
+Ասա ինձ, ինձ ո՞նց զատեմ ցավասույզ իմ հավատից։</p></div></details>
+    <details class="st"><summary><span class="no">47</span><span class="ptitle">Մնաս բարով, իմ սեր</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Մնաս բարով, իմ սեր, իմ թանկ ներհայեցում,
+Դու հո գիտես ջան ես, բուստ ու մնջան ես, ջան։
+Թե ձյուներից ճերմակ և ժպիտից լուսե,
+Հույսի նման անմոտ, ապա ցոլքից թանձր,
+Ցավի նման կարծր ինձ ես մտապահել,
+Ես էլ չունեմ, անգին, թաքստոցում գանձեր։
+Ես քո շուքի շուքը թե առաթուր դարձա,
+Իմ այս կերպին տխուր դարձյալ վերադարձա
+Եվ գրում եմ հիմա հրաժեշտի գազել,
+Ուր իմ մահվան կորը երկուսով ենք խազել։
+Մնաս բարով, իմ սեր, իմ թանկ ներհայեցում,
+Դու հո գիտես ջան ես, բուստ ու մնջան ես, ջան։</p></div></details>
+    <details class="st"><summary><span class="no">48</span><span class="ptitle">Ներածական է տաղիս հատվածը</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ներածական է տաղիս հատվածը,
+Անիմանալի մի շռայլությամբ
+Բանաստեղծական շնորհ ասվածը
+Նոր մեծավերջի շեշտումով էր թանկ։
+Դառնարաններիս մեջ եք ներխուժել,
+Անկումիս համը ոսկի էր հատած,
+Վերջին բարևս, անկռինչ խութեր,
+Էջադրել եք իմ մահից առաջ։</p></div></details>
+    <details class="st"><summary><span class="no">49</span><span class="ptitle">Նույն օրը կրկին ապրելու համար</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Նույն օրը կրկին ապրելու համար
+Ժամսլաքներդ մի շրջան հետ տուր,
+Թրև գալով ես լուսանցքում՝ կամար,
+Ժպիտներիցդ հավաքում կտուր։
+Շրջիկ թատրոնիդ Եղծն՝ աղանդոցում,
+Լարախաղացդ աչքակապ ունի,
+Տեսնես, նրա հետ քանիսն են դողում
+Որ չոտնառեմ, թե որ չեմ տեսնում։
+Աղջիկ, հայելու առաջ նույն դիրքով՝
+Երկապատիկ է ծամդ երկարում,
+Ինչի համար ես ինձ օժտել ձիրքով,
+Խելքս մաղվելուն բան չի խանգարում։</p></div></details>
+    <details class="st"><summary><span class="no">50</span><span class="ptitle">Շատ մեղքերից քանի՞ հոգնած ապաշխարես</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Շատ մեղքերից քանի՞ հոգնած ապաշխարես,
+Կամ նույն մեղքը՝ յոթնապատիկ, քեզ ո՞նց ներվի,
+Խոտոր ճամփով ուղի՞ղ գնաս, թե՞ շվարես,
+Մոլոր մնաս, հետո ձեռքդ թափահարես։
+Քո բռնածը գինու թաս էր, կամ քոսոտ թերզ,
+Արձակածդ՝ մեջ տալու պես, քաղցու և թույն,
+Էն սահմանված կարգին հլու քանի՞ աղերս
+Քնած տեղդ ես արտաբերել, կամ թե արթուն։
+Տարբերության ո՞ր անդամդ էր նվազելին,
+Դու անընդհատ հավելեցիր ցավը չոռին,
+Ակնահաճո քո էն տաղի պարզ նազելին
+Եթերին է հարաբերվում վրաոռի։
+Հիմա գոնե նրան հուշիր, որ դարդ չանի,
+Զգայական խաբկանքն էլ է պատկերացում,
+Ինչի հանգի, դա առումն է տրականի,
+Մնացածը կամ պնդում է, կամ ուրացում։</p></div></details>
+    <details class="st"><summary><span class="no">51</span><span class="ptitle">Շարժանկար</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p class="sonnet-part"><span class="sonnet-label">Ա</span>Աչքերիս սև սաթի նման քեզ խազել եմ աննկատ,
+Եվ ուզում եմ, որ կոպերիս խոնարհ իջնես, լալազար,
+Անմատչելի ժեռ ափերիս փարոս դառնաս սիրահար,
+Ու թե հրճվեմ, իմ աննման, դալուկ լույսից՝ հարազատ :
+Նմանակիս անմեղսունակ լույսերի մեջ խնկարկես,
+Ես չես ուզում, որ գլխիկոր հեռանաս իմ փողոցով,
+Ալեկոծես առանց հորձանք, էանաս նույն փողոցով,
+Ինքդ քո հետ անանձնանաս և չհիշես, որ չատես:
+Արուսյակի հմայիչ քույր, Երևակի լույս, խոյանք,
+Երկինքն ինչ է, ուր ճախրում ես առանց կամար և խոյակ:
+Մութն է անգութ, մելամաղձիկ, խոցված թիրախ անվրեպ,
+Հայեցող եմ, ընկել է, տես, հույզերիդ հետ մի կցորդ ,
+Սիրահար են կույս և տնանկ, անցյալում են և անցորդ,
+Իմ էսքիզն էլ հին հուշերում՝ թե տխուր է, թե ուրախ…</p><p class="sonnet-part"><span class="sonnet-label">Բ</span>Իմ էսքիզն էլ հին հուշերում՝ թե տխուր է, թե ուրախ,
+Եվ հարբում է նույն պանդոկում. մաճա՞ռ է, թե՞ աղի լաց,
+Ես սուզվում եմ խորքը գինու. կարեկից կույս ալանաց
+Հրճվում ես դեռ, ինչ մանկամարդ, աղջիկ ես դու կենսուրախ:
+Անվերջության այս նշանը շուռ եմ տալիս հանապազ,
+Տասնյակի մեջ ութ միավոր , թե Մոբիուսի ժապավեն,
+Ծնված օրից, իմ սիրելի, քույր ես եղել, ապավեն,
+Այս թամաշան չունի ավարտ, անսկիզբ է և կապկազ:
+Ինձ թևանցուկ տար հույզերի սրահներով այն մեծար,
+Ավազներով անթիվ, սորուն, ուր կարոտ կա ծովահար:
+Քո տեսքից էլ հեզիկ- նազիկ, թե հարբում եմ, նուրբ, շարմաղ,
+Ինչ երազ էր, որ շարունակ անավարտ է հղանում,
+Քո ջրերին թի՞կն եմ տվել, թե՞ ադպես եմ լողանում,
+Օրորում եմ թախիծ ու հուշ անդունդներում ես անվախ:</p><p class="sonnet-part"><span class="sonnet-label">Գ</span>Օրորում եմ թախիծ ու հուշ անդունդներում ես անվախ,
+Ինչը՞ կանցնի, ի՞նչ կմնա սպիացած հոգուս մեջ,
+Հոգեզմայլ այս գույներում թառամել է վարդն անվերջ.
+Պատկերազարդ մի մագաղաթ մանրանկար է , ավաղ:
+Ինչ աշխարհ է զարմանալի, կյանքն անցողիկ և շարժուն,
+Երբ փորձի մեջ աստվածային մերկանդամ են այր ու կին ,
+Մեղքի համար բիրտ մարդկության զոհն ասված էր միածին
+Որդուն պիտի խաչված գտնեն, ցավ տարածեն հարաճուն:
+Արծաթասեր մի ստահակ, կատարածու անգիտակ
+Մեզ մատնել է լուրջ փորձության մեղքի ահից անպիտակ:
+Տիղմ ես տանում, ավազ բերում, ծովից ծածան մանկամարդ,
+Ոտնասույզ ես ինձ հմայում, մակընթաց ու հնաբույր,
+Կույս, անվրեպ եմ քեզ խոցել, շառագունում ես իզուր,
+Ինչ հեսաբ է, այս նուբարը մնացել է անավարտ :</p><p class="sonnet-part"><span class="sonnet-label">Դ</span>Ինչ հեսաբ է, այս նուբարը մնացել է անավարտ.
+Խեցու մեջ է ապաշխարում անթվակիր մի հայցվոր,
+Ստորադաս քանի անձավ լույս չեն տեսել անցավոր,
+Ոսկին մի նոր հուր է վառում, եթե քար չէ , այլ դուկատ:
+Եվ կորչում է հետքը լույսի արհեստածին, սլացիկ,
+Խազագրվեց երգ մի դյուրին համահնչյուն իր տակտին,
+Կամ եղեգն էր շրշում մեղմիկ գիշերներում անմեկին,
+Անբացահայտ համբույր ու հևք՝ պարանոցին գեղեցիկ:
+Սեր իմ, այսօր քույրդ նազուկ քամու շուրթին ասելիք,
+Նրան հետո անվանարկեց , գետնեց կրկին մի հովիկ:
+Սա երազ էր, իմ հուշերում սեպվեց, մնաց, անղողանջ
+Անանց էր լոկ ցավը հոգուս, և մերժված եմ,ով Բարձյալ,
+Ողբաձայն եմ երազիս մեջ , իմ երազն է ողբ դարձյալ,
+Արի կրկին քեզ քնարեմ, անսեր գնամ, անհառաչ:</p><p class="sonnet-part"><span class="sonnet-label">Ե</span>Արի կրկին քեզ քնարեմ, անսեր գնամ, անհառաչ,
+Եվ կամ դառնամ անկրկնելի պատումների բանասաց,
+Բայց արցունքի ակն ցամաք ,ես եմ կրկին անասաց,
+Հրեշտակը աստվածամերձ թափանցիկ էր քիչ առաջ:
+Անէացավ իմ երկյուղը, այս երկիրը մերկ կրկին,
+Տիրոջ սերը չի պակասել, իմ պատկերն է քանդակել,
+Հետո անգամ անհրապույր մոլորակում վանդակել,
+Տեր, դե կեցո զնդանս այս, և սիրո մեջ հույսն անդին:
+Բույրդ այնտեղ տափաստանում, գիշերվա մեջ մի սուսեր,
+Դեռ կանգուն են քամու շուրթին անիրական թանկ հուշեր:
+Չփարատվող մի հիվանդ եմ, ինչ հանդես է այս հալիս,
+Ինձ ընդունել, բայց հերքել է, անկարեկից մի փերի,
+Սա երկինք է, սա երազ է, անարձագանք ու թերի.
+Այսքան հույզեր միանգամից կիսատ թողած մեղեդիս:</p><p class="sonnet-part"><span class="sonnet-label">Զ</span>Այսքան հույզեր միանգամից՝ կիսատ թողած մեղեդիս,
+Զվռնում եմ՝ հանգս կիսատ, թե ճախրում եմ երկնամերձ,
+Առատության եղջյուրը քեզ, ընկեցիկ եմ , մահամերձ,
+Կյանքս դարձյալ մի հակոտնյա կամ պարգև է այս մահիս:
+Ինձ կփնտրես տողերիս մեջ սիրահարված նույն հանգին,
+Ես սիրում եմ վայրի խոլորձ և կակաչը ժեռ ծերպին,
+Նվեր կտամ քեզ իմ խեցին և կարկաչը ջրերի
+Նրանց գուցե կրկին տեսնես, եթե անցնի բյուր տարի:
+Ասում են թե հող է դառնում սքանչելի մի մարմին,
+Երբ փակվում են քո աչքերը զգայացունց նույն ժամին:
+Բոլորածիր նույն փուլում է, կամ սեղմվել է իր ահից,
+Ինչ գաճաճ է կարմիր հսկան, չունի ստվեր հիանամ,
+Անմարդկային ջա՞նք, թե՞ եռանդ և ու՞մ փառքով լիանամ,
+Ես հույզերի անթաղ կծիկ, թե գաղթել եմ ես մահից:</p><p class="sonnet-part"><span class="sonnet-label">Է</span>Ես հույզերի անծայր կծիկ, թե գաղթել եմ ես մահից,
+Մտացիր եմ, և ըստ կարգի անժամանակ կգնամ,
+Կամ գուցե՞ իր ժամանակին կանչում է մի անզգամ,
+Արդ նա էլ է ինձ բախտակից և ընկել է իր գահից:
+Քույր, ամոթս սրբագրիր, մոլորվել եմ դիմադարձ,
+Ես սիրում եմ աննմանին, փակ շրջան է մի անդարձ,
+Բացահայտիր ընկալելին, ինչ պատիր են խոսք ու վարձ,
+Արքան սիրո պակաս չունի, պոռնիկն էլ է մի քիչ հարճ:
+Այսպես քանի կոր ու բեկյալ գծվեց լեռան կատարին,
+Կեռ ճանապարհը վերելք տանող՝ վերագրված հավատին:
+Գահավեժ եմ ընկնում սակայն, կամ սա էլ է մի ընթացք,
+Եվ շարժում եմ փետուր ու սուր, ճերմակ թուղթն է անպակաս,
+Բայց թվում էր , թե իմ կանչով, երբ մի օր էլ դեռ կգաս,
+Սավառնակն իմ հուշերի մեջ աննշմար էր, ու՞ր մնաց:</p><p class="sonnet-part"><span class="sonnet-label">Ը</span>Սավառնակն իմ հուշերի մեջ աննշմար էր, ու՞ր մնաց,
+Ներոնին էլ փառքն անցյալի աներևույթ քող թվաց,
+Մեկին սերը պատանք ու լաց , կամ երազ է մի անանց,
+Ով հրդեհեց իմ տաճարը, սիրտ կոչվածից բան մնա՞ց:
+Ո՞վ ինձ դյութեց ընդաշխարհից, սիրեցյա՞լս էր կարեկից,
+Նրա քու՞յրն էր անբարեգութ, ապուշ կտրած ու՞մ ժպտամ,
+Ինձ սիրեցեք վաղվաղակի, գիրս անթաղ պիտ մնամ,
+Ասես նորեկ մի ձեռնածու գավառներից հարակից:
+Եկար, անցար վիթի նման, գեղակազմիկ աննման,
+Ինձ շոյում ես , ես հրճվում եմ, թե՞ սիրում ես դեռ նրան:
+Ես եմ, դու ես և լուսնկան տարածքներում դյութական,
+Մելանխոլիկ այս ջութակը ներդաշնակ է և… անձայն,
+Անխոս պիտի անէանանք կիսորդներն ենք նույն անկյան,
+Մեր հյուղակն է լույսին փարված տեսիլներում ըղձական:</p><p class="sonnet-part"><span class="sonnet-label">Թ</span>Մեր հյուղակն է լույսին փարված տեսիլներում ըղձական,
+Տես, փլվել եմ առագաստիդ նշանի պես հարցական,
+Թե չես ուզում հանգավորեմ իմ երկյուղը պատմական,
+Սուսերն ինչ է, սիրտս խոցիր, ինչպես սիրո մի ական:
+Ձյուն է իջնում, հազար փաթիլ պար են բռնել անվարան,
+Ասես պստիկ հրեշտակներ՝ մեղքից դեպի քավարան,
+Ում կներվի հանդգնության այս տարափը մեբերան,
+Ցնցվում է աջ ահյակս, երբ հիշում եմ ես նրան:
+Ամեն տարերք ընդգծում է սահմանները ավերման,
+Թե ցնորք է անիրական, ասա ժամը ավետման:
+Ես զգում եմ վայրկյաններս ինձ լքում են, հուշ դարձան,
+Ու՞մ է հասու, թե ինչ ջանքով դեռ գրում եմ, ով Բարձյալ,
+Եվ թե մի օր ինձ կտանի հրեշտակը կատարյալ,
+Ես գրում եմ այս պատումը ինչպես սիրո մի մատյան:</p><p class="sonnet-part"><span class="sonnet-label">Ժ</span>Ես գրում եմ այս պատումը ինչպես սիրո մի մատյան,
+Ողբն իմ ներսում հասունացել ընկել է,ախ, պատեպատ,
+Ու արտաքին հայեցողին մի մատուռ է քարուքանդ,
+Ինձ էլ դատիր քո երազում ինչպես վերջին մի ատյան:
+Երբ լույս բացվի քո եզերքում նվիրական ու բարի,
+Էլ չեմ լինի, էլ չեմ լինի ես բոլորից սիրելի,
+Թմրամոլ է իմ սարսափը, անհաջողակ ու էլի,
+Ես մեկնում եմ անվերադարձ որպես մերժված անարի:
+Ինձ էլ պատմիր ֆիլմի մասին, ուր թաղել են պոետին,
+Արտահայտիչ այն աչքերը տուրք են տվել սոնետին:
+Երբեք այսքան ուրախ թաղում ես չեմ հիշում իմ օրում,
+Երեք ոսկով կեղծավոր լաց բեմադրված հենց տեղում,
+Մարգարիտը քար չէր հարկավ, ի՞նչ ամոթ էր անթեղում,
+Մոխիր լինեմ, թե ոսկեփայլ՝ կանգնած թաղեք ինձ հողում:</p><p class="sonnet-part"><span class="sonnet-label">Ի</span>Մոխիր լինեմ, թե ոսկեփայլ՝ կանգնած թաղեք ինձ հողում,
+Ինձ կհիշեք անուրջներում, տոնացույցում սեփական,
+Համասփյուռում մի գիսավոր ինձ նվիրեք անվարան,
+Նրա հանգած խառնարանում ես առկայծ եմ նույն տեղում:
+Ինձ աշխարհիկ դասեր կտաք, թեկուզ մահվան իմ մահճում,
+Ասենք, ինչքան լույսից քամեմ պատկեր ու գույն այլազան,
+Անտես գծեմ անհունի մեջ կախարդական մի շրջան,
+Թե Բարձյալից խռով գնամ անհայտության այս վերջում:
+Գզրոցներում ինձ չպահես, ես էլ քար եմ թանկագին,
+Կանոնավոր մի բազմանիստ, թե անմշակ, բայց անգին:
+Այս հուշերը հերթով գալիս, ընդդիմանում են հանգիս,
+Ինչ է լույսը ցոլացիկ է, կյանքը՝ պարգև, մարգարիտ,
+Մի օր ես էլ անակնկալ, կասեմ եկել եմ հոգիս
+Քո լույսերում թող սավառնեմ աներևույթ այս հալիս:</p><p class="sonnet-part"><span class="sonnet-label">Լ</span>Քո լույսերում թող սավառնեմ աներևույթ այս հալիս,
+Իմ պատկերը մնաց կիսատ, նայիր խորքը նկարիս,
+Կորցրել եմ քունս, անգին, քուն չի գալիս աչքերիս,
+Դու շարունակ այս կտավում ալեկոծում ես հոգիս:
+Աղվորերես իմ սրբուհի, լուսնին ձոնված եղանակ,
+Գիշեր ու զոր պար ես բռնել տեսիլներում կորացած,
+Ինձ կիսել ես աջ, ահյակում, վեր ու վարդ մոռացած
+Ո՞նց հասկացա լուսնկան ես, հուշերիս մեջ՝ արեգակ:
+Ես սիրում եմ, երբ պատիվը պերճ չէ, ինչպես հարճ անբավ,
+Որ մի կանչով մերկանում է, հարբած ձեռքին՝ գինու գավ:
+Երբ հրճվանքից ծովն ալեկոծ կբերի քեզ ավետիս,
+Ո՞վ եմ, կասե՞ս, քո խորանում՝ աղոթում եմ ծնկաչոք,
+Մի նորոգիր ցավը հոգուս, անսփոփ ու անամոք,
+Քեզ պես մերժված ես էլ եմ այն հեռուներից տուն գալիս:</p><p class="sonnet-part"><span class="sonnet-label">Խ</span>Քեզ պես մերժված ես էլ եմ այն հեռուներից տուն գալիս,
+Մինչ լուսաբաց, դեպի գիշեր գլխիկոր ու հուսահատ,
+Մի՞թե իմն է այս պատկերը անթագակիր և անհայտ,
+Երբ մի աղջիկ իմ հուշերում դեռ ժպտում է ու լալիս:
+Եթե սեր ես, մահս արտոնիր ինչպես չքնաղ մի պարգև,
+Ով է, հոգիս, իմ երկյուղից ինձ վերստին աքսորել,
+Եթե սեր ես, մեր եռանկյան գագաթներից անարգելք
+Ինձ շոշափիր վերջին անգամ,թե կրկին չես անարգել:
+Քո առանցքը մագնիսական շրջելու եմ մեկընդմիշտ,
+Որ աչքերիս մայրամուտին չհեռանաս ամբարիշտ:
+Անկրոն է լոկ սարսուռը, թաքցրել եմ ջրերում,
+Նրան հարմար բնորոշում չեմ հնարել գրերում,
+Գաղտազերծիր ինձ վերստին աշխարհի քո անկյունում,
+Եվ չկարծես, թե անհարկի և իզուր եմ քեզ գովում:</p><p class="sonnet-part"><span class="sonnet-label">Ծ</span>Եվ չկարծես, թե անհարկի և իզուր եմ քեզ գովում,
+Արուսյակի հմայիչ քույր, Երևակի լույս, խոյանք,
+Երկինքն ինչ է, ուր ճախրում ես առանց կամար և խոյակ:
+Ինձ թևանցուկ տար հույզերի սրահներով այն մեծար,
+Ավազներով անթիվ, սորուն, ուր կարոտ կա ծովահար:
+Սեր իմ, այսօր քույրդ նազուկ քամու շուրթին ասելիք,
+Նրան հետո անվանարկեց , գետնեց կրկին մի հովիկ:
+Բույրդ այնտեղ տափաստանում, գիշերվա մեջ մի սուսեր,
+Դեռ կանգուն են քամու շուրթին անիրական թանկ հուշեր:
+Եկար, անցար վիթի նման, գեղակազմիկ աննման,
+Ինձ շոյում ես , ես հրճվում եմ, թե՞ սիրում ես դեռ նրան:
+Ինձ էլ պատմիր ֆիլմի մասին, ուր թաղել են պոետին,
+Արտահայտիչ այն աչքերը տուրք են տվել սոնետին…
+Եվ չկարծես, թե անհարկի և իզուր եմ քեզ գովում….</p><p class="sonnet-part"><span class="sonnet-label">Կ</span>Աչքերիս սև սաթի նման խազել եմ քեզ աննկատ,
+Իմ էսքիզն էլ հին հուշերում՝ թե տխուր է, թե ուրախ,
+Օրորում եմ թախիծ ու հուշ անդունդներում ես անվախ,
+Ինչ հեսաբ է, այս նուբարը մնացել է անավարտ :
+Արի կրկին քեզ քնարեմ, անսեր գնամ ,անհառաչ,
+Այսքան հույզեր միանգամից՝ կիսատ թողած մեղեդիս,
+Ես հույզերի անծայր կծիկ, թե գաղթել եմ իմ մահից,
+Սավառնակն իմ հուշերի մեջ աննշմար էր, ու՞ր մնաց:
+Մեր հյուղակն է լույսին փարված տեսիլներում ըղձական,
+Ես գրում եմ այս պատումը ինչպես սիրո մի մատյան:
+Մոխիր լինեմ, թե ոսկեփայլ՝ կանգնած թաղեք ինձ հողում,
+Քո լույսերում թող սավառնեմ աներևույթ այս հալիս,
+Քեզ պես մերժված ես էլ եմ այն հեռուներից տուն գալիս,
+Եվ չկարծես, թե անհարկի և իզուր եմ քեզ գովում:</p></div></details>
+    <details class="st"><summary><span class="no">52</span><span class="ptitle">Ոմանց վրա փոշին մինչև կեսօր իջավ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ոմանց վրա փոշին մինչև կեսօր իջավ,
+Ցեցի նման կերավ նրանց անճուճ հոգին,
+Ապա խանդոտ դևի չարակնի մեջ կորավ
+Տաղի անհամ լեզուն՝ վերացարկված ոճին։
+Ոնց փորձեցի կարդալ մտմտուքը ոմանց,
+Որ ծվանգին ասեմ անգին մեռելաձայն,
+Աչքերիս դեմ մթնեց թոկը կտրած, անսանձ,
+Միջակ կցիրների գրոհներից սակայն։
+Այն, որ գրի տեղակ պլագիատ եք անում,
+Ձեր չունեցած խիղճն եք այն է ծախում,
+Բա այդքանից հետո ո՞ւմ Աստծուն եք ծաղրում,
+Որ տաղանդի փայլից քոռ ու փուչ եք լինում։</p></div></details>
+    <details class="st"><summary><span class="no">53</span><span class="ptitle">Ոչ արտասովոր ընթացքիս համար ինձ չնշմարեք</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ոչ արտասովոր ընթացքիս համար ինձ չնշմարեք,
+Թե որ արժան չեմ, մի՜ արագահաս նոր կուռք հորինեք,
+Իմ երակների արյունն է կապույտ, թեև դյուրամած,
+Ես էլ եմ հաճախ անճարակ տեղս ամենքից շշմած:
+Եվ չեմ հասկանում, թե զարմանալին ինչ երանգ ունի,
+Երբ որ փարվում է կույս երանելին սնարիս մահվան,
+Շոշափելով է նա հալել տալիս փաթիլին ձյունի,
+Ասես շեշտում է, թե ձեր մեջ ես եմ լոկ չմահավան:</p></div></details>
+    <details class="st"><summary><span class="no">54</span><span class="ptitle">Պարաբոլ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Գիշերվա մեջ ես ձեռնահաս խոկում,
 Հատվածակողմիդ գույներն ես բեկում,
 Ինձ չես հավաքում քո կիզակետում
 Եվ խորատակից անկից ես նետում։
@@ -551,15 +1516,69 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Լույսի նման եմ այտիցդ կաթում,
 Մի արար հետո թե փայլուն սաթ եմ,
 Քո թվարկության կոներն եմ հատում։</p></div></details>
-  <details class="st"><summary><span class="no">31</span><span class="ptitle">Քո զինվոր բալեքին կանչել ես</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Քո զինվոր բալեքին կանչել ես,
-Որ փառքիդ դռները պահես,
-Աստված, մեզ էլի խաչել ես,
-Որ արյան կաթիլդ շահես։
-Օրհնանքի և սիրո արանքում,
-Թե Քեզ հետ լույսերում ապրենք,
-Մոմերը հանգել են և վանքում
-Մեր տեղակ էլ որին համրենք։</p></div></details>
-  <details class="st"><summary><span class="no">32</span><span class="ptitle">Սարգիս Նաղդալյանի հիշատակին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ասի վերջում հուշերիդ հետ անշքանամ
+    <details class="st"><summary><span class="no">55</span><span class="ptitle">Պիտի ակն ածես աննենգ խավարին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Պիտի ակն ածես աննենգ խավարին,
+Շենք ու շնորհքդ թողած աստղերին,
+Հայացքդ ձգես շքեղ թափորին,
+Լույսի երկվորյակ ճամուկ լաստերին։
+Քանի տաղ պիտի ուշաթափ գրես,
+Որ ցավը հոգուդ դեմ առ դեմ բերես,
+Նայես մեծկեկին պարթևահասակ,
+Ասես՝ հորինիր անհոգ մի քառյակ։
+Դասական բան է արհամարհանքը,
+Հազարից հետո ուրիշը անդարդ,
+Կրկնաբանելով քո հաջորդ ջանքը,
+Իրար կբարդի գոգ ու կորնթարդ։</p></div></details>
+    <details class="st"><summary><span class="no">56</span><span class="ptitle">Պոետին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Քո բախտը բերեց, առանց մնացորդ
+Տես, բաժանվել ես ինքդ քեզ վրա,
+Մեկ է արդյունքում, ամեն մի անցորդ
+Քեզ է կարեկցում աչքերով նրա:
+Գրածդ տա՞ղ չի և կամ շարական,
+Մագաղաթներիդ լեզվից գրավոր
+Անգեղակոթից մինչ Վասպուրական
+Մեսրոպատառ է գիրդ զորավոր:
+Այս արևելքում քանի խորագետ
+Հազար ու մեկ են բույրդ անգոսնում,
+Հակառակ կողմում մի հնարագետ
+Քեզ դեռ հիշում է, քո մասին խոսում:
+Եվ քանի օրդ չի մտել թաղար
+Պարբերական է ամեն մի շարժում,
+Կանցնեն բացահայտ սկյութ ու խազար,
+Աստված նրանց էլ այդպես է մերժում:
+Քո սիրո մասին դու կվկայես,
+Այլքը կթախծեն տողիդ արանքից,
+Թեև նրանց էլ այդպես կսիրես,
+Ազատում չունես ցավ ու հառաչից:</p></div></details>
+    <details class="st"><summary><span class="no">57</span><span class="ptitle">Ռեստարտ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Մտքերի, հույզերի, սրտի,
+Ի դեմ թալանի, ստի,
+Ամենքն էլ գիտեն ինչ և երբ,
+Աղբանոթներն են անջրպետ:
+Կմնա շվարը շվար,
+Երբ կյանքը լարել է ականատ,
+Եվ կրկին ամբոխները ստվար
+Կմղեն մահվան մենամարտ:
+Մայդան է, մայդան չէ, ինչ գիտեմ,
+Մի խելոք քարը գլորել,
+Ում միտքն էլ այս պահին թե ցիտեմ.
+Աշխարհում այս կարգն են հորինել:
+Դժգոհը պիտի ընդվզի,
+Արքան իր մոնթերին կունդգլուխ
+Քարոզի և հետո ընդգծի,
+Թե սև են հոգի և կնգուղ:
+Պոետը գնում է կոնծելու,
+Գալիս եմ աննման, Երևան,
+Թե հարբեմ, էլ մահը սանձելու
+Այլ առիթ ու պատճառ չունենամ:</p></div></details>
+    <details class="st"><summary><span class="no">58</span><span class="ptitle">Սահմանումներ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Եվ Արարատին շողն արեգակի դիպավ երկյուղած,
+Աղջիկը շիկնեց, նրա սիրելին հանդին էր քնած:
+Ճանապարհներց բանուկը հատվեց նույն դիմադարձին,
+Մինչդեռ մենաձիգ սոսափն ազդարար հասավ Հաղարծին:
+Ավերակ վանքում անթվելի է հավատն առ Աստված,
+Դժվարակոխ են կածան ու շավիղ, երիցս անտեսված:
+Խորանի առաջ արցունք եմ հեղում անձս ուրացած,
+Տեր, երանելին ինչո՞ւ էր այսօր փոքր ինչ կորացած:
+Մարտիրոս եղբայր, քրոջդ գտա՞ր գաղթի ճամփեքին,
+Խավարից հետո լույսն էր կարեկից առավոտ ծեգին:</p></div></details>
+    <details class="st"><summary><span class="no">59</span><span class="ptitle">Սարգիս Նաղդալյանի հիշատակին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ասի վերջում հուշերիդ հետ անշքանամ
 Քարինտակի ու Սղնախի մատույցներից,
 Ցոլքի նման շվաքիդ տակ էլ չքանամ
 Ու պակասեմ այսաշխարհիկ զրույցներից։
@@ -571,32 +1590,720 @@ footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font
 Արյան համը հողի մեջ է ամբողջանում,
 Քմայքներիդ գիտակներն են դեռ խաղալիք
 Բախտախաղում, ուր ձեռնածուն ցավն է մանում։</p></div></details>
-  <details class="st"><summary><span class="no">33</span><span class="ptitle">Աբո Ալավերդյանին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այս պատումս երբեք թող չգրվեր,
-Այս մի երգս էլ ձոնվեր մայրամուտին,
-Երկու կաթիլ արցունք թե գլորվեր,
-Իմ կարոտը ձուլվեր Բուրջամուտին:
-Թե վախվորած թուրքը չառաջանար,
-Թեկուզ մառախուղը թանձր լիներ,
-Անպատմելի մի ցավ ուրիշ հնար
-Թող հորիներ, հետո սրտին զիներ:
-Թեկուզ որդիդ էլի տարաբնակ
-Ու թոռնիկիդ էլի Աբո կոչեր,
-Թող, որ Տերը կազմեր սիրո բանակ
-Եվ էլ չարքին երբեք բան չարտոներ:
-Բայց քանի դեռ հուդան՝ ծախու պոռնիկ,
-Մեղքնի իր հաստատ գրի կյանքի գրքում,
-Տափաստանի թուրքն էլ անհարմոնիկ
-Իր ոռնոցով էլի նույնն է երգում:
-Ու Սրբերն են կրկին մատաղացու,
-Ջահել կյանքեր քանի և հատկապես
-Փառքը տարան իրենց այլ մի հեռու,
-Ես Ձեր ցավը տանեմ նաև այսպես…</p></div></details>
+    <details class="st"><summary><span class="no">60</span><span class="ptitle">Սերգեյ Եսենին Հիշում եմ ու էլի, նազելի</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Հիշում եմ ու էլի, նազելի,
+Վարսերիդ շողյունը աբրեշում,
+Չեմ ցնծում, դյուրին չէ ավելի
+Քեզ լքել սիրով լի հուշերում։
+Հիշում եմ աշնանը շաղավոտ
+Անլույսի սոսափը կապուտակ,
+Կարճ օրեր և մինչև առավոտ
+Չի կորչում լուսնկան ամպի տակ։
+Հիշում եմ, երբ դու ինձ ասացիր,
+Սրտամաշ օրերն այս կանցնեն,
+Ուրիշ մի գրկում աստղացիր
+Չեմ լինի էլ ես քեզ սիրելի։
+Եվ այսօր լորենին հմայիչ
+Պարուրեց ինձ անցած հույզերով,
+Ոնց էի այն գանգուր մազերիդ
+Շաղ տալիս ծաղիկներ անխռով։
+Եվ սիրտն իմ տաք է, որ չմարի,
+Թախծում է տրվելով ուրիշին,
+Իբրև թե իր սիրած անուրջում
+Ուրիշի գրկում է քեզ հիշում։</p></div></details>
+    <details class="st"><summary><span class="no">61</span><span class="ptitle">Սերգեյ Եսենին Սև մարդը</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Սրտակից, հարազատ ընկերս,
+Ես տկար, ես ինչքան եմ հիվանդ,
+Չիմացա` ինչ ցավ է, ընկերս,
+Քամու հետ սուլում է համահունչ
+Դաշտերում ամայի և անշունչ,
+Սաղարթն է աշնանը շարմաղում
+Ուղեղիս խանդավառ ծալքերում:
+Գլուխն իմ` թափ տալով ունկերս,
+Հավքի պես թևերն է տարածում,
+Ոտքերը շլինքին այլևս
+Մարում է ամեն մի տատանում:
+Սև մարդը, թխաթույր մահավոր,
+Թխաթույր, թխաթույր մարմնավոր,
+Սև մարդը, թխաթույր մահավոր
+Ողջ գիշեր բազմած է կողինքիս,
+Չի թողնում քուն իջնի կոպերիս:
+Սև մարդը թխաթույր մահավոր,
+Նողկալի մի գիրք է աչք ածում,
+Գարշում է իմ լեշից ահավոր
+Տեր հոր պես՝ մեռելի նույն աջում,
+Անառակ, ստահակ մի մարդու
+Կյանքն է ինձ երկյուղած դեռ կարդում,
+Եվ հոգիս վախով է պարուրում
+Սև մարդը, թխաթույր մահավոր,
+Թխաթույր, թխաթույր մարմնավոր:
+-Հագագդ առ, ականջդ չորս արա,-
+Նա ինձ է քրթմնջում անվարան,-
+Գրքի մեջ կան բազում բավարար
+Մտքեր ու պլաներ անկատար:
+Այս մարդը թխաթույր մարմնավոր
+Ապրել է մի երկրում հեռավոր,
+Ահընկեց, ուր ամեն մի զինվոր
+Եվ նենգ է և մահին կնքավոր:
+Ձմռանը ձյունն այդտեղ է մաքուր,
+Խղճի պես, հոգու պես ձյունաթույր,
+Թեշիկը թռչկոտում, մանում է
+Բուքի մեջ հազար մի հրապույր:
+Սև մարդը իր օր ու արևին
+Ոնց ապրեց` միշտ մնաց խաբեբա,
+Ով կասի, թե ցածր է, ավարա:
+Նրբագեղ և հետն էլ բանաստեղծ,
+Թեկուզ և մի փոքր կյանքով լի,
+Մի կնոջ չորս տասնյակը լրած
+Ասում է գեշ աղջնակ սիրելի:
+Եվ ասում , որ բախտը ձեռքերի
+Եվ մտքի մի խաղ է, սիրելիս,
+Սրտամեռ և հայտնի ելքերի
+Գումարն է, ակամա գրելիս:
+Եվ ոչինչ և ոչինչ, որ հետո
+Կոտրված և սուտը ակնարկի
+Բերում է տառապանքն անհարկի,
+Եվ ոչինչ և ոչինչ, որ հետո…
+Ամպրոպի, հողմի հետ, ցրտերում,
+Կորուստի և ծանր վշտերում,
+Երևալ հասարակ և խնդուն,
+Գերագույն արվեստին է հանգույն:
+Մեղաց մարդ, թխաթույր մահավոր
+Ինձ գթա, այնուհետ ծանակիր,
+Ջրասույզ անհոգի, մարմնավոր,
+Սակայն ինձ քեզանից մի վանիր:
+Կյանքը ինձ պարգև չէ և հետո
+Խնդրում եմ այդ մասին ուրիշին
+Դու պատմիր և երբեք մի հիշիր
+Ինձ նման խեղկատակ պոետին:
+Սև մարդը սևեռուն, ակնդետ
+Նայում է ինձ վրա, այնուհետ
+Աչքերն են իր պատում ասմազուն
+Վարանքով, կասկածով բազում:
+Կարծես թե հենց նոր եմ թալանել
+Մեկին, որն ինձ գող չի կարծել.
+Ստահակ, մոր ծիծը, որ կտրել
+Եվ երբեք էլ խելքի չի եկել:
+------------------------------------------------
+Սրտակից, հարազատ ընկերս,
+Ես տկար, ես ինչքան եմ հիվանդ,
+Չիմացա` ինչ ցավ է, ընկերս,
+Քամու հետ սուլում է համահունչ
+Դաշտերում ամայի և անշունչ,
+Սաղարթն է աշնանը շարմաղում
+Ուղեղիս խանդավառ ծալքերում:
+Ցրտաշունչ գիշերվա կափկափոց,
+Անխռով և անծուփ խաչփողոց,
+Մեն-մենակ, մթնով էլ հյուր չեկան.
+Սրտակից այցելու մի չկա:
+Հեշտալի և սորուն մանրախիճ,
+Շաղ եկած դաշտերի մեջ արձակ,
+Ծառերը ինչպես մի ձիավոր
+Դոփում են այգու մեջ հեռավոր:
+Չարագույժ հավքերը գիշերվա
+Լաց լինում, կռնչում լսելի,
+Անճկուն հեծվոր և հետերա
+Ցանում են թակոցներ սարսելի:
+Սև մարդն այդ թխաթույր մահավոր
+Բազմում է աթոռիս կամավոր
+Եվ գանգն իր թողնելով անծածկույթ,
+Սերթուկը արձակում է անփույթ:
+-Հագագդ առ, ականջդ չորս արա,-
+Խռխռում, նայում է ինձ վրա,
+Կռանում, թեքվում է և զննում,
+Մոտիկից՝ ոնց որ լեշ է տեսնում:
+Քնազուրկ ստահակ չգիտեմ,
+Չեմ տեսել, հանդիպել դեռ մեկին,
+Ցավից թե տառապեր՝ ես ցիտեմ.
+Անօգուտ, հենց այնպես անմեկին:
+Ա՜խ, ասենք սխալ եմ և կոր չի,
+Լուսնկան նորել է՝ չկորչի,
+Եվ կոր չի աշխարհս այս քնկոտ
+Կուշտ կերած, կամ արբած՝ ալարկոտ:
+Կարող է իր ջաջուռ զիստերով
+Թաքուն գա, մութի հետ, լաստերով
+Եվ կարդաս դու նրան շնչասպառ
+Քո տժգույն երգերը անպատճառ:
+Սիրում եմ բանաթուխ հանճարին
+Խնդազդեցիկ մարդ ու անճարին,
+Որ սրտիս հաճելի և ծանոթ
+Անեկդոտ են պատմում անամոթ:
+Կծըպտուկ որ կույսին այն անուշ,
+Երկար հեր, կճատ քիթ մի ապուշ
+Պատմում է աշխարհիս անցքերից,
+Հեշտանքից հալումաշ անձերից:
+Չգիտեմ, չեմ հիշում, թե պատմեմ,
+Մի գյուղում, հեռու, մոտ՝ կպարզեմ,
+Ռյազանում, Կալուգա, թե այլ տեղ
+Ապրում էր մի տղա նորաբեղ:
+Ապրում էր կենցաղով հասարակ,
+Ակներև գյուղական հարկի տակ,
+Շիկահեր, ոսկեմազ մի տղեկ,
+Երկնագույն աչքերով, անտրեխ:
+Եվ ահա մեծացավ տղեկն այդ
+Նրբագեղ և հետն էլ բանաստեղծ
+Թեկուզ և մի փոքր կյանքով լի,
+Մի կնոջ չորս տասնյակը լրած`
+Ասում է` գեշ աղջնակ սիրելի:
+Սև մարդ, թխաթույր մահավոր,
+Մեղաց մարդ, թխաթույր մարմնավոր,
+Քո փառքը քեզանից շատ առաջ
+Տարածվել, ձգվում է աննահանջ:
+Փրփրում, գազազում եմ մի պահ
+Մահակս նետում եմ վերապահ,
+Ինչ է, թե մռութը ջնջխեմ,
+Կամ քիթը, որ թեկուզ փշրեմ:
+--------------------------------------
+Լուսնկան մահացավ մի հանգի
+Եվ դրսում ինչ լույս է չի հանգչի,
+Ա՜խ, գիշեր, դե հիմա վայելիր,
+Տվածդ էն էլ ո՜նց կայրեիր:
+Կանգնել եմ, և գանգիս թաթախն է
+Ինձ հուշում, թե մենակ մնացիր,
+Ես եմ և... այս լարած թակարդն է.
+Անկյունի փշրված հայելին…</p></div></details>
+    <details class="st"><summary><span class="no">62</span><span class="ptitle">Սիրահարի հետ օրը բարակեց</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Սիրահարի հետ օրը բարակեց,
+Ուսի մախաղը տխուր շալակեց,
+Երբ դուռը հրեց, վայրահած քամին
+Մթնով պարուրեց անթարթափ քաջին:
+Միտքն ապավինեց աչքի տեսածին
+Հարդագող պապի ծիրի մեջ կաթին,
+Սատանի շապիկ հագցրեց չարքին,
+Բա ուշունց չտար նմանին կարգին:
+Աղջամուղջի մեջ ինչ սահման պահեր,
+Կնոջ հմայքին շատ էր կարոտել,
+Հազար խրտվիլակ մոտ ու մոտ շարեց,
+Անկորով թուրքին մի կերպ պաշարեց:
+Հենամեջերում ականներ դրեց,
+Ինքն էլ խանդակի եզրին հապաղեց,
+Մեկ էլ երկնքից հյուսիսից հարավ
+Մի ասուպ ընկավ, նա էլ էր ծարավ:
+Սիրո նման է, որ քթիթ տալիս,
+Շողարձակ լուսնի հետքով է գալիս,
+Օրեր են, կանցնեն իրար միահար,
+Աշխարհում ոչինչ չկա անհնար:</p></div></details>
+    <details class="st"><summary><span class="no">63</span><span class="ptitle">ՍԻՐՈ ԱՆԵԶՐ ՄԱԿԵՐԵՍՆԵՐ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Մի՛ լքեր, զոոր զարթնեմ, լինես հոգվո աղբյուր...
+Որպես պտղի սաղարթ, որպես լույսի փետուր,
+Երակահոս ափիս որպես աղերս առ Տեր,
+Հեռու հեռվում մի գետ, լերանցամեջ մատուռ,
+Որպես շնորհ հոգու, ինձ մի լքեր, իմ սեր։
+Աչքիս բացուխուփի իմ տարակա կարոտ,
+Անլույս կյանքս թռավ, երազներս կորան,
+Երրորդ մի մոմ վառիր, ոնց գույնզգույն նարոտ,
+Ցույց տուր բառիս ճամփան մեղքից դեպի խորան։
+Իմ ցնծություն, պարծանք, ողորմության իմ հույս,
+Որպես կնիք ու գանձ, զմռնենի իմ հույզ,
+Անշունչ այս փողոցում, հուսամեղ է հոգիս,
+Քանի ծվար կենաս, անտարբեր ես գալիս։
+Կանայք գիտեն ինչպես, կյանքը կասի ինչու,
+Որ կաթիլում սիրո անձս զոհաբերես,
+Դառը դարման թեկուզ, իբրև հանգերգ կանչում,
+Քեզ եմ կանչում ուխտի՝ հոգվո աղբյուր լինես։</p></div></details>
+    <details class="st"><summary><span class="no">64</span><span class="ptitle">Սիրո հանգերդ տվեցիր քամուն</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Սիրո հանգերդ տվեցիր քամուն,
+Սիրտդ փշրվեց հախճապակու պես,
+Ապարդյուն բան է, եթե անկայուն
+Այս փշրանքներդ կրկին բաժանես։
+Խինդ ու ծիծաղդ տվեցիր սյուքին,
+Պատարագիչդ ժպտաց անարյուն,
+Սիրո հանդեսում տղամարդ ու կին
+Քո հոգեդարձի ծեսն են ավարտում։
+Եվ ճամփադ էլի քեզ տուն է բերում,
+Դուրեկան մի կին կանգնել է շեմին,
+Նա է մայրաբար քո սիրտը գերում,
+Ապա հուշ դառնում կյանքի մեծ բեմին։
+Այս պարբերության վերջին դրվագում
+Կողերը Տիրոջ խուտուտ ես տալիս
+Ապրածդ ինչո՞ւ է անյամբ դրվատում,
+Թե ձմռան հետ է տագնապը գալիս։</p></div></details>
+    <details class="st"><summary><span class="no">65</span><span class="ptitle">Սիրունին չկոփես, Տեր</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Սիրունին չկոփես, Տեր,
+Չկապկես աջն ահյակին,
+Դյուրաբեկ մնա սերը
+Ու մեկ էլ հախճապակին։
+Բրուտի ափերին՝ լույս,
+Հուրքի պես էշխի թող գա,
+Հարաջան, նա է անհույզ
+Եվ թող նա սիրտ գողանա։
+Չթրծես սիրունին, Տեր,
+Կրակը չի դիմանա,
+Սիրունին՝ սիրուհու դեր,
+Բրուտը թող հիանա։
+Ու բան է, եթե հանկարծ,
+Մշմրի նա էլ հոգնած,
+Իմաց տուր, ուր էլ գնա,
+Բրուտ է, ոչ քահանա։</p></div></details>
+    <details class="st"><summary><span class="no">66</span><span class="ptitle">Սիրտդ բաց արա, տակաթաղ գիրս</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Սիրտդ բաց արա, տակաթաղ գիրս
+Ի բաց դնելու ոչինչ չթողեց,
+Լուսնկան նորեց աչազուրկ ծիրս,
+Վայրի խոլորձն էլ հանդին երկյուղեց:
+Ամոթն այսօր է գլխիկոր ներկա,
+Յաղութ քար հո չէ՝ կարծր շափյուղա,
+Ուշքդ դեսն արա, ինչ էլ ջերմանա,
+Զօր ու գիշերդ է, արևս վկա:
+Բաց փանջարա է հոգիդ ամենքին,
+Ասողիկն ով է, պարոն ոչ-ոքին,
+Շափրակ ես հյուսել բառերից պես-պես,
+Յոթնագիսակ յար, ամենքին ի տես:
+Այսպես ամեն օր ոտքերդ անկանած
+Նաղաշն իր հույզը՝ ոսկի և արծաթ,
+Ի ցույց է դնում, մանում է կամաց,
+Ներիր, ասում է աշխարհին հոգնած:</p></div></details>
+    <details class="st"><summary><span class="no">67</span><span class="ptitle">Սոնետների պսակ Մարգարտահնչուն Ճիչ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p class="sonnet-part"><span class="sonnet-label">Սոնետ 1</span>Գիշերային շուք, սահեցիր ի վիհ,
+Կաթ-կաթ քամեցիր օրհնաբեր գինին,
+Սրտիս ակունքում արծաթ և սկիհ,
+Անգիրկ շշուկներ,ունայնի քամի։
+Ինձ անտես արիր, որ մտապահես,
+Ողբալի զույգ իմ, թախծալի ընկեր,
+Եվ մահվան պարն իմ միայնակ պարես․
+Թե՝ բառդ՝ լույս էր , այրողը՝ ստվեր:
+Ինձ առաջնորդիր ի լռության խոր
+Խորվիրապները, ուր չկան բառեր, 
+Ձայնի վերծանված տաղաչափ հանգեր։
+Եվ ինչպես սիրո անէացած շող,
+Անցավ կարոտի ալիքեր ծովին,
+Թողեցիր ցավի աղոթքը շուրթիդ։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 2</span>Թողեցիր ցավի աղոթքը շուրթիդ,
+Իբրև շող-առկայծ՝  նշույլներ կոպիտ,
+Եւ ճիչ մի  վսեմ՝ մարգարտահնչուն,
+Տարուբերում մեղմ՝ անկյունից-անկյուն։
+Օրերն անդարձակ հուշերին ի սույզ,
+Իբրև երազանք հանճարի անհույզ,
+Անապատի մէջ միակյաց անխույր,
+Կորության մրմունջ, ցավի հրապույր։
+Արծաթավառ վարդ ծաղկեցավ անփուշ,
+Եվ տեսա նրան այս գիշեր դարձյալ,
+Ծննդյան տոնիս բոցավառ մի հուշ։
+Ծածկեր իմ դեմքը թախծալի քողով,
+Խազեր նվագի ակորդը սիրով,
+Խաչաձև գրչով՝ բիբերի խորունկ։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 3</span>Խաչաձև գրչով՝ բիբերի խորունկ,
+Ինձ էլ նկարեր տխուր կամ անձուկ,
+Աչօք տնտղեր՝ սուսեր ու սրով,
+Անհուսական գիր՝ անհեթեթ սիրով։
+Ոչ բառեր մարձան շուրթերին իմ տաք,
+Արյան պես հորդեր սիրտս անհատակ,
+Մտապատկերիս լուսաշող արփին՝
+Բոցի պէս մաքուր՝ անարատ, նրբին։
+Եվ նայեր ի վեր՝ ի վեհ լուսնկան,
+Ցրտագույն հսկեր խաղքը աստղերի,
+Փշրեր ծարաված սառույցը գրկի։
+Ամպուզամպի մեջ եթերային լույս,
+Հանգչեր խորքերում հոգուս սիրահար,
+Ոնց ճրագ անշեջ, պատրանքների կույս։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 4</span>Ոնց ճրագ անշեջ, պատրանքների կույս,
+Հանգչեր լռության դռներիս անփեղկ,
+Եվ իբրև փետուր անտարբեր ու մեղկ,
+Աչառուիս էլ չաներ կարգալույծ։
+Անբարբառ հողմից մի համբույր առներ,
+Ձեռաց նման էր, սակայն անմարմին,
+Խոհերս որպես վերքեր ամոքեր,
+Ինձ էլ սրբերի շարքին չդասեր։
+Եվ մի պահ գերվեր հմայքով տաղի,
+Շուքիս մեջ ծածուկ մարմին իր փռեր,
+Իբրև մեղքերիս հին սրբատեղի։
+Որպես մի ուրու,վանք աչերով կին,
+Ճերմակ մի մեծ մոմ պահ տար անհունին,
+Իմ բաղձանքների կենտ անզուգական։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 5</span>Իմ բաղձանքների կենտ անզուգական,
+Անդարձ էլ անցար գիշերքով սաթե,
+Ի գիրկ երազոյ՝ արցունքներ եթե՝
+Անքնության խոհ, մոռացված սակայն։
+Սիրեցիր դարձյալ՝ խաբկանքը միջի,
+Մեր այս երկուսից մեկը կանրջի,
+Եվ այն մյուսը, մարգարիտ գիշեր,
+Որի՞ս է հաճո, որ չունի՞ հուշեր։
+Անունս խառնեմ ճակատիդ գծին,
+Իմ սևադեղի լուծույթն է ցամաք,
+Քանի տաղ գիտես  անիմաց գրվեց։
+Ծովի  խորքերում փնտրեցիր իզուր,
+Ինձ բալի գույնն է խելքահան արել,
+Անհույզ մելանի իստակն է լազուր։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 6</span>Անհույզ մելանի իստակն է լազուր,
+Անխռով եթեր, հմայիչ, խավար,
+Սիրտս անհունի ցանցի մեջ խոցոտ,
+Փնտրում է լույսդ անծանոթ, տկար։
+Լուսավոր կաթիլք խավարում անփայլ,
+Թե շնչեմ խոցյալ և հոգիս դարձյալ,
+Բառերս անզոր ցավիս համրաքայլ
+Պիտի քերծեին դեմքդ անայլայլ։
+Եվ դեպի խորքը սրտիս ծագեցավ
+Լույսդ անտես, անուշ, առանց վիշտ ու ցավ,
+Հավերժին ներհակ իմ անակնկալ։
+Ասում եմ , Տիկին, մահին հարազատ,
+Որ մեկը մնաց ինձնից հուսահատ
+Շնչահեղձ սիրո հետքս ո՞վ ձգեց։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 7</span>Շնչահեղձ սիրո հետքս ո՞վ ձգեց,
+Եվ ո՞ր շրջանում գլխահակ կանգնեց,
+Արևն այս անգամ մտքի՞ս պես ծագեց,
+Ցավս անընտել ձմռան պես չոքեց։
+Թե մի ձայն հնչեր հին լեռան լանջից,
+Բարեհամբույր կամ դառնաղի-մաղձոտ,
+Ձյունահուսի հետ անհասցե կանչից,
+Հոգու փշուրներ՝ մարող ու մահոտ։
+Եվ ով հապաղեց քողի տակ ծածուկ,
+Թող ապրած կենա խամրած երիզին,
+Ձյունահալքի հետ վարդենին ծաղկեց,
+Ու ցողվեց գինին խաչքարի եզրին։
+Հոգուս վիհերում մի շող անանձուկ,
+Կամ նա էր խոնարհ, ես էի անծունկ։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 8</span>Կամ նա էր խոնարհ, ես էի անծունկ,
+Ով որ վերածեց խավարը լույսի,
+Ծնանի երգ և սաղմոսներ բազում,
+Որ շող հույս կապեց վարդ ու շուշանի։
+Իբրև հնոց սեր, չմարած կարոտ,
+Հիշատակների մոխիրն իմ ձեռքին,
+Օրերս անցան ոնց ցավի մատյան
+Կիսաբոլորակ գամված առեքին։
+Եվ սիրտս՝ ցավի մրմուռով լեցուն,
+Այն սեր, որ կորավ տարիներ առաջ,
+Իբրև հին գինի նվիրյալ հուշի։
+Հավիտենության ավիշը սառած
+Կքանդի ամեն կապույտ հիշատակ,
+Ուր սերը մնաց, ոչ մի հառաչանք։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 9</span>Ուր սերը մնաց, ոչ մի հառաչանք,
+Օտարոտի լույս, անցյալից մի վանք,
+Որպես մի գաղտնիք ներումի միջին,
+Խնկաբույր գրվածք առաջին էջին։
+Իբրև դալուկ ծուխ, այրված ձեռագիր՝
+Սիրտ ու միտք կրծած և երակագիր,
+Զարկերակիս մեջ թրթիռդ եմ զգում,
+Եվ այս շափրակը սիրով եմ գրում։
+Քո սիրով,անգին, գրում եմ տաղեր,
+Ուր է թե միտքս միայն շարմաղեր,
+
+Կամ անժպիտ ակ, կամ մի խոր հատույթ՝
+Մութ սրտի բերկրանք, հրացայտ խանձանք,
+Որպես տարտամ հուշ դարձած ավանդույթ։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 10</span>Որպես տարտամ հուշ դարձած ավանդույթ,
+Անմար կրակ է սրտումս վառված,
+Որ թե չհանգչի, կմնա անգին,
+Հավերժի ճամփին, հոգուս ուղեկից։
+Անցյալի ստվերն ինձ հետ  է պարում,
+Մոռացված երազ, որ չի  էլ հանգչում,
+Բայց ամեն շնչով նորից է ծնվում,
+Սիրո անունով, որ չի էլ մարում։
+Թող ցավս լինի և մոխիր և հող,
+Եվ հույսս՝ ծաղիկ, որ բացվի կրկին,
+Անցյալի վերքս կբուժվի շուտով։
+Սերս հավերժ է, անմահ ու անհաս,
+Կմնա իմ հետ, թե անգին, թե վառ,
+Կիսատ մի աղոթք, անավարտ երազ։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 11</span>Կիսատ մի աղոթք, անավարտ երազ,
+Ահա իմ սերը՝ անմահ ու անհաս,
+Որ մնաց այստեղ՝ սրտիս խորքերում,
+Ինչպես լույսի շող՝ մութի հետ պարող։
+Եվ երբ գալիս է գիշերը խավար,
+Ալեկոծ սիրտս ակորդն է ցավի,
+Թույլ աղոտ մի հույս,շողշողուն ծավի
+Որ հնչում էր միշտ,այլևս չկա։
+Բայց մի կին կա դեռ, որ չի էլ պարում,
+Պահում է հույսը՝ աննվաճ սրտի,
+Որ գուցե մի օր էլի հանդիպենք։
+Երբ ժամանակը մեզ հեռու տանի,
+Մի կին ինձ կրկին հոգեդարձ կանի,
+Որպես վերջին սեր՝ վերջին անծանոթ։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 12</span>Որպես վերջին սեր՝ վերջին անծանոթ,
+Հոգուս խորքերից հնչող մի աղոթք՝
+Իբրև մոխրացող աստղ շողարձակ,
+Անմարմին մի կին՝ մազերը արձակ։
+Կորած երազի դատարկ շուրջանակ,
+Ցավի հատիչներ, կայծքարե դանակ,
+Սիրտս հերձում են հազար մասերի,
+Տտիպ է համը դատարկ թասերի։
+Եվ անդարձ կանչի հանգանակություն,
+Ու օրհնված աղի բյուրեղներ և թույն,
+Զատիկից զատիկ մինչև հարություն։
+
+Որպես կեսօրվա մենավոր հովիտ,
+Շրջափակ տարածք և հոգիս՝ գավիթ,
+Ձիրքերիս կինը քնարն էր լարիս,</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 13</span>Ձիրքերիս կինը քնարն էր լարիս,
+Անհատույց բարիք, սրտափոխ տալիք,
+Եղած անցքերից հեքիաթ հնարող,
+Կախարդական և միշտ կանգուն ալիք։
+Համույրի պես է՝ քայլերը թեթև, 
+Անգգվել էլ ե՞րբ համբույրը կառնեմ,
+Երբ ամեն բառը՝ այս կյանքս թեքեց․
+Աշխարհ չեմ եկել, գնում եմ կարծես։
+Գնում եմ լույսի հակերը կապեմ,
+Քանի այրում է, դարձնում մոխիր,
+Էն լուսնատանը միայնակ կապրեմ։
+Թող գիշերը գա, այս աստղաթափիս
+Մի երեզանք եմ ջրին պահ տվել․
+Այտոսր թափվում և էլ չես լալիս։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 14</span>Այտոսր թափվում և էլ չես լալիս,
+Ջավահիր քարից չքնաղ մարգարիտ,
+Խուլ տագնապներս լցված մի գավիթ՝
+Հնչում եմ կրկին, սակայն չեմ լալիս։
+Անձայնությունդ գիշեվա բու է,
+Գիտես քանի թաս դեռ պիտի պարպեմ,
+Առատաջուր է, կաթիլ կամ կում է,
+Մեկ է, քո սիրուց չպիտի հարբեմ։
+Քեզ հորինեցի իմ պատրանքներից,
+Ինչ իրական է ստվերդ ձգվում,
+Ես նրան ահա խումար եմ գգվում։
+Եվ թե չեմ ապրում, տևում եմ կարծես,
+Ու թե չեմ սիրում, մեռնում եմ ահա
+Ու թե չեմ այրվում, մարո՞ւմ եմ, ասա։</p><p class="sonnet-part"><span class="sonnet-label">Սոնետ 15</span>Գիշերային շուք, սահեցիր ի վիհ
+Թողեցիր ցավի աղոթքը շուրթիդ,
+Խաչաձև գրչով՝ բիբերի խորունկ,
+Ոնց ճրագ անշեջ, պատրանքների կույս։
+Իմ բաղձանքների կենտ անզուգական,
+Անհույզ մելանի իստակն է լազուր,
+Շնչահեղձ սիրո հետքը ո՞վ ձգեց,
+Կամ նա էր խոնարհ, ես էի անծունկ։
+Ուր սերը մնաց, ոչ մի հառաչանք,
+Որպես տարտամ հուշ դարձած ավանդույթ,
+Կիսատ մի աղոթք,անավարտ երազ։
+Որպես վերջին սեր՝ վերջին անծանոթ,
+Ձիրքերիս կինը քնարն էր լարիս, 
+Այտոսր թափվում և էլ չի լալիս։</p></div></details>
+    <details class="st"><summary><span class="no">68</span><span class="ptitle">Սոնետների պսակ Ֆլամինգո</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p class="sonnet-part"><span class="sonnet-label">Ա</span>Ակնախտիտ ցող ու արցունք այտս են թրջում ապարդյուն,
+Մի՞թե զուր է՝ կամ անձրև է, կամ սրսուռ է, ապա ձյուն,
+Ցնորական զմայլանքիս դրվագներում կիսավարտ
+Հուշի նման էլ չեն ծաղկում կուժկոտրուկ ու շողավարդ։
+Ծայրածավալ թոնութաց է, թե անըմբեր տրոփեմ
+Եվ հեշտանքի ի՜նչ ալիք է, որ պիտի դեռ կարոտեմ,
+Ինչ տարերք է Երանելին կնոջ տեսքով արարել,
+Հորդանալուց հետո եմ ես անկրելի վարարել։
+Ինձ առինքնիր, որ դյութանքիդ պարագիծը ընկալեմ,
+Հորձանքս առնեմ և ծփանքիդ իմ էսքիզը նկարեմ։
+Դիմալույսի փաթիլի պես քեզ էլ ճոճեմ անարյուն
+Եվ սրտից սիրտ տարուբերեմ, ձեռքս ծոցիդ անընտել
+Ինչ հեսաբ է, աննմանի չափ ու ձևում անարգել
+Ու՞ր են կորել եթերահած հրեշտակները արթուն։</p>
+<p class="sonnet-part"><span class="sonnet-label">Բ</span>Ու՞ր են կորել եթերահած հրեշտակները արթուն,
+Երբ հեքիաթում կամ առաչյա և կամ ծածան, թրթռուն
+Որպես ցնորք արտածել են սիրահնար կիրք ու ցավ
+Կաթնածիրի անհունի մեջ անիրական ու անկավ։
+Ըստ թվացյալ ժամանակի երկվայրկյանում աննշան
+Մի աղջիկ է կետադրում տագնապներս այլևայլ,
+Անկարեկից հայացքի մեջ տրոհության կույր նշան,
+Կրկին սիրո թվարկության խզվածքներով անայլայլ։
+Թե անփույթ գաս, ինձ կթվա մահս է փնտրում համրաքայլ
+Քանասարի գազանի պես ծաղկակոխ մի շնագայլ։
+Գիշերվա մեջ աստղ ու բոլիդ աղոտ ցոլք են՝ պաղպաջուն,
+Թե բռնկվեմ, ապա մարեմ, հե՞տք կթողնեմ լուսավառ,
+Քեզ ձեռաձիր՝ որպես ընծա, երբ պսպղամ վերից վար,
+Անուշաբույր մեղր ու նեկտար և մազտաքե ակաղձուն։</p>
+<p class="sonnet-part"><span class="sonnet-label">Գ</span>Անուշաբույր մեղր ու նեկտար և մազտաքե ակաղձուն,
+Դրախտի և դժոխքի մեջ երկինքն ի՞նչ է՝ առանց ձյուն,
+Առանց քնար ձիրքը ի՞նչ է՝ ծանրության չա՞փ արծաթե,
+Շա՞տ է փայլուն, անգամ սև՞է, համրիչի հա՞տ է սաթե։
+Խատուտիկի գինու համից ուշքս գնաց, անաստված,
+Ես այս կյանքը կամ ապրում եմ, նվաղում եմ կամ հոգնած,
+Ո՞ր դրվագում ինձ թևանցուկ պանդոկներով ման տվիր,
+Սիրո հույզի դատարկ թասեր, ինձ կորցրի, դու թվիր։
+Մեկ էլ որից հետո, անգին, քանի՞ անգամ հարբեցի,
+Լուսավորիր էս անգետիս և ի՞նչ Ղազար Փարպեցի։
+Քեզ չթվա՝ վրիպեցի, մահադեղը քո անգույն
+Ոնց բալասան դժգույն կյանքիս, դատարկեցի մի հանգում,
+Տես, հոգետան իմ երկնքում պատկերներ կան ավարտուն,
+Տարածական լույսին հանգույն, նրբամարմին ինչպես ձյուն:</p>
+<p class="sonnet-part"><span class="sonnet-label">Դ</span>Տարածական լույսին հանգույն, նրբամարմին ինչպես ձյուն,
+Թե շարմաղեմ, նուրբ է գալիս կնոջ նման հոլանի,
+Ահյակ ու հետ տեղաշարժում ՝ Ալաշկերտի գորանի,
+Պարբերական պտույտներն են դուռը փակում խորանի։
+Վառվող մոմի մի առկայծում քանի թաքուն երազանք
+Աստեղաձև փաթիլներ են՝ ձյունափայլուն անրջանք,
+Մրմնջում եմ, որ Անեղը ցավը փոխի հրճվանքի,
+Առառավել չափը պահի հրապուրանք- հմայքի։
+Թե բժժանքով գիր ես արել, որ նվաստիս առինքնես,
+Լուսահոգիդ հանձնվում է, ամաչերես որ քննես։
+Լուսնի նման եթե հանկարծ աներևույթ հնանամ,
+Անտես մնամ, բայց տաղերիս կախարդանքից էանամ,
+Մերժվածների տողանի մեջ ինձ չփնտրես, չջանաս
+Կրկին պիտի փառաբանեմ տեսիլներն իմ հնամաշ։</p>
+<p class="sonnet-part"><span class="sonnet-label">Ե</span>Կրկին պիտի փառաբանեմ տեսիլներն իմ հնամաշ,
+Գրավչության փարաբոլով երբ անընդհատ հեռանաս,
+Դու ծնվել ես սիրո համար մոռացված մի փարախում,
+Անդրադարձիկ շողքերի մեջ քո էտյուդն է փաղփաղում։
+Վարժական է այս տագնապս, որ առավել հմտանամ,
+Կիզակետիդ ցայտուն մասում վարդ ու շափրակը ստանամ,
+Քառակուսի հավասարման քո արմատն եմ, իմացիր,
+Այս անթեղը դարձյալ տաք է դու թե առկայծ, ես՝ մոխիր։
+Օրվան մի օր ես էլ կանցնեմ քմայքներիդ անտեղյակ,
+Դու չտխրես, ես ձանձրույթդ կփարատեմ քո տեղակ։
+Անզուսպ չասեմ, չասեմ արագ, կարճամետրաժ մի ֆորսաժ,
+Ես ծպտված ինչու՞ ապրեմ այս խաբուսիկ աշխարհում,
+Հափշտակիր ինձ տեղաթափ՝ ձնձեղ հագած նախշերում,
+Որտեղ կանայք փափկասուն են և նրանց մեջ դու՝ միրաժ։</p>
+<p class="sonnet-part"><span class="sonnet-label">Զ</span>Որտեղ կանայք փափկասուն են և նրանց մեջ դու՝ միրաժ,
+Կանաչ, կարմիր այս աշխարհում մթնալույսս էր քեզնով խաս,
+Հովերս առ մենամոլիս և պարգև ես և երազ,
+ես առաչոք իմ այս կյանքում վրիպեցի հանապազ։
+Ձյունահատի անխառն սրսուռ, երբ անձրև ես, կամ շառափ,
+Հորդ ես գալիս, ծանծաղ ափիս թե շառայլ ես, թե քարափ
+Անկոխ մի տեղ, ժայռերն ի վեր ոտքս խոչին դեմ առավ,
+Քո պոետը, սիրուց արբած, չմոլորեց, բայց մեռավ։
+Ցրիվ գալով անէացա, ձանձախարիթ չքացա,
+Խորքը նայիր, տակն ինչ մնաց, մուր չբռնած քչացա։
+Ի լրոյ է այս հռչակս, թե չարաբեր չթվար,
+Ուրիշները քեզ կպատմեն՝ երանելի, թե չվառ,
+Աչքը խաբող այն ձեռնածուն առավ- փախավ լույսս վառ,
+Իմ երազում այս լուսինը շուռ եմ տվել գլխիվայր։</p>
+<p class="sonnet-part"><span class="sonnet-label">է</span>Իմ երազում այս լուսինը շուռ եմ տվել գլխիվայր,
+Որ համրանքի քո հատվածում ծուռ հայելում չծփար,
+Էյ, սիրուհի, զով գիշեր է, արի գնանք սարատեղ,
+Մեջքիդ ոսկի գոտի կապեմ և ծիրանի մի աղեղ։
+Էյ, սիրուհի, թթվաշ ու սև մոշ եմ քաղել մեծահատ,
+Այս կռնակս երբ էլ հոգնի, գովքդ կանեմ բացահայտ,
+Հատապտղի կթոցներս հյուսածո են սերերից,
+Հազար խաղ կա, որ ձգել եմ իմ անտաղանդ դերերից։
+Էյ, սիրուհի, փառքիս համար ի՞նչ ես աղոթք մրմնջում,
+Լուսնի համար արդեն մեկ է, թե ես ոնց եմ անրջում։
+Բանաստեղծի իմ տիտղոսին չհավելես վեստ ու պայլ,
+Ես թախիծի արքան էի, մնացել եմ այդպես հար,
+Վերջամնաց թթվաշ համիդ յամբը շեշտեմ ապշահար
+Երբ պատկերդ դեռ անէ է, թեև գիտեմ անայլայլ:</p>
+<p class="sonnet-part"><span class="sonnet-label">Ը</span>Բայց պատկերդ դեռ անէ է, թեև գիտեմ անայլայլ,
+Ոչ սուրբ եղար, ոչ՝ անառակ, կողոմու՞մ ես միտքս ծուռ,
+Թաքստոցում մորի ունեմ և քթոցում՝ երկու նուռ,
+Եվ չեմ ճզմել, որ չշիկնես, կարմիրն էլ է հոգու փայլ։
+Խմբագրիր Ֆլամինգոն մոլորված մի չվահյուր,
+Մահվան գրքում թե գրել են, կտուցը՝ կեռ, ծայրը՝ սև,
+Սրանց շատը խաղալիք է, իրականում՝ վարդաբույր,
+Պաչդ, ասեմ, կիսատ մնաց, ես էլ դարձա նաղլի դև։
+Չափ ու ձևի քո սանդղակով այրված սիրտս՝ մուր-ածուխ,
+Քանի մեղք ես հաստատ գրել, որ չեմ գործել էլ կանուխ։
+Չարամանկին բան չմաղթես քո մարզային տապանում,
+Ողբի հանգով ինչ էլ երգես ոնց բերկրանքի լուր-ավետ,
+Մի հարց պիտի առկախ թողնի մի կիսահայ վարդապետ
+Ձգողական ի՜նչ ուժեր են քեզ երկնքում տատանում։</p>
+<p class="sonnet-part"><span class="sonnet-label">Թ</span>Մագնիսական ի՜նչ ուժեր են քեզ երկնքում տատանում,
+Երբ ակնավեր լույսս ես ցրում և աչքերս թաց անում,
+Վերևու՞մ է ցոլքդ անբիծ, թե՞ ցածում ես կեղծ-պատիր,
+Անգզելին ժամանակն է համասփյուռում այս անծիր։
+Կռապաշտի բուրգից մատուռ ինչ հույզեր ենք ավերել,
+Երբ սառելով սառչում էինք և ձնձեղն էր մեզ կերել
+Եվ այս գլխիս պտտվում է աստնվորը առանց քեզ,
+Դու իմ մահվան դուռբռնեքին այդպես խոնարհ էլ չանցնես։
+Հոգետունս դատարկ թողիր և փոշին է ինձ կերել,
+Խռպոտ ու թույլ, ինձ նմանի, կասկածներն են դեռ կերկեր։
+Քո հմայքի հորձանուտում օրհնված է իմ ճամփան
+Եվ մի ձայն է անվերջ հնչում տարադիմիկ անհայտում,
+Եվ ես գիտեմ որն է սրտի միավորը քո չափման,
+Երբ առանցքն իմ ճշգրիտ է աստղերի մեջ անհատնում։</p>
+<p class="sonnet-part"><span class="sonnet-label">Ժ</span>Երբ առանցքն իմ ճշգրիտ է աստղերի մեջ անհատնում,
+Դու իմ սրտի պարագծով ի՞նչ խավար ես փարատում,
+Հալածում ես, որ ամենուր լույսս անես անվավեր,
+Բա, չիմացար, Տորքի աջում ես էլ մեկն եմ անվեհեր։
+Մի նմանիր աննմանին, նա էլ չունի դիմագիծ
+Եվ թշվառի սիրտը կոտրած փակ կորի բեր, որ չատես,
+Կռնակ չանես, որ տխրության չափը զգաս դիմացից
+Եվ չստացված սիրո համար մատույրի պես չդատես։
+Գեշ բաներից դադար խնդրիր, մեկն ամոթն է շառագույն,
+Մեկ էլ որից հետո, անգին, ակնկորին՝ աղու թույն։
+Բաց թողնելով արկանել ես սիրո լիցքը տարանուն,
+Հուսախաբին և դյութվածին բան չմնաց այս կյանքում,
+Ինչ էլ թողիր, հուշերից զատ, երկու սրտի արանքում,
+Ազդականչի նման անհայտ իմ երկյուղն ես տարհանում:</p>
+<p class="sonnet-part"><span class="sonnet-label">ԺԱ</span>Ազդականչի նման անհայտ իմ երկյուղն ես տարհանում
+Ինձ փրկում ես, թե հերքում ես եռաչափ այս ծավալում,
+Վաղ աշխարհի Ծիր Կաթինը ցավի հետք է տարածուն,
+Ինձ թվում է, միայն ցավն է, որ երբեք չեն ծրարում։
+Իմ մակույկը ծովը տարավ, թիավարում եմ իզուր,
+Կապտազմրուխտ տեսարան է և երկինքն է դեռ լազուր,
+Վերջին անգամ աչք ածեցի ես իմ ապրած օրերին,
+Տագնապներս ծովը կերավ՝ հագուրդ տալով կորերին։
+Ալիքները փշրվում են, որ ինձ անհետ կորցնեն,
+Մեջ-գիշերին, թե հմտանան, գուցե վերջին փորձն անեն։
+Հիշում ես, չէ՞, սերը թողինք այս ջրերին պաղպաջուն,
+Մի կաթ ցողի կարոտի հետ կռիվ չունեմ ի վերուստ,
+Սրտիս վրա շյուղ չբռնեց, ասեմ բարով եմ հարուստ,
+Երկինքն այսօր մի տեղ ամպել, մի այլ տեղ է շառագույն։</p>
+<p class="sonnet-part"><span class="sonnet-label">ԺԲ</span>Երկինքն այսօր մի տեղ ամպել, մի այլ տեղ է շառագույն,
+Դառը գինին թե հրաշք է, ես հարբում եմ էլ նորից,
+Վշտի մի թաս, ցավի մի շիշ և մորմոք է սերը նույն,
+Ես հարբում եմ, որ լուր չառնեմ իմ չիրացված դերերից։
+Ամենուրեք քո պատկերն է, որպես լույսի քնքուշ շող,
+Հազար տաղում հազար անգամ զանց եմ առել տապ ու դող,
+Այս սարսուռը հմայանքի ի՜նչ լուսին է մակածել
+Եվ փաղաղը տոչոր սրտիս մեղրամոմերն է մաշել։
+Էլ ոնց ասեմ, որ սիրով եմ մոռացված այս պանդոկում
+Քո պատկերով հրեշտակին ինքնաուրաց քանդակում։
+Ֆլամինգոն չվահյուր է, անդրիանդու մի հանգույն,
+Եթե անգամ խաղալիք է՝ հմայությամբ չար աչքից,
+Կռահում ես, թե ուր հասա երեքնուկի հմայքից։
+Լա՞ց ես լինում, թե՞ հրճվում ես, կամ բեկել ես հազար գույն։</p>
+<p class="sonnet-part"><span class="sonnet-label">ԺԳ</span>Լա՞ց ես լինում, թե՞ հրճվում ես, կամ բեկել ես հազար գույն,
+Ես գրում եմ այս շափրակը որպես սիրո չքնաղ ձոն,
+Ձյունահատի այս սավանին ճերմակն էլ է թաց ու թոն,
+Հալխռնում է սիրո նման և կորչում է ինչպես ձյուն։
+Քեզ ներում եմ, այս քաղաքին որ իմ գույնը չմնա
+Եվ իմ մահով ուրիշ մի կյանք էլ անիմաստ չթվա,
+Հեռանում եմ անձրևների և ձյուների տարափով,
+Աստղաթափի մի գիշեր էլ ինձ կհիշես շառափով։
+Կարեկցանքի քո մատուռում մնաց մի մոմ առանց վառ,
+Լաց չլինես, որ չտխրեն խաղարկու և խմբավար։
+Գրավչության բեմը դարձյալ ինչ դատարկ է առանց քեզ,
+Երբ դահլիճը հրավերքի լեփլեցուն է, ակաղձուն,
+Կամ մոռացել, ինձ չեք կանչել իմ այս մահվան կոչունքին
+Ակնախտիտ ցող ու արցունք այտս են թրջում ապարդյուն։</p>
+<p class="sonnet-part"><span class="sonnet-label">ԺԴ</span>Ակնախտիտ ցող ու արցունք այտս են թրջում ապարդյուն,
+Ու՞ր են կորել եթերահած հրեշտակները արթուն,
+Անուշաբույր մեղր ու նեկտար և մազտաքե ակաղձուն,
+Տարածական լույսին հանգույն, նրբամարմին ինչպես ձյուն:
+Կրկին պիտի փառաբանեմ տեսիլներն իմ հնամաշ,
+Որտեղ կանայք փափկասուն են և նրանց մեջ դու՝ միրաժ,
+Իմ երազում այս լուսինը շուռ եմ տվել գլխիվայր,
+Բայց պատկերդ դեռ անէ է, թեև գիտեմ անայլայլ:
+Մագնիսական ի՜նչ ուժեր են քեզ երկնքում տատանում,
+Երբ առանցքն իմ ճշգրիտ է աստղերի մեջ անհատնում,
+Ազդականչի նման անհայտ իմ երկյուղն ես տարհանում:
+Երկինքն այսօր մի տեղ ամպել, մի այլ տեղ է շառագույն,
+Լա՞ց ես լինում, թե՞ հրճվում ես, կամ բեկել ես հազար գույն,
+Ակնախտիտ ցող ու արցունք այտս են թրջում ապարդյուն:</p></div></details>
+    <details class="st"><summary><span class="no">69</span><span class="ptitle">Վերջին պատվիրանը</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ես Աստծո հիշողություն եմ հանգուցյալի աճյունի մեջ
+և վերջին դիակը, ով գիտեր ինչ է ձյունը՝ աստղաձև փաթիլներով։
+Իմ սահակողերից խզակները հույզերի ծփանքի սառցե արձագանքներ են ցավի եռանկյան վեց
+անկյուններում ծվարած։
+Աշխարհում տեսանելի մահերը կրկնում են իրար, թաքուն պահելով մարդու մեջ մեռած մարդուն։
+Իմ պատկերով պայմանական մի նշան կա կարծր սևակուճին խազած։ Սա միակ նկարն է, ուր ես
+անբնական եմ ժպտում։
+Հայկական այս գամբիտը տանուլ չտաք, ձեր զոհաբերածը ոտքի կոխան չէ։</p></div></details>
+    <details class="st"><summary><span class="no">70</span><span class="ptitle">Քո զինվոր բալեքին կանչել ես</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Քո զինվոր բալեքին կանչել ես,
+Որ փառքիդ դռները պահես,
+Աստված, մեզ էլի խաչել ես,
+Որ արյան կաթիլդ շահես։
+Օրհնանքի և սիրո արանքում,
+Թե Քեզ հետ լույսերում ապրենք,
+Մոմերը հանգել են և վանքում
+Մեր տեղակ էլ որին համրենք։</p></div></details>
+    <details class="st"><summary><span class="no">71</span><span class="ptitle">Քվանտային մեխանիկայի իմ տեսությունը</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Արհեստական է կյանքը անհունում,
+Նախագծել են անհոգի մարդուն,
+Դիտորդի համար կա՞ տարբերություն,
+Ո՞վ է մտքերն իր այս պահին կարդում։
+Անփաստարկ բան է մեծ լռությունը,
+Թե որ աղմուկն է անկախ մեծություն,
+Քվանտից մինչև երկնային Տերը
+Դիրքավորվում են, քանի չես դիտում։
+Շարակարգի մեջ պորտը կտրածին
+Տրոհելով են մահին մոտ անում,
+Օրապակասին ասում թերածին,
+Դեն ձգելով են վերարկուն հանում։
+Հնարքից հրաշք օրենքը նույնն է,
+Ուղեղի մեջ են մտքերը ծնվում,
+Դատողությունը սպանիչ թույն է,
+Թե փորձիդ հաշվին ոչինչ չի սնվում։
+Այս անգոյության մեծ պայթունն էլի
+Տեղահան սիրտս է մտքից դուրս շեղել,
+Ասես հուշերում քո անմեկնելի
+Հրապույրներն եմ անցյալից պեղել</p></div></details>
+    <details class="st"><summary><span class="no">72</span><span class="ptitle">Օտար մի երկրի դու լուսե աղջիկ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Օտար մի երկրի դու լուսե աղջիկ,
+Վաղորդյան ցողից մաքուր, թափանցիկ,
+Ազնիվ ես ինչպես ոսկին ոգեղեն,
+Աստվածուհի ես և կամ հողեղեն:
+Անմիջական ես որպես նախասկիզբ,
+Հեռու ես վանում տխրություն, թախիծ,
+Զուլալ առվակի ձայնն ես խոխոջուն,
+Ծիծաղ վարակիչ, այնպես զրնգուն:
+Տոնական մի օր, քույր իմ սիրելի,
+Մերժվածիս գտար ետնախորշերից,
+Եվ ցնծաց հոգիդ հրճվանքի սովոր,
+Մեղեդի չքնաղ, դու ես անսովոր:</p></div></details>
+    <details class="st"><summary><span class="no">73</span><span class="ptitle">Օրն էլ արթնացման անձրև է, տեր իմ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Օրն էլ արթնացման անձրև է, տեր իմ,
+Երևակումի կարոտ փոշին է քարանձավների
+Մամռոտ մենության հազարաժամին
+Խրախճան անում` դեղին հրճվանքի ակնկալիքով:
+Լույսն է տարաբայ հավիտենության կերոնի վասալ,
+Որ իր փարաջան տարածում է դեռ անհայտի հեռու ակնախորշերում
+Եվ չի ցանկանում մահվան տեսիլի կանչին իսկ անսալ.
+Ոսկեղողանջ է ծավալումը այս և հայցվոր, ինչպես օրն իր սափորում:
+Արծաթազօծված մի ձեռնաշղթա մեղեսիկների հատընդ-մեջերում
+Երկբայում է, տե՛ր, օր ու գիշերի խաբկանքն անհատնում.
+Սպասավոր են մարմինները մեր չվերթից չվերթ,
+Ուղենիշներից մինչև ուղենիշ, ծննդից մինչև մահ:</p></div></details>
 </section>
 
 <section class="about dk"><div class="pt rv"><img src="https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058629987.jpg?v=1792750618" alt="Արմեն Ալավերդյան" loading="lazy"></div>
   <div class="rv"><p class="tag">Հեղինակի մասին</p><h2>Արմեն Ալավերդյան</h2>
   <p style="opacity:.7;max-width:520px;margin-top:1.5rem">Բանաստեղծություններ և գրքեր։ Այս էջում ներկայացված են ընտրված ստեղծագործություններն ու ժողովածուները։</p>
-  <div class="nums"><div><b data-n="5">0</b><small>գիրք</small></div><div><b>Ա.</b><small>բանաստեղծ</small></div></div></div></section>
+  <div class="nums"><div><b data-n="5">0</b><small>գիրք</small></div><div><b>4K+</b><small>բանաստեղծություններ</small></div></div></div></section>
 
 <section class="lt" id="books"><p class="tag">Ժողովածուներ</p><h2 class="rv">Գրքեր</h2>
 <div class="bl rv">
