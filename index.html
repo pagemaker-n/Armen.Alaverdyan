@@ -1,1 +1,689 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
+<title>Արմեն Ալավերդյան — բանաստեղծ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&family=Noto+Sans+Armenian:wght@400;500;800&family=Noto+Serif+Armenian:ital,wght@0,400;0,800&display=swap" rel="stylesheet">
+<style>
+:root{--k:#0A0A0A;--w:#F2F2EF;--m:#8a8a86;--sans:Inter,"Noto Sans Armenian",system-ui,sans-serif;--serif:"Noto Serif Armenian",Georgia,serif;--r:0px;--x:50%;--y:50%}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--k);color:var(--w);font:400 1rem/1.6 var(--sans);overflow-x:hidden;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.dk{background:var(--k);color:var(--w)}.lt{background:var(--w);color:var(--k)}
+section,footer{padding:clamp(4rem,9vw,8rem) clamp(1.2rem,5vw,5rem)}
+.tag{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;opacity:.6;margin-bottom:2rem;display:flex;align-items:center;gap:.8rem}
+.tag::before{content:"";width:36px;height:1px;background:currentColor}
+h2{font:800 clamp(2.4rem,7vw,6rem)/.95 var(--serif);letter-spacing:-.03em}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;padding:calc(1.1rem + env(safe-area-inset-top,0px)) clamp(1.2rem,5vw,5rem) 1rem;mix-blend-mode:difference;color:#fff;font-size:.85rem;letter-spacing:.08em}
+nav a{color:#fff;text-decoration:none;margin-left:1.6rem}nav a:first-child{margin:0;font-weight:800}
+@media(max-width:600px){nav .h{display:none}}
+/* hero with spotlight */
+.hero{position:relative;height:100vh;height:100svh;min-height:520px;overflow:hidden;padding:0;cursor:none}
+.lay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(1.2rem,5vw,5rem) clamp(2rem,5vw,4rem)}
+.lay.base{background:var(--k);color:var(--w)}
+.lay.top{background:var(--w);color:var(--k);clip-path:circle(var(--r) at var(--x) var(--y))}
+.lay h1{font:800 clamp(2.2rem,9.5vw,11rem)/1.05 var(--serif);letter-spacing:-.05em;text-transform:none}
+.lay h1 span{display:block;overflow:hidden;padding:.18em 0 .24em;margin:-.18em 0 -.24em}
+.lay h1 em{display:block;font-style:normal;transform:translateY(105%);animation:up 1.1s cubic-bezier(.2,.9,.2,1) forwards}
+.lay h1 span:nth-child(2) em{animation-delay:.15s}
+@keyframes up{to{transform:none}}
+.lay .meta{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-top:1.6rem;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;flex-wrap:wrap}
+.vs{font:italic 400 clamp(1rem,2.2vw,1.5rem)/1.3 var(--serif);text-transform:none;letter-spacing:0;max-width:34ch;min-height:2.7em}
+.vs::after{content:"▍";animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.badge{position:absolute;right:clamp(1rem,5vw,5rem);top:22%;width:clamp(90px,14vw,160px);aspect-ratio:1;pointer-events:none}
+.badge svg{width:100%;height:100%;animation:spin 18s linear infinite;fill:currentColor}
+.base .badge{color:var(--w)}.top .badge{color:var(--k)}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* expandable poems */
+.poem .st{padding:clamp(2rem,5vw,4rem) 0;border-top:1px solid rgba(10,10,10,.2)}
+.poem .st:last-child{border-bottom:1px solid rgba(10,10,10,.2)}
+.poem summary{display:grid;grid-template-columns:120px 1fr auto;gap:1.5rem;align-items:center;list-style:none;cursor:pointer}
+.poem summary::-webkit-details-marker{display:none}
+.poem .no{font:800 .9rem var(--sans);letter-spacing:.2em}
+.poem .ptitle{font:400 clamp(1.8rem,4.6vw,4rem)/1.13 var(--serif);letter-spacing:-.02em;transition:color .3s}
+.poem summary:hover .ptitle{color:#77746d}
+.poem .plus{width:3.25rem;height:3.25rem;border:1px solid rgba(10,10,10,.35);border-radius:50%;display:grid;place-items:center;font:400 2rem/1 var(--sans);transition:transform .3s,background .3s,color .3s,border-color .3s}
+.poem .plus::before{content:"+"}
+.poem details[open] .plus{transform:rotate(45deg);background:var(--k);border-color:var(--k);color:var(--w)}
+.poem .copy{padding:2rem 0 0 120px}
+.poem p{font:400 clamp(1.35rem,2.8vw,2.25rem)/1.5 var(--serif);letter-spacing:-.01em;white-space:pre-line;opacity:.15;transition:opacity .8s,transform .8s;transform:translateX(-24px)}
+.poem p.on{opacity:1;transform:none}
+.poem .acro{color:#a22d35;font-weight:800}
+@media(max-width:700px){.poem summary{grid-template-columns:2.5rem 1fr 2.8rem;gap:.7rem}.poem .ptitle{font-size:clamp(1.35rem,6vw,2rem)}.poem .plus{width:2.45rem;height:2.45rem;font-size:1.65rem}.poem .copy{padding:1.5rem 0 0 3.2rem}.poem p{font-size:clamp(1.15rem,4.5vw,1.5rem)}}
+/* about */
+.about{display:grid;gap:3rem;align-items:center}
+@media(min-width:800px){.about{grid-template-columns:5fr 6fr}}
+.pt{aspect-ratio:4/5;background:var(--w);position:relative;overflow:hidden;filter:grayscale(1) contrast(1.2)}
+.pt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.pt::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.25) 0 1px,transparent 1px 4px);mix-blend-mode:multiply;pointer-events:none}
+.nums{display:grid;grid-template-columns:repeat(2,1fr);margin-top:3rem;border-top:1px solid rgba(242,242,239,.25)}
+.nums div{padding-top:1.2rem}.nums b{display:block;font:800 clamp(2.4rem,6vw,4.5rem)/1 var(--serif)}.nums small{opacity:.6}
+/* books list */
+.bl{margin-top:3rem;border-top:1px solid var(--k)}
+.bi{display:grid;grid-template-columns:3rem 1fr;gap:1rem;align-items:center;padding:1.8rem .8rem;border-bottom:1px solid var(--k);transition:background .3s,color .3s,padding .3s}
+.bi:hover{background:var(--k);color:var(--w);padding-left:2rem}
+.bi h3{font:800 clamp(1.6rem,5vw,3.6rem)/1 var(--serif);letter-spacing:-.03em}
+.bi>span:first-child{font-size:.85rem;opacity:.7}
+.bi small{display:block;font:500 clamp(.8rem,2vw,1.05rem)/1.45 var(--sans);letter-spacing:.12em;margin-top:.7rem}
+/* marquee */
+.mq{overflow:hidden;white-space:nowrap;padding:1.6rem 0;background:var(--w);color:var(--k);border-block:1px solid var(--k)}
+.mq div{display:inline-block;font:800 clamp(2.2rem,7vw,5.5rem)/1 var(--serif);letter-spacing:-.03em;animation:mq 40s linear infinite}
+.mq span:nth-child(even){-webkit-text-stroke:1px var(--k);color:transparent}
+.mq i{font-style:normal;margin:0 1.5rem}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* book launch gallery */
+.moments h2{margin-bottom:2.5rem}
+.carousel{max-width:1300px}
+.moment-stage{height:clamp(300px,58vw,720px);position:relative;display:grid;place-items:center;overflow:hidden;background:#151515;border:1px solid rgba(242,242,239,.2)}
+.moment-stage>img{display:block;width:100%;height:100%;object-fit:contain;transition:opacity .3s}
+.moment-caption{position:absolute;left:clamp(1rem,3vw,2.5rem);bottom:clamp(1rem,3vw,2.5rem);display:flex;align-items:center;gap:1rem;color:var(--w);text-shadow:0 1px 8px #000;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase}
+.moment-count{font:800 1rem var(--sans);letter-spacing:.08em}
+.moment-arrows{position:absolute;right:clamp(1rem,3vw,2.5rem);bottom:clamp(1rem,3vw,2.5rem);display:flex;gap:.6rem}
+.moment-arrow{width:3rem;height:3rem;border:1px solid rgba(242,242,239,.7);border-radius:50%;background:rgba(10,10,10,.35);color:var(--w);font:400 1.4rem var(--sans);cursor:pointer;transition:background .2s,color .2s}
+.moment-arrow:hover{background:var(--w);color:var(--k)}
+.moment-tools{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:1.1rem 0}
+.moment-pause{border:0;background:none;color:var(--w);font:500 .72rem var(--sans);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.moment-pause:hover{color:#c9c9c3}
+.moment-thumbs{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:.55rem}
+.moment-thumb{aspect-ratio:1.45;border:1px solid rgba(242,242,239,.2);padding:0;overflow:hidden;background:#151515;opacity:.55;cursor:pointer;transition:opacity .2s,border-color .2s}
+.moment-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.moment-thumb:hover,.moment-thumb[aria-pressed="true"]{opacity:1;border-color:var(--w)}
+@media(max-width:700px){.moment-stage{height:clamp(300px,95vw,560px)}.moment-thumbs{display:flex;overflow-x:auto;padding-bottom:.45rem}.moment-thumb{flex:0 0 82px}.moment-caption{bottom:4.7rem;font-size:.62rem}.moment-arrows{bottom:1rem}.moment-arrow{width:2.65rem;height:2.65rem}}
+@media(prefers-reduced-motion:reduce){.moment-pause{display:none}}
+/* call to read */
+.nl h2{margin-bottom:2.5rem;max-width:14ch}
+.btn{display:inline-flex;align-items:center;border:0;background:var(--k);color:var(--w);padding:1.2rem 2.2rem;font:500 .85rem var(--sans);letter-spacing:.15em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.honor{display:grid;gap:3rem;align-items:center}
+@media(min-width:800px){.honor{grid-template-columns:1fr 1fr}}
+.honor h2{max-width:12ch}
+.honor-photo{margin:0;justify-self:end;width:min(100%,720px);padding:0;background:transparent}
+.honor-photo img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;border-radius:10px}
+.honor-photo figcaption{padding:.8rem .2rem 0;color:var(--m);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+footer .big{font:800 clamp(2rem,9.5vw,11rem)/1.25 var(--serif);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px var(--w);white-space:nowrap;transition:color .4s}
+footer .big:hover{color:var(--w)}
+footer .s{display:flex;gap:1.6rem;flex-wrap:wrap;margin-top:2rem;opacity:.7;font-size:.85rem}footer a{color:var(--w)}
+#cur{position:fixed;left:0;top:0;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:60;transition:width .25s,height .25s,margin .25s}
+#cur.h{width:64px;height:64px;margin:-32px 0 0 -32px}
+@media(max-width:600px){.bi{grid-template-columns:2.2rem 1fr;gap:.65rem;padding:1.2rem .35rem}.bi:hover{padding-left:.75rem}.bi h3{font-size:clamp(1.2rem,5vw,1.65rem)}}
+@media(hover:none){#cur{display:none}.hero{cursor:auto}}
+.rv{opacity:0;transform:translateY(36px);transition:all .9s cubic-bezier(.2,.8,.2,1)}.rv.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv,.poem p{opacity:1!important;transform:none!important}.lay h1 em{transform:none!important}}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<nav><a href="#top">Ա. ԱԼԱՎԵՐԴՅԱՆ</a><div><a class="h" href="#poem">Բանաստեղծություններ</a><a class="h" href="#books">Գրքեր</a><a class="h" href="#moments">Պահեր</a></div></nav>
 
+<header class="hero" id="top">
+  <div class="lay base">
+    <div class="badge"><svg viewBox="0 0 100 100"><defs><path id="c" d="M50 50m-38 0a38 38 0 1 1 76 0a38 38 0 1 1-76 0"/></defs><text font-size="10.5" font-weight="700" letter-spacing="2.2"><textPath href="#c">ԲԱՆԱՍՏԵՂԾՈՒԹՅՈՒՆՆԵՐ · </textPath></text></svg></div>
+    <h1 aria-label="Արմեն Ալավերդյան"><span><em>Արմեն</em></span><span><em>Ալավերդյան</em></span></h1>
+    <div class="meta"><div class="vs" id="vs"></div><div>Բանաստեղծ</div></div>
+  </div>
+  <div class="lay top" aria-hidden="true">
+    <div class="badge"><svg viewBox="0 0 100 100"><text font-size="10.5" font-weight="700" letter-spacing="2.2"><textPath href="#c">ԲԱՆԱՍՏԵՂԾՈՒԹՅՈՒՆՆԵՐ · </textPath></text></svg></div>
+    <h1><span><em>Արմեն</em></span><span><em>Ալավերդյան</em></span></h1>
+    <div class="meta"><div class="vs" id="vs2"></div><div>Բանաստեղծ</div></div>
+  </div>
+</header>
+
+<section class="poem lt" id="poem"><p class="tag">Ընտրված բանաստեղծություններ</p>
+  <details class="st"><summary><span class="no">01</span><span class="ptitle">Այսօր նվեր կտամ քեզ իմ ակնախեցին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այսօր նվեր կտամ քեզ իմ ակնախեցին,
+Եթե սիրես մի օր կամ թե սիրես կրկին,
+Իմ աչքերը սիրիր որպես թախծի պատվար,
+Երբ քո հեղեղն իմ մեջ կրկին առնի դադար:
+Քո իղձերի հորդուն հանգրվանն եմ խաղաղ,
+Սեթևեթ ես այսօր լույսերի մեջ կայտառ,
+Շրթունքներիս, ասես, զգայական մի խաղ,
+Համբույրդ իջավ չքնաղ ինչպես գարնան ծիծառ:
+Հիմա դու ես խոնարհ բավիղում մի անտես,
+Կույրի նման, սակայն առանց ձեռնափայտի,
+Ականջալուր կանցնես սրտիդ արձագանքին
+Եվ ձայներին բազում դեպի սիրո հանդես:
+Չմոլորվես, հոգիս, ստվերների ցոլքից,
+Համր ու խեղճ է հիմա իմ երկյուղը մի քիչ,
+Ու քո գրկից բացի. ուրիշ գրկում եթե...
+Սարդոստայնը մահվան իմ շուրջ հյուսվի գուցե:
+Այսօր նվեր կտամ քեզ իմ ակնախեցին,
+Սեթևեթ ես այսօր լույսերի մեջ կայտառ,
+Ականջալուր եթե չանցար սրտիդ ձայնին...
+Սարդոստայն է մահը իմ շուրջ հյուսված իսպառ:</p></div></details>
+  <details class="st"><summary><span class="no">02</span><span class="ptitle">Աղջիկը, որ սիրտ չունի և անուն չունի ծաղկի</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Աղջիկը, որ սիրտ չունի և անուն չունի ծաղկի,
+Իմ գունատ դեմքից բացի, թող նաև գիրկս ծածկի։
+Աղջիկը, որ հույզ չունի , հույս չունի սրտում թաքուն,
+Առանց ինձ ո՞նց է ապրում, առանց ինձ ո՞նց է զնգուն։
+Կիթառի լարից բացի, աղջիկը հոգի չունի,
+Ինչ գիտի ո՞նց է հնչում ամոթխած երգը լուսնի։
+Աղջիկը երկինք չունի, համասփյուռ չունի աչքին,
+Ում համար քար է չեչոտ, ում համար թանկ ու անգին։
+Աղջիկը ինձ էլ չունի մտքերի առապարում
+Եվ մահվան պարը էլի ինձ հետ է կրքոտ պարում։
+Աղջիկը արցունք չունի, մի կաթիլ, որ ծովանար,
+Էպոսին թե տուրք չտամ, ինչ Խանդութ, ինչ Ծովինար։
+Ինչ մնաց, որ չեմ թվել, չեմ ասել չունես ոչինչ,
+Էն պստիկ իշխանի պես ես էլ եմ մանր ու մի քիչ։
+Ինձ էլ ես, սառցե դշխո, պահ տվել կախարդանքին,
+Հմայիլ ունես հաստատ և մի սեր ունես, Անգին։</p></div></details>
+  <details class="st"><summary><span class="no">03</span><span class="ptitle">Ամոթի շրջա՞ն, թե՞ կարեկցանքի թվականություն</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ամոթի շրջա՞ն, թե՞ կարեկցանքի թվականություն,
+Որքան դյուրին է ցավակցությունը,
+Մարդկային չափից ավելի դյուրին։
+Հիշողությունից մինչև մոռացում,
+Թողություն տուր, Տեր,
+Տունս չդառնա իմ հոգոցների և ստվերների
+խավար մի անկյուն։
+Ծփանքում լույսի
+սրտիս զարկերի անձայնությունն է,
+որտե՞ղ՝ եղկելի մեծանձնությունը,
+և ասեք, որտե՞ղ՝ շրջաբերական իմ ցնծությունը,
+Բարեխոհությամբ, թեև խստասիրտ,
+Քաջատոհմության իմ պատմությունը։
+Մոլություններից այս կաթիլ-կաթիլ,
+Եվ շշուկներից միշտ պարսավելի,
+Թողություն տուր, Տեր,
+Բանսարկուների շքահանդեսին
+Մեզ էլ չթվես առաջին շարքում,
+Փակիր շրջանը,
+Այս անակնության ամփոփը ի՞նչ էր</p></div></details>
+  <details class="st"><summary><span class="no">04</span><span class="ptitle">Այս աշխարհի լավ ու վատին անտարբեր</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այս աշխարհի լավ ու վատին անտարբեր,
+Մեկը լիներ, իմ փոխարեն թող հարբեր,
+Ես չիմացա, թե ոնց հասա այս փառքին,
+Մի սուրբ չկար, ինձ գոնե մարդ հռչակեր։</p></div></details>
+  <details class="st"><summary><span class="no">05</span><span class="ptitle">Այս աչքերս, որ խոնավ են անլուր ցավից</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այս աչքերս, որ խոնավ են անլուր ցավից,
+Այս ձեռքերս, որ զատում են մութը լույսից,
+Ես դարձել եմ անհրապույր այս եզերքից,
+ԵՎ հոգնել եմ կյանքի, մահվան բանավեճից:
+Քեզ ընդառաջ՝ ես եմ փարվել իմ ստվերին,
+ԵՎ դողում եմ անակնկալ հանդիպումից,
+Դու ապրում ես իմ հուշերում այն տաղտկալի,
+Երբ սրտիս մեջ, բայց հեռու ես անդառնալի:
+Քո ժպիտը իջել է ցած կեսգիշերին,
+Եվ թախիծս է այդպես,ավաղ, զորացրել,
+Ուրացել եմ այդ փայլի մեջ աստղ ու լուսին,
+Խենթ կարոտից անհայտությունն եմ հմայել:
+ԵՎ կիսվել եմ անօգնական, բյուր մասերի,
+Սակայն բախտից խռով հոգիս, իմ սիրելի,
+Ասես, վերջին մի հանգրվան, մի վերջակետ,
+Գրկիդ մեջ եմ տեղադրել անձեռակերտ:</p></div></details>
+  <details class="st"><summary><span class="no">06</span><span class="ptitle">ԱՆԴԱՌՆԱԼԻ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Կտուց կտցի չենք կափկափում,
+Էլ օտար ենք և անծես,
+Դժգույն դեմքեր` սիրո չափում,
+Անշքանում ենք կարծես։
+Իրար բախում, տուրք ենք տալիս
+Հուշերի պարզ քանորդին,
+Կիսավարտ ենք, հատված տաղից՝
+Անշարակարգ ակորդ մի։
+Ամոթահար ոնց էլ հնչենք,
+Դեռ կտևենք մի հանգի,
+Ճրագին յուղ ի՞նչ հավելենք,
+Անկացուկամ թե հանգչի</p></div></details>
+  <details class="st"><summary><span class="no">07</span><span class="ptitle">ԱՆԻՄԱՆԱԼԻՆ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ահա, ասում եք` երկյուղը, որպես մորեմերկ
+ծնված մի քաջամարտիկ, սատրապ է կարգված
+զգացմունքներին մեր ամենօրյա, և տերունական
+հողերը նրա ձգվում են ահա մեր գոտկատեղից
+մինչև պարանոց, ծնունդից` մինչ մահ և դեպի
+գիշեր, ուր ժամանակն է իր սրինգները բաժանում,
+ինչպես ծննդյան տոնի թանկագին նվեր ...
+Սակայն սերը չ՞է, ում ասեղնակար և ոսկեծածան
+դրոշով միայն հոգի են առնում մանուկները մեր,
+և այդ ինչի՞ց է թախիծը ծորուն, ժպիտն անբասիր,
+կարոտն անբարբառ, ցավը և լացը հավերժ զույգածին,
+անգամ հաճույքի թանձրահյութն են մեզ մատուցում
+(ինչու՞), սարսուռի խաժաչ մատռվակները...
+Համբույրն եմ խլում ես այն շուրթերի որպես նոր Հուդա
+Եվ առաջածին այս մեղքը ահա յոթնագիր ծաղկում
+այն մատյաններում, որոնց վերծանման գաղտնիքը միայն
+նշանագիր է շուրթերին կանանց և աղջիկների...
+Ասա, աննմա՛ն, քո տառապանքի զինակիցը` ես,
+ի՞նչ մեղք գործեցի...</p></div></details>
+  <details class="st"><summary><span class="no">08</span><span class="ptitle">ԱՆՁՐԵՎԻՑ ՀԵՏՈ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այսպես ավելի լավ է, սիրելի՛ս,
+Թեև կատարյալ, բայց անավարտ ես,
+Գահավեժ ջրվեժ անգամ, սիրելի՛ս,
+Մերկ, հանդիպակաց, ինչքա՜ն հպարտ ես:
+Կամար չբռնեց տանիքիս վրա,
+Աստղերն են վետվետ աչքերիդ հեռվում,
+Խորհրդավորը քո ամեն նազում
+Ինձ երգ է թվում, թվում շարական:
+Ուր է թե լինի լույսի խնկարկում,
+Անձրևից հետո ծիածան հեռվում,
+Անստվեր անցնե՛նք, անցնե՛նք թափանցիկ,
+Երազից ծնված այնպես հպանցիկ:</p></div></details>
+  <details class="st"><summary><span class="no">09</span><span class="ptitle">Անի</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ցող արցունքի մեջ աշխարհն ակներև
+Գարնան հալոցք է կամ աշնան տերև,
+Գոռ կատարներից բացվեց առավոտ,
+Ինչ միալար ես, անհասցե կարոտ:
+Անին մարգարիտ և լքված խեցի,
+Բնավեր ոստան, բյուր եկեղեցի:
+Քառասուն դուռ կա քաղաքում անուրջ,
+Եվ Ախուրյանից ձգվող մի կամուրջ:
+Սմբատ արքայի քանդակ հոյակերտ
+Ձեռքիդ պահում ես Անին՝ մանրակերտ:
+Մայր տաճարի մեջ Սուրբ Աստվածածին
+Որմնանկարում Տերն է միածին:
+Զվարթնոցի պես կատարյալ ու շեն
+Սուրբ հոգու խորան կոչված Գագկաշեն:
+Առաքելոց վանք, Փրկիչ-կացարան,
+Որբ է իմ Անին, հուշի կայարան:
+Միտքս շրջում է քաղաքում անէ,
+Ուր ժամանակը վաղուց անկարգ է,
+Զարդեղեն ու զենք և ճենապակի…
+Ցավից խորասույզ մեկն ինձ ապտակի:
+Եվ հարյուր տարվա մենությունն է այս
+Ցող արցունքի մեջ ծվարած երազ,
+Գարնան հալոցք է, թե տերև աշնան,
+Ինձ կանգնած թաղեք մահս չիմանամ:</p></div></details>
+  <details class="st"><summary><span class="no">10</span><span class="ptitle">Անիրական մի աղջիկ կա աշխարհում</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անիրական մի աղջիկ կա աշխարհում
+Թագուհու պես, ախր, շատ է տիրական,
+Համբույրն առա շուրթերիցը կուսական,
+Սիրտս հիմա էլ անիմաստ չի զարկում:
+Կախարդական հյուլեներից հավաքված,
+Ասես ցողում թաքնված մի արեգակ,
+Հուշիկ լույս է երեկոյում մոլորված,
+Մի աշխարհ է, մի երազ է ու պատրանք:
+Շորորվում է լուսավոր ու թափանցիկ
+Եթերի մեջ մեղեդի է դյութական,
+Մեկ ժպտում է, մեկ էլ հանկարծ հպանցիկ
+Զեփյուռի պես գգվում լանջիս առնական:
+Այսօր նա ինձ անվերադարձ հմայեց,
+Մազերն արձակ ծովի փրփուր է ասես,
+Ամենակալ Տերն աշխարհը հնարեց,
+Մեկին սիրեց, մեկի սերն էլ բացառեց:</p></div></details>
+  <details class="st"><summary><span class="no">11</span><span class="ptitle">Անհաղորդ էլ մնացին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անհաղորդ էլ մնացին,
+Ով լինելդ չիմացան,
+Չարքից թեև խելացի,
+Աստծուց սակայն հեռացան:
+Զսպաշապիկ հագցրին,
+Անձդ այդպես ուրացան,
+Ոնց հանցապարտ խաչեցին՝
+Պարզած սուր ու հրացան:
+Քանի գիշեր, նույնքան տիվ
+Եվ կորուսյալ ժամանակ,
+Մարդ ու գազան անպատիվ,
+Պիղծ են խոկում շարունակ:
+Առընթեր կամ տարանջատ,
+Բայց մեկտեղ են երկբայում,
+Ով էլ մնաց հարազատ,
+Մտքերի մեջ են դավում:</p></div></details>
+  <details class="st"><summary><span class="no">12</span><span class="ptitle">Անհետ կորած տղերք, սիրտս գցեմ ՝զարկեք</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անհետ կորած տղերք, սիրտս գցեմ ՝զարկեք,
+Աղոթարան-լույսն իմ ալ կարմիրով ներկեք,
+Արյան կաթիս էլի արջնագռավ է թառել,
+Երկյուղ չունեմ, տղերք, ինձ առաթուր թաղեք։
+Ձեր Ածխահամ բիբով քանի՞ կորուստ սգամ՝
+Կալանդ ու կապ դրած այս հարաճուն ցավին,
+Մտքով տարվեմ մի կերպ, թե՞ ճարահատ խոկամ՝
+թուրքին թվաքարեմ նզովք չեկած կավին</p></div></details>
+  <details class="st"><summary><span class="no">13</span><span class="ptitle">Անձրև</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անձրև...
+Ու առանց անձրևանոցի
+Ոսկորներս են թաց` կրակի կարոտ,
+Հոգիս դառնունյան, քայլս` վարանոտ,
+Հմայել է ինձ, ախ, ձայնը օձի:
+Եվ ոճիրներիս գինն եմ անհատույց
+Ակնապիշ զգում հեռու և մատույց
+Բարեկամներիս հոգատարությամբ.
+Կեղծ մի հայտանիշ` բոլորին ի ցույց:
+Ձեռքերիս հիվանդ շարժ ու վարժանքն է
+Փոխանցվել լեզվիս, և անզորության
+Մի խորաթափանց զգացողության
+Գերին է թուղթը` ինքնության կամքն է:
+-Կինը հանում է շապիկներն իր թաց,
+Եվ մարմինների դողն է մակընթաց
+Փոխանցվում լուսնին… ես, դու, լուսինը…
+Ո՞վ է հնարել հայտնին ու սինը:</p></div></details>
+  <details class="st"><summary><span class="no">14</span><span class="ptitle">Անունս</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Տառերը խառնեցին ինձ հետ
+տեղերը փոխելով անշփոթ,
+Ո՞վ եմ ես դարձյալ,
+Պոե՞տ։
+-Երազանքների
+Թ ե
+ր թ երի
+վ ր ա
+Բանահյուսվել ես որպես մի տերև
+Նկարազարդ և ցավոք որպես
+Սրտի ժամացույց։
+Շնչարանների տակտերը չափող
+Հուզմունքդ տաղ է։
+- Հապա անու՞նս</p></div></details>
+  <details class="st"><summary><span class="no">15</span><span class="ptitle">Աշխարհ քեզ հետ ճամփա ելա</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Աշխարհ քեզ հետ ճամփա ելա,
+Ու՞ր ենք գնում, ա´յ աշխարհ,
+Ի՞նչ տագնապ է սիրտս հիմա
+Քեզ հետ կիսում, վա´յ աշխարհ:
+Ես մի հոգի, դու հազար ձայն,
+Հազար մարդու ելևէջ,
+Հոգիս շարժեմ, թե բազմաձայն
+Սաղմոս ասեմ այլազան:
+Ես քեզ, աշխարհ, զրուցակից.
+Ինքս իմ հետ եմ խոսում,
+Այդ ե՞րբ եմ ես ինձ կարեկից,
+Ա՛խ, իմ ցավից եմ պատմում:
+Ամուր մնամ պատումներիս
+Լուսանցքներում թանկագին,
+Մի օր ինձ էլ կարհամարհես`
+Հողին տալով ցավագին :
+Ով իմ լույսով մոմ ու կանթեղ,
+Ժպիտ վառի խավարում,
+Ինձ չփնտրեք, ես եմ անթեղ
+Անիրական աշխարհում...</p></div></details>
+  <details class="st"><summary><span class="no">16</span><span class="ptitle">Աշխարհը բեմ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Աշխարհը բեմ
+Եվ ես տխուր մի խաղարկու,
+Իմ դերերն եմ, թե չհարբեմ,
+Դեռ թվարկում,
+Իմ սերերն եմ, բեր, չթարթեմ,
+Սևեռաբիբ
+Այս ի՞նչ տաղ եմ արտասանում,
+Մի երկվայրկյան և մի քթիթ
+Ես այս անտեր ժամանակին
+Ի՜նչ հակառակ եմ նավարկում։</p></div></details>
+  <details class="st"><summary><span class="no">17</span><span class="ptitle">Աշունն ու կինը</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Քո աչքերի մեջ լուսինն ամոթխած,
+Գիշերն անանջատ, աստղերն անթերի,
+Մի քիչ աշուն կա այնպես տխրամած,
+Եվ աղոտ առկայծ եթերում անհաս:
+Մենակյաց, ինչպես հուշն անապաստան,
+Որ քամու թևին գնում է, գալիս,
+Սիրահետել է դաշտ ու տափաստան,
+Որ ամեն թարթում նշմար է տալիս:
+Քո աչքերի մեջ տեսիլներ հարբած,
+Դատարկ փողոցդ բանուկ է թվում,
+Կմնաս այդպես մինչև լուսաբաց,
+Ուր ասպետները էլ քեզ չեն թովում:
+Աշունն ու կինը պատահական են
+Ոսկեդեղին նույն հանդերձը հագել,
+Մեկ է գիշեր է, անգամ լռել են
+Ձայները, որ ես երբեք չեմ լսել…</p></div></details>
+  <details class="st"><summary><span class="no">18</span><span class="ptitle">Ավե, Մարիա</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p><span class="acro">Ա</span> նհույս էլ փակում եմ այս էջը,
+<span class="acro">Վ</span> հատ ու ձորձերս եմ կարկատում,
+<span class="acro">Ե</span> կել է, չի եկել իմ վերջը,
+<span class="acro">Մ</span> եռնում է քո անհույզ հարկատուն:
+<span class="acro">Ա</span> ստծուն մոտ, երբ Աստված կամենա,
+<span class="acro">Ր</span> ոպեն այս թե ապրեմ անթարթափ,
+<span class="acro">Ի</span> նձանից լոկ մի հուշ կմնա՝
+<span class="acro">Ա</span> չքս թաց՝ լուրերում հրատապ:</p></div></details>
+  <details class="st"><summary><span class="no">19</span><span class="ptitle">ԲԱՐՁՐԱԳՈՒՅՆ ՄԱԹԵՄԱՏԻԿԱ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Եթե տխուր եմ, ապա մռայլ եմ,
+Ի՜նչ զուգամետ եմ, ախր, ես այլ եմ,
+Թե անուրախ եմ, կամ ես թախծում եմ,
+Տարամետ այսպես ինձ արտածու՜մ եմ:
+Թե մնացորդ եմ և կամ քանորդ եմ
+Ես բաժան-բաժան անսանձ ու հորդ եմ,
+Արհամարհում եմ ամեն փակագիծ,
+Արտադրիչ եմ մի անկարեկից:
+Բազմապատիկ եմ օրն այս ընկալում,
+Գումարում, հանում ես եմ հնարում,
+Որերորդ կարգի ես ածանցյալ եմ,
+Թե որ քո հուշում ես լոկ անցյալ եմ:
+Ես նվազում եմ և առաջարգել,
+Վերջս քո գրկում այնպես անարգել,
+Ի՞նչ ես թվերի առանցքն անտեսում,
+Թե որ սիրում են, չեն կանխատեսում:</p></div></details>
+  <details class="st"><summary><span class="no">20</span><span class="ptitle">Թուղթ ընդհանրական</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անկարության նման բազմաչարչար,
+Սպիացած ինչպես ցավը հոգուդ,
+Ողորմածիկ, սակայն առանց պատճառ
+Եվ սրբազան մասունք և կամ դիցուք,
+Հայցվորին գութ, ինչպես փշրանք հացի,
+Ապա նախորդ դրվագ կամուկացի,
+Մշտահոլով թախիծ անսեռ, անզույգ,
+Չթարգմանվող կսկիծ և կամ դիցուք,
+Թլպատվածի մեղքին անմնացորդ
+Հավելվածից խռով ինչ-որ անցորդ,
+Խոժոռ հայացք, խիստ և անտարակույս,
+Մի կաթ արցունք՝ իմ չափ խղճահարույց:</p></div></details>
+  <details class="st"><summary><span class="no">21</span><span class="ptitle">Ժամանակ դեռ կա</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ժամանակ դեռ կա,
+որ հոգեվարքիս
+տագնապը ցրես,
+Դեռ մի քիչ էլ կա,
+որ հուշերիդ մեջ
+ինձ մտապահես,
+Մի ակնթարթ կա,
+ուր հապաղել եմ
+մինչև լուսնալիր ,
+Ինձ բան չմնաց,
+բայց հենց կարոտես,
+քո ներսը նայիր։</p></div></details>
+  <details class="st"><summary><span class="no">22</span><span class="ptitle">ժամանակը</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>ժամանակը՝
+Վախի ածանցյալով,
+Այրվում է հաստատուն արագությամբ՝
+Առանց զանգվածի կորստի,
+ապա սահմանային պայմաններում,
+երբ Սիրտս դառնում է սև խոռոչ,
+Ժամանակը կորցնում է իր հմայքը։
+Եվ չի անցնում իմ միջով
+Որպես արյուն,
+Որպես հիշողություն։</p></div></details>
+  <details class="st"><summary><span class="no">23</span><span class="ptitle">Իմ արձագանքը ծովում սուզել ես</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Իմ արձագանքը ծովում սուզել ես,
+Ափակոծ, ասես, հառաչաձայն,
+Ավազ ու խեցի թե որ հուզել ես,
+Տագնապս ափիդ է մի մահարձան:
+Ծովի աղմուկից ես երկնչել եմ,
+Ծփանքն եմ սիրել, ճոռ հայելին,
+Ու թե վախվորած քեզ էլ կանչել եմ,
+Այդ ես չեմ եղել, ստվերս էր հին:
+Ինձ քո մեջ հիմա բանադրել ես,
+Ծովասպատակ եմ ես իմ հերթին,
+Ասա, սիրու՞մ ես, թե՞ դադարել ես
+Փարոս դառնալ իմ նոր երթին…</p></div></details>
+  <details class="st"><summary><span class="no">24</span><span class="ptitle">Իմ մահից առաջ ինչ լինելու էր, եղել է արդեն</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Իմ մահից առաջ ինչ լինելու էր, եղել է արդեն,
+Մնաց, որ հարբած, դատարկությունը քաոսի բերեմ,
+Մի թաս էլ մնաց, խառնակ ամբողջին թե ցավս հղեմ,
+Անհոգի աղջիկ, չափավորությամբ սիրտդ չգերեմ։
+
+Ահա և չկամ</p></div></details>
+  <details class="st"><summary><span class="no">25</span><span class="ptitle">Իմ պատմությունը մի քիչ տարբեր է</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Իմ պատմությունը մի քիչ տարբեր է,
+Գլխապտույտից ես թևեր չառա,
+Ձեր պոետն այսօր թեև հարբել է,
+Սլացքի մեջ է և՛ տեր, և՛ ծառա։
+Մի կաթ արցունքի արագությամբ էլ
+Անտես էլ կապրեմ, մինչև կավոտեմ,
+Վարգող ձիերիս քանի չեք թամբել,
+Հույզերիս պես են, հենց որ աղոթեմ։
+Փահլ ու անղրուվար, շիկագույն, կամ սև,
+Արծաթաբաշ է տաղիս այս բռչոն,
+Ես նրա մասին իմ Աստծուն կասեմ,
+Իմացա՞ք մանր է, մեծ պասի կռճո՞ն։</p></div></details>
+  <details class="st"><summary><span class="no">26</span><span class="ptitle">Մակերեսների անարցունք խաղ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Սերս կորզելու գայթակղության խորքերում անկիրք
+Տաղերիս նման մեզ ծնում, թերթում, թաղում ես, երկիր,
+Թող որ աշխարհս իր կարգով գնա ոնց սուրբ գրքերում,
+Ինչ որ կա՝ ծաղկի, մառ գինին էլ է ծաղկախայթ գերում։
+Այս կյանքիս մռայլ և անծայրածիր ի՞նչ ճանապարհ է
+Մարմնից դեպի մահ ոսկրոտ հայացքիս թմբիրն անողոք,
+Լսո՞ւմ ես, ծովի հառաչանքներում անկումիս պահն է,
+Արտոսր ցավս՝ չքացող դեմքիդ անվրեպ բողոք։</p></div></details>
+  <details class="st"><summary><span class="no">27</span><span class="ptitle">Մակերեսների անզուգական խաղ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Մթին գիշեր, երբ լուսնկան դեռ թարթում էր,
+Հիշեցի՞ր իմ մակագիրը երանությամբ,
+Սռսուռ բառեր, չնաշխարհիկ կինն արթուն էր,
+Բայց չշեշտեց շաղաշարիս ոտքերը յամբ։
+Բան չմնաց տաղաչափիս կարոտից թանկ ,
+Անհիմն, անդուռ, ինքս ինձ նման սրտատոչոր,
+Գինու մի թաս, ավերակիս մի խոնարհ վանք,
+Գինու մրուր և դառնության մի անտակ ձոր։
+Երփըներանգ մատիտներով Դիմանկար,
+Էլ մի փորձիր ինձ ներբեռնել քո հուշերից,
+Չորեքերես հոբելիքի մի չեչոտ քար,
+Չես հասկանա, որ թրջվել ես շատ հույզերից։
+Վաղորդ օրեր, տարփածության օդի երանգ,
+Անբռնելի կշռոցով եք մեղքս չափում,
+Իմ նազելի, շուքս ձգիր առանց փաղանգ,
+Ես չգրված մի տաղ ունեմ, թեև անհանգ։</p></div></details>
+  <details class="st"><summary><span class="no">28</span><span class="ptitle">Մակերեսների բաժանման խաղ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Անհամապատասխանությունների խճանկար,
+Ներհակ զգացողությունների քրոնիկոն
+Կարոտիս ծխապատիճի մեջ կրակ ես վառել,
+Ասում ես սերն աննահանջ գրկախառնություն Է,
+Դու այստեղ ես, ինչպես թափառող շշուկ,
+Ինչպես անկեղծ ապաշխարություն,
+Ինչպես անփոփոխ գրկախառնություն՝
+Գայթակղիչ և չարաճճի,
+Այստեղ ես,ինչպես քաղցր ու երանելի ակորդ,
+Որ դեռ չի հնչել սիրո երգեհոնի տոնայնությամբ,
+Որպես ցավի հրապույր
+Եվ սրտիս զարկերի մարող արձագանք։
+Դե, բարև, կարոտ։</p></div></details>
+  <details class="st"><summary><span class="no">29</span><span class="ptitle">Մայրիկիս</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այն բարության համար, որ սահմանում չունի,
+Եվ խեղճության համար սրտակտուր, աղի,
+Վեհանձնության համար հորդուն, առանց հունի,
+Թեկուզ երկինքն այսօր իմ աչքերով շաղի,
+Խոնարհության համար, առաքինի՛ մայրիկ,
+Շնորհնկալ հոգու համեստության համար,
+Այն ճերմակի համար այս աշխարհին տալիք,
+Անդորր չունեմ, քանի կանխիկ չառնեմ դադար:
+Ինձ խաբելու համար կողքավեր եմ այսօր,
+Ասացիր, թե կապրես և ժպտացիր անմար,
+Ցախաքլորի նման ծղրտում եմ անզոր
+Անմնացորդ այսպես ինձ սիրելուդ համար:
+Նեղացրել եմ հաճախ, հաճախ ընդդիմացել,
+Իմ պատանքը այսօր կամ երեկ եմ կարել,
+Ի՞նչ եմ հանգանակել, աղի արցունք հեղել
+Եվ արցունքի թացին անձնատուր եմ եղել:
+Մի անճարակ որբի պատմուճան եմ հագել
+Եվ բառերս ցավի տիրույթներից հեգել,
+Քո խորանի առաջ ծնկաչոք եմ կրկին,
+Մի՞թե կարոտ կերթամ քո կաթնաբույր գրկին:
+Շնորհակալ եմ, մա՛յր, տառապանքիդ համար,
+Ցավդ տանեմ, մամա, ցավդ տանեմ, ի՛մ մայր:</p></div></details>
+  <details class="st"><summary><span class="no">30</span><span class="ptitle">Պարաբոլ</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Գիշերվա մեջ ես ձեռնահաս խոկում,
+Հատվածակողմիդ գույներն ես բեկում,
+Ինձ չես հավաքում քո կիզակետում
+Եվ խորատակից անկից ես նետում։
+Իրար չես բերում , որ երբ տրոհես՝
+Ջրելու նման հույզերիդ ածուն,
+Մտքից ներս անգամ թե ինձ որոնես,
+Ես չամբողջանամ աչքերիդ թացում։
+Անգութ, թե ես էլ արցունքի կաթ եմ,
+Լույսի նման եմ այտիցդ կաթում,
+Մի արար հետո թե փայլուն սաթ եմ,
+Քո թվարկության կոներն եմ հատում։</p></div></details>
+  <details class="st"><summary><span class="no">31</span><span class="ptitle">Քո զինվոր բալեքին կանչել ես</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Քո զինվոր բալեքին կանչել ես,
+Որ փառքիդ դռները պահես,
+Աստված, մեզ էլի խաչել ես,
+Որ արյան կաթիլդ շահես։
+Օրհնանքի և սիրո արանքում,
+Թե Քեզ հետ լույսերում ապրենք,
+Մոմերը հանգել են և վանքում
+Մեր տեղակ էլ որին համրենք։</p></div></details>
+  <details class="st"><summary><span class="no">32</span><span class="ptitle">Սարգիս Նաղդալյանի հիշատակին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Ասի վերջում հուշերիդ հետ անշքանամ
+Քարինտակի ու Սղնախի մատույցներից,
+Ցոլքի նման շվաքիդ տակ էլ չքանամ
+Ու պակասեմ այսաշխարհիկ զրույցներից։
+Կրակն առա, որ տղերքը չպակասեն,
+Նշանառուն քանի թիրախ պիտի խոցեր,
+Կյանքն ու մահը գուցե իրար չհակասեն,
+Թե այս մասին վեցից մեկը ուղիղ խոսեր։
+Ասպարընկեց տղեկներից ի՞նչ դասալիք,
+Արյան համը հողի մեջ է ամբողջանում,
+Քմայքներիդ գիտակներն են դեռ խաղալիք
+Բախտախաղում, ուր ձեռնածուն ցավն է մանում։</p></div></details>
+  <details class="st"><summary><span class="no">33</span><span class="ptitle">Աբո Ալավերդյանին</span><span class="plus" aria-hidden="true"></span></summary><div class="copy"><p>Այս պատումս երբեք թող չգրվեր,
+Այս մի երգս էլ ձոնվեր մայրամուտին,
+Երկու կաթիլ արցունք թե գլորվեր,
+Իմ կարոտը ձուլվեր Բուրջամուտին:
+Թե վախվորած թուրքը չառաջանար,
+Թեկուզ մառախուղը թանձր լիներ,
+Անպատմելի մի ցավ ուրիշ հնար
+Թող հորիներ, հետո սրտին զիներ:
+Թեկուզ որդիդ էլի տարաբնակ
+Ու թոռնիկիդ էլի Աբո կոչեր,
+Թող, որ Տերը կազմեր սիրո բանակ
+Եվ էլ չարքին երբեք բան չարտոներ:
+Բայց քանի դեռ հուդան՝ ծախու պոռնիկ,
+Մեղքնի իր հաստատ գրի կյանքի գրքում,
+Տափաստանի թուրքն էլ անհարմոնիկ
+Իր ոռնոցով էլի նույնն է երգում:
+Ու Սրբերն են կրկին մատաղացու,
+Ջահել կյանքեր քանի և հատկապես
+Փառքը տարան իրենց այլ մի հեռու,
+Ես Ձեր ցավը տանեմ նաև այսպես…</p></div></details>
+</section>
+
+<section class="about dk"><div class="pt rv"><img src="https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058629987.jpg?v=1792750618" alt="Արմեն Ալավերդյան" loading="lazy"></div>
+  <div class="rv"><p class="tag">Հեղինակի մասին</p><h2>Արմեն Ալավերդյան</h2>
+  <p style="opacity:.7;max-width:520px;margin-top:1.5rem">Բանաստեղծություններ և գրքեր։ Այս էջում ներկայացված են ընտրված ստեղծագործություններն ու ժողովածուները։</p>
+  <div class="nums"><div><b data-n="5">0</b><small>գիրք</small></div><div><b>Ա.</b><small>բանաստեղծ</small></div></div></div></section>
+
+<section class="lt" id="books"><p class="tag">Ժողովածուներ</p><h2 class="rv">Գրքեր</h2>
+<div class="bl rv">
+  <div class="bi"><span>01</span><h3>ՎԵՐԱԴԱՐՁ</h3></div>
+  <div class="bi"><span>02</span><h3>ԹՈՒՂԹ ԸՆԴՀԱՆՐԱԿԱՆ</h3></div>
+  <div class="bi"><span>03</span><h3>ԱՇՈՒՆՆ ՈՒ ԿԻՆԸ</h3></div>
+  <div class="bi"><span>04</span><h3>ԱՆԺԱՄԱՆԱԿԻ ԿԵՆՎՈՐԸ<small>ԿԱՄ ՔԱՂԱՔԱՅԻՆ ՄԱՆՐԱՊԱՏՈՒՄ</small></h3></div>
+  <div class="bi"><span>05</span><h3>ԴԻՄԱՆԿԱՐ</h3></div>
+</div>
+</section>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section class="moments dk" id="moments"><p class="tag">Լուսանկարներ</p><h2 class="rv">Պահեր գրքերի շնորհանդեսից</h2>
+  <div class="carousel rv" id="moment-carousel" role="region" aria-roledescription="carousel" aria-label="Պահեր գրքերի շնորհանդեսից">
+    <div class="moment-stage">
+      <img id="moment-image" src="https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630023.jpg?v=1792757480" alt="Գրքերի շնորհանդեսից լուսանկար 1" loading="lazy">
+      <div class="moment-caption"><span class="moment-count" id="moment-count">01 / 08</span><span>Գրքերի շնորհանդեսից</span></div>
+      <div class="moment-arrows"><button class="moment-arrow" id="moment-prev" type="button" aria-label="Նախորդ լուսանկարը">←</button><button class="moment-arrow" id="moment-next" type="button" aria-label="Հաջորդ լուսանկարը">→</button></div>
+    </div>
+    <div class="moment-tools"><span class="tag" style="margin:0">Ավտոմատ թերթում</span><button class="moment-pause" id="moment-pause" type="button" aria-pressed="false">Դադարեցնել</button></div>
+    <div class="moment-thumbs" aria-label="Լուսանկար ընտրել">
+      <button class="moment-thumb" type="button" aria-label="Ցուցադրել լուսանկար 1" aria-pressed="true"><img src="https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630023.jpg?v=1792757480" alt="" loading="lazy"></button>
+      <button class="moment-thumb" type="button" aria-label="Ցուցադրել լուսանկար 2" aria-pressed="false"><img src="https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630028.jpg?v=1792757480" alt="" loading="lazy"></button>
+      <button class="moment-thumb" type="button" aria-label="Ցուցադրել լուսանկար 3" aria-pressed="false"><img src="https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630034.jpg?v=1792757480" alt="" loading="lazy"></button>
+      <button class="moment-thumb" type="button" aria-label="Ցուցադրել լուսանկար 4" aria-pressed="false"><img src="https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630032.jpg?v=1792757480" alt="" loading="lazy"></button>
+      <button class="moment-thumb" type="button" aria-label="Ցուցադրել լուսանկար 5" aria-pressed="false"><img src="https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630031.jpg?v=1792757480" alt="" loading="lazy"></button>
+      <button class="moment-thumb" type="button" aria-label="Ցուցադրել լուսանկար 6" aria-pressed="false"><img src="https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630033.jpg?v=1792757480" alt="" loading="lazy"></button>
+      <button class="moment-thumb" type="button" aria-label="Ցուցադրել լուսանկար 7" aria-pressed="false"><img src="https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630029.jpg?v=1792757480" alt="" loading="lazy"></button>
+      <button class="moment-thumb" type="button" aria-label="Ցուցադրել լուսանկար 8" aria-pressed="false"><img src="https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630037.jpg?v=1792757480" alt="" loading="lazy"></button>
+    </div>
+  </div></section>
+
+<section class="nl lt"><p class="tag">Բանաստեղծություններ</p><h2 class="rv">Կարդա ընտրված տողերը</h2>
+  <a class="btn rv" href="#poem">Բացել բանաստեղծությունները</a></section>
+
+<section class="honor lt"><div class="rv"><p class="tag">Ճանաչում</p><h2>Գրողների միության պատվավոր անդամ</h2></div>
+  <figure class="honor-photo rv"><img src="https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630025.jpg?v=1792759860" alt="Գրողների միության պատվավոր անդամության մասին լուսանկար" loading="lazy"><figcaption>Արմեն Ալավերդյան</figcaption></figure></section>
+
+<footer class="dk"><div class="big">Ալավերդյան</div>
+<div class="s"><a href="#top">Վերև ↑</a><a href="https://www.facebook.com/armen.alaverdyan63" target="_blank" rel="noopener noreferrer">Facebook ↗</a><span>© 2026 Արմեն Ալավերդյան</span></div></footer>
+
+<script>
+(function(){
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches,touch=matchMedia('(hover:none)').matches;
+var hero=document.querySelector('.hero'),rs=document.documentElement.style;
+function spot(x,y,r){rs.setProperty('--x',x+'px');rs.setProperty('--y',y+'px');rs.setProperty('--r',r+'px')}
+var R=0,tr=0,mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
+if(rm){spot(innerWidth/2,innerHeight/2,150)}
+else if(touch){(function a(t){var w=hero.clientWidth,h=hero.clientHeight;spot(w/2+Math.sin(t/1400)*w*.3,h*.7+Math.cos(t/1900)*h*.12,95);requestAnimationFrame(a)})(0)}
+else{hero.addEventListener('mousemove',function(e){var b=hero.getBoundingClientRect();mx=e.clientX-b.left;my=e.clientY-b.top;tr=180});hero.addEventListener('mouseleave',function(){tr=0});
+(function a(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;R+=(tr-R)*.12;spot(cx,cy,R);requestAnimationFrame(a)})()}
+var v=['Այսօր նվեր կտամ քեզ իմ ակնախեցին։','Իմ աչքերը սիրիր որպես թախծի պատվար։','Այս աչքերս, որ խոնավ են անլուր ցավից։'],vi=0,ci=0,del=false,e1=document.getElementById('vs'),e2=document.getElementById('vs2');
+function set(s){e1.firstChild?e1.firstChild.nodeValue=s:e1.prepend(s);e2.firstChild?e2.firstChild.nodeValue=s:e2.prepend(s)}
+function tick(){if(rm){set(v[0]);return}var w=v[vi];ci+=del?-1:1;set(w.slice(0,ci));var d=del?25:65;if(!del&&ci===w.length){del=true;d=1800}else if(del&&ci===0){del=false;vi=(vi+1)%v.length;d=350}setTimeout(tick,d)}
+setTimeout(tick,900);
+function cnt(el){if(el.done)return;el.done=1;var to=+el.dataset.n,s=performance.now();(function f(n){var p=Math.min((n-s)/1400,1);el.textContent=Math.round(to*p);if(p<1)requestAnimationFrame(f)})(s)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');if(e.target.dataset.n)cnt(e.target)}})},{threshold:.35});
+document.querySelectorAll('.rv,.poem p,[data-n]').forEach(function(el){io.observe(el)});
+var q=['Այսօր նվեր կտամ քեզ իմ ակնախեցին','Աղջիկը, որ սիրտ չունի և անուն չունի ծաղկի','Այս աշխարհի լավ ու վատին անտարբեր','Այս աչքերս, որ խոնավ են անլուր ցավից'];
+var h=q.map(function(x){return '<span>'+x+'</span><i>/</i>'}).join('');document.getElementById('mq').innerHTML=h+h;
+var carousel=document.getElementById('moment-carousel'),momentImage=document.getElementById('moment-image'),momentCount=document.getElementById('moment-count'),momentThumbs=[].slice.call(document.querySelectorAll('.moment-thumb')),momentPause=document.getElementById('moment-pause');
+var moments=[
+  {src:'https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630023.jpg?v=1792757480',alt:'Գրքերի շնորհանդեսից լուսանկար 1'},
+  {src:'https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630028.jpg?v=1792757480',alt:'Գրքերի շնորհանդեսից լուսանկար 2'},
+  {src:'https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630034.jpg?v=1792757480',alt:'Գրքերի շնորհանդեսից լուսանկար 3'},
+  {src:'https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630032.jpg?v=1792757480',alt:'Գրքերի շնորհանդեսից լուսանկար 4'},
+  {src:'https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630031.jpg?v=1792757480',alt:'Գրքերի շնորհանդեսից լուսանկար 5'},
+  {src:'https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630033.jpg?v=1792757480',alt:'Գրքերի շնորհանդեսից լուսանկար 6'},
+  {src:'https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630029.jpg?v=1792757480',alt:'Գրքերի շնորհանդեսից լուսանկար 7'},
+  {src:'https://cdn.shopify.com/s/files/1/0603/3021/3434/files/5393366227058630037.jpg?v=1792757480',alt:'Գրքերի շնորհանդեսից լուսանկար 8'}
+];
+var mi=0,autoTimer=null,swapTimer=null,paused=false,hovering=false,focused=false;
+function showMoment(n){mi=(n+moments.length)%moments.length;momentImage.style.opacity='0';if(swapTimer)clearTimeout(swapTimer);swapTimer=setTimeout(function(){momentImage.src=moments[mi].src;momentImage.alt=moments[mi].alt;momentCount.textContent=('0'+(mi+1)).slice(-2)+' / '+('0'+moments.length).slice(-2);momentImage.style.opacity='1'},140);momentThumbs.forEach(function(b,i){b.setAttribute('aria-pressed',i===mi?'true':'false')})}
+function stopAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null}}
+function startAuto(){stopAuto();if(!rm&&!paused&&!hovering&&!focused)autoTimer=setInterval(function(){showMoment(mi+1)},2000)}
+document.getElementById('moment-prev').onclick=function(){showMoment(mi-1);startAuto()};
+document.getElementById('moment-next').onclick=function(){showMoment(mi+1);startAuto()};
+momentThumbs.forEach(function(b,i){b.onclick=function(){showMoment(i);startAuto()}});
+momentPause.onclick=function(){paused=!paused;momentPause.setAttribute('aria-pressed',paused?'true':'false');momentPause.textContent=paused?'Շարունակել':'Դադարեցնել';startAuto()};
+carousel.addEventListener('mouseenter',function(){hovering=true;stopAuto()});carousel.addEventListener('mouseleave',function(){hovering=false;startAuto()});
+carousel.addEventListener('focusin',function(){focused=true;stopAuto()});carousel.addEventListener('focusout',function(e){if(!carousel.contains(e.relatedTarget)){focused=false;startAuto()}});
+startAuto();
+var c=document.getElementById('cur');
+addEventListener('mousemove',function(e){c.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)'});
+document.querySelectorAll('a,button,input,.bi,.poem summary').forEach(function(el){el.addEventListener('mouseenter',function(){c.classList.add('h')});el.addEventListener('mouseleave',function(){c.classList.remove('h')})});
+})();
+</script>
+</body>
+</html>
